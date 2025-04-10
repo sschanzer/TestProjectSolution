@@ -20,7 +20,13 @@ namespace LeetCodeProblems
     /// </remarks>
     public class TwoSum
     {
-        public int[] twoSum1(int[] nums, int target)
+        /// <summary>
+        /// Brute force solution.
+        /// </summary>
+        /// <param name="nums">The input array.</param>
+        /// <param name="target">The target int.</param>
+        /// <returns>Integer array of the indicies of the two numbeers that sum to the target.</returns>
+        public int[] TwoSum1(int[] nums, int target)
         {
             for (int i = 0; i < nums.Length; i++)
             {
@@ -35,6 +41,40 @@ namespace LeetCodeProblems
                         return solution;
                     }
                 }
+            }
+
+            return null;
+        }
+
+        /// <summary>
+        /// Alternative solution.
+        /// </summary>
+        /// <param name="nums">The input array.</param>
+        /// <param name="target">The target int.</param>
+        /// <returns>Integer array of the indicies of the two numbeers that sum to the target.</returns>
+        public int[] TwoSum2(int[] nums, int target)
+        {
+            /// Input: nums = [2,7,11,15], target = 9
+            /// Output: [0, 1]
+            /// Explanation: Because nums[0] + nums[1] == 9, we return [0, 1].
+            
+            var indexMap = new Dictionary<int, int>();
+
+            for (int i = 0; i < nums.Length; i++)
+            {
+                var currentValue = nums[i];
+                var difference = target - currentValue;
+
+                if (indexMap.ContainsKey(difference))
+                {
+                    int idx = Array.IndexOf(nums, currentValue);
+                    var solution = new int[] { indexMap[difference], idx };
+
+                    return solution;
+                }
+
+                indexMap[currentValue] = i;
+
             }
 
             return null;
