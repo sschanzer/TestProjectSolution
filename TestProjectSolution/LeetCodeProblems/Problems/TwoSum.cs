@@ -1,10 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
-using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LeetCodeProblems
 {
@@ -30,7 +26,7 @@ namespace LeetCodeProblems
         {
             for (int i = 0; i < nums.Length; i++)
             {
-                for (int j = 0; j < nums.Length; j++)
+                for (int j = i + 1; j < nums.Length; j++)
                 {
                     int sumOfNums = nums[i] + nums[j];
 
@@ -47,17 +43,13 @@ namespace LeetCodeProblems
         }
 
         /// <summary>
-        /// Alternative solution.
+        /// Alternative solution. (Beats 98.18% on runtime)
         /// </summary>
         /// <param name="nums">The input array.</param>
         /// <param name="target">The target int.</param>
         /// <returns>Integer array of the indicies of the two numbeers that sum to the target.</returns>
         public int[] TwoSum2(int[] nums, int target)
         {
-            /// Input: nums = [2,7,11,15], target = 9
-            /// Output: [0, 1]
-            /// Explanation: Because nums[0] + nums[1] == 9, we return [0, 1].
-            
             var indexMap = new Dictionary<int, int>();
 
             for (int i = 0; i < nums.Length; i++)
@@ -67,14 +59,12 @@ namespace LeetCodeProblems
 
                 if (indexMap.ContainsKey(difference))
                 {
-                    int idx = Array.IndexOf(nums, currentValue);
-                    var solution = new int[] { indexMap[difference], idx };
+                    var solution = new int[] { indexMap[difference], i };
 
                     return solution;
                 }
 
                 indexMap[currentValue] = i;
-
             }
 
             return null;
