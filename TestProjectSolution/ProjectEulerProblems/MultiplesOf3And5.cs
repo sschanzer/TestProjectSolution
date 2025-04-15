@@ -104,7 +104,7 @@ namespace ProjectEulerProblems
 
             // Note:
             //
-            //     Sum_{i}^{k} i = 1 + 2 + 3 + ... + k = k * (k + 1) / 2
+            //     Sum_{i}^{k} j = 1 + 2 + 3 + ... + k = k * (k + 1) / 2
             //
             // Proof:
             // Write the sum forwards and backwards:
