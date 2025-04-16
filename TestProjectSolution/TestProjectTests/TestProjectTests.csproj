@@ -47,10 +47,12 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="PersonalProblemTests\UnitTest1.cs" />
     <Compile Include="ProjectEulerTests\MultiplesOf3And5Tests.cs" />
+    <Compile Include="ProjectEulerTests\FibonacciTests.cs" />
     <Compile Include="TestList.cs" />
     <Compile Include="LeetCodeTests\TwoSumTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
