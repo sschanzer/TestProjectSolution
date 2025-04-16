@@ -57,5 +57,20 @@ namespace TestProjectTests.ProjectEulerTests
 
             Assert.AreEqual(expectedNumber, fibList.Last());
         }
+
+        /// <summary>
+        /// Tests the <see cref="Fibonacci.GetEvenFibSum(int)"/> method.
+        /// </summary>
+        [TestMethod]
+        [TestCategory(TestList.Validation)]
+        public void TestFibonacci_GetEvenFibSum()
+        {
+            var fib = new Fibonacci();
+            var fibSum = fib.GetEvenFibSum(34);
+
+            const int ExpectedValue = 4613732;
+
+            Assert.AreEqual(ExpectedValue, fibSum);
+        }
     }
 }
