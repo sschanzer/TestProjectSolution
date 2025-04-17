@@ -33,7 +33,7 @@ namespace TestProjectTests.ProjectEulerTests
         /// </summary>
         [TestMethod]
         [TestCategory(TestList.Validation)]
-        public void TestFibonacci_GetTheHundrethTermOfTheFibonacciSequence()
+        public void TestFibonacci_GetTheHundredthTermOfTheFibonacciSequence()
         {
             var fib = new Fibonacci();
             var fibList = fib.GetFibonacciNumbers(100);
