@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="Problems\Fibonacci.cs" />
     <Compile Include="Problems\MultiplesOf3And5.cs" />
+    <Compile Include="Problems\Primes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
