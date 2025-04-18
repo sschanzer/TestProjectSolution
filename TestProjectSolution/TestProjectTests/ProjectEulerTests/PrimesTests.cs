@@ -216,5 +216,29 @@ namespace TestProjectTests.ProjectEulerTests
 
             Assert.AreEqual(6857, largestFactor);
         }
+
+        /// <summary>
+        /// Tests the <see cref="Primes.IsPrime(long)"/> method with a variety of inputs.
+        /// </summary>
+        [TestMethod]
+        [TestCategory(TestList.Validation)]
+        [DataRow(2, true)]                         // Smallest prime number
+        [DataRow(3, true)]                         // Small prime number
+        [DataRow(4, false)]                        // First composite number
+        [DataRow(7, true)]                         // Prime number
+        [DataRow(9, false)]                        // Odd composite number
+        [DataRow(29, true)]                        // Larger prime number
+        [DataRow(1234, false)]                     // Even non-prime
+        [DataRow(600851475143, false)]            // Large non-prime (used in Euler Problem 3)
+        [DataRow(982451653, true)]                // Large prime number
+        [DataRow(1, false)]                        // Not prime
+        [DataRow(0, false)]                        // Not prime
+        [DataRow(-7, false)]                       // Negative number, not prime
+        [DataRow(1000066600001, true)]             // Belphegor's prime
+        public void TestPrimes_IsPrime(long num, bool expectedValue)
+        {
+            var primes = new Primes();
+            Assert.AreEqual(expectedValue, primes.IsPrime(num));
+        }
     }
 }

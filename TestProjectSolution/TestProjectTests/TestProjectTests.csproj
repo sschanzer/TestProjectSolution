@@ -54,6 +54,7 @@
     <Compile Include="ProjectEulerTests\MultiplesOf3And5Tests.cs" />
     <Compile Include="ProjectEulerTests\FibonacciTests.cs" />
     <Compile Include="ProjectEulerTests\PrimesTests.cs" />
+    <Compile Include="ProjectEulerTests\PalindromicNumbersTests.cs" />
     <Compile Include="TestList.cs" />
     <Compile Include="LeetCodeTests\TwoSumTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

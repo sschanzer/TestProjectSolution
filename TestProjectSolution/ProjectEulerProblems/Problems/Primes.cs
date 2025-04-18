@@ -86,6 +86,29 @@ namespace ProjectEulerProblems.Problems
         }
 
         /// <summary>
+        /// Method to determine if a given number is prime.
+        /// </summary>
+        /// <param name="num">The number.</param>
+        /// <returns>True if the numer is prime, false otherwise.</returns>
+        public bool IsPrime(long num)
+        {
+            if (num < 2)
+            {
+                return false;
+            }
+
+            for (int i = 2; i <= Math.Sqrt(num); i++)
+            {
+                if (num % i == 0)
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        /// <summary>
         /// Gets all factors of the given number.
         /// </summary>
         /// <param name="num">The numer to determine it's factors.</param>
