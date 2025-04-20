@@ -7,18 +7,16 @@ using System.Threading.Tasks;
 namespace ProjectEulerProblems
 {
     /// <summary>
-    /// Project Euler Problem 1.
-    /// If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9.
-    /// The sum of these multiples is 23. Find the sum of all the multiples of 3 or 5 below 1000.
+    /// Class containing methods relating to the Sum of Numbers.
     /// </summary>
-    public class MultiplesOf3And5
+    public class SumNums
     {
         /// <summary>
-        /// Method determines the sum of all multiples of 3 and 5 below n.
+        /// Project Euler Problem 1.
+        /// If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9.
+        /// The sum of these multiples is 23. Find the sum of all the multiples of 3 or 5 below 1000.
         /// </summary>
-        /// <param name="n">The number to check up to.</param>
-        /// <returns>The sum of all multiples of 3 and 5 below n.</returns>
-        public int GetSumDumb(int n)
+        public int GetSumMultiplesOfThreeAndFiveDumb(int n)
         {
             var multiplesOfThree = new List<int>();
             for (int i = 3; i < n; i += 3)
@@ -45,7 +43,7 @@ namespace ProjectEulerProblems
         /// </summary>
         /// <param name="n">The number to check up to.</param>
         /// <returns>The sum of all multiples of 3 and 5 below n.</returns>
-        public int GetSumStillDumb(int n)
+        public int GetSumMultiplesOfThreeAndFiveStillDumb(int n)
         {
             var multiples = new HashSet<int>();
 
@@ -65,7 +63,7 @@ namespace ProjectEulerProblems
         /// </summary>
         /// <param name="n">The number to check up to.</param>
         /// <returns>The sum of all multiples of 3 and 5 below n.</returns>
-        public int GetSumAnotherDumb(int n)
+        public int GetSumMultiplesOfThreeAndFiveAnotherDumb(int n)
         {
             int sum = 0;
             for (int i = 3; i < n; i++)
@@ -82,14 +80,14 @@ namespace ProjectEulerProblems
         /// <summary>
         /// Method determines the sum of all multiples of 3 and 5 below n.
         /// </summary>
-        /// <param name="n">The number to check up to.</param>
+        /// <param name="bound">The number to check up to.</param>
         /// <returns>The sum of all multiples of 3 and 5 below n.</returns>
         /// <remarks>
         /// This is O(1) runtime.
         /// </remarks>
-        public int GetSumSlick(int n)
+        public int GetSumSlick(int bound)
         {
-            return this.SumOfMultiples(3, n - 1) + this.SumOfMultiples(5, n - 1) - this.SumOfMultiples(15, n - 1);
+            return this.SumOfMultiples(3, bound - 1) + this.SumOfMultiples(5, bound - 1) - this.SumOfMultiples(15, bound - 1);
         }
 
         /// <summary>
@@ -128,8 +126,6 @@ namespace ProjectEulerProblems
             var sum = n * k * (k + 1) / 2;
 
             return sum;
-
-
         }
     }
 }

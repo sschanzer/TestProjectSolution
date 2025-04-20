@@ -5,154 +5,154 @@ using ProjectEulerProblems;
 namespace TestProjectTests.ProjectEulerTests
 {
 	/// <summary>
-	/// Tests for the <see cref="MultiplesOf3And5"/> class.
+	/// Tests for the <see cref="SumNums"/> class.
 	/// </summary>
 	[TestClass]
-	public class MultiplesOf3And5Tests
+	public class SumNumsTests
 	{
 		/// <summary>
-		/// Tests the <see cref="MultiplesOf3And5.GetSumDumb(int)"/> method.
+		/// Tests the <see cref="SumNums.GetSumMultiplesOfThreeAndFiveDumb(int)"/> method.
 		/// </summary>
 		[TestMethod]
         [TestCategory(TestList.Validation)]
-        public void TestMultiplesOf3And5_GetSumDumb_Test1()
+        public void SumNums_GetSumDumb_Test1()
 		{
-			var getMultiples = new MultiplesOf3And5();
+			var getMultiples = new SumNums();
             const int num = 10;
 			const int ExpectedResult = 23;
 
-			var result = getMultiples.GetSumDumb(num);
+			var result = getMultiples.GetSumMultiplesOfThreeAndFiveDumb(num);
 			Assert.AreEqual(ExpectedResult, result);
 		}
 
         /// <summary>
-        /// Tests the <see cref="MultiplesOf3And5.GetSumDumb(int)"/> method.
+        /// Tests the <see cref="SumNums.GetSumMultiplesOfThreeAndFiveDumb(int)"/> method.
         /// </summary>
         [TestMethod]
         [TestCategory(TestList.Validation)]
-        public void TestMultiplesOf3And5_GetSumDumb_Test2()
+        public void SumNums_GetSumDumb_Test2()
         {
-            var getMultiples = new MultiplesOf3And5();
+            var getMultiples = new SumNums();
             const int num = 20;
             const int ExpectedResult = 78;
 
-            var result = getMultiples.GetSumDumb(num);
+            var result = getMultiples.GetSumMultiplesOfThreeAndFiveDumb(num);
             Assert.AreEqual(ExpectedResult, result);
         }
 
         /// <summary>
-        /// Tests the <see cref="MultiplesOf3And5.GetSumDumb(int)"/> method.
+        /// Tests the <see cref="SumNums.GetSumMultiplesOfThreeAndFiveDumb(int)"/> method.
         /// </summary>
         [TestMethod]
         [TestCategory(TestList.Validation)]
-        public void TestMultiplesOf3And5_GetSumDumb_Test3()
+        public void SumNums_GetSumDumb_Test3()
         {
-            var getMultiples = new MultiplesOf3And5();
+            var getMultiples = new SumNums();
             const int num = 1000;
             const int ExpectedResult = 233168;
 
-            var result = getMultiples.GetSumDumb(num);
+            var result = getMultiples.GetSumMultiplesOfThreeAndFiveDumb(num);
             Assert.AreEqual(ExpectedResult, result);
         }
 
         /// <summary>
-		/// Tests the <see cref="MultiplesOf3And5.GetSumStillDumb(int)"/> method.
+		/// Tests the <see cref="SumNums.GetSumMultiplesOfThreeAndFiveStillDumb(int)"/> method.
 		/// </summary>
 		[TestMethod]
         [TestCategory(TestList.Validation)]
-        public void TestMultiplesOf3And5_GetSumStillDumb_Test1()
+        public void SumNums_GetSumStillDumb_Test1()
         {
-            var getMultiples = new MultiplesOf3And5();
+            var getMultiples = new SumNums();
             const int num = 10;
             const int ExpectedResult = 23;
 
-            var result = getMultiples.GetSumStillDumb(num);
+            var result = getMultiples.GetSumMultiplesOfThreeAndFiveStillDumb(num);
             Assert.AreEqual(ExpectedResult, result);
         }
 
         /// <summary>
-        /// Tests the <see cref="MultiplesOf3And5.GetSumStillDumb(int)"/> method.
+        /// Tests the <see cref="SumNums.GetSumMultiplesOfThreeAndFiveStillDumb(int)"/> method.
         /// </summary>
         [TestMethod]
         [TestCategory(TestList.Validation)]
-        public void TestMultiplesOf3And5_GetSumStillDumb_Test2()
+        public void SumNums_GetSumStillDumb_Test2()
         {
-            var getMultiples = new MultiplesOf3And5();
+            var getMultiples = new SumNums();
             const int num = 20;
             const int ExpectedResult = 78;
 
-            var result = getMultiples.GetSumStillDumb(num);
+            var result = getMultiples.GetSumMultiplesOfThreeAndFiveStillDumb(num);
             Assert.AreEqual(ExpectedResult, result);
         }
 
         /// <summary>
-        /// Tests the <see cref="MultiplesOf3And5.GetSumStillDumb(int)"/> method.
+        /// Tests the <see cref="SumNums.GetSumMultiplesOfThreeAndFiveStillDumb(int)"/> method.
         /// </summary>
         [TestMethod]
         [TestCategory(TestList.Validation)]
-        public void TestMultiplesOf3And5_GetSumStillDumb_Test3()
+        public void SumNums_GetSumStillDumb_Test3()
         {
-            var getMultiples = new MultiplesOf3And5();
+            var getMultiples = new SumNums();
             const int num = 1000;
             const int ExpectedResult = 233168;
 
-            var result = getMultiples.GetSumStillDumb(num);
+            var result = getMultiples.GetSumMultiplesOfThreeAndFiveStillDumb(num);
             Assert.AreEqual(ExpectedResult, result);
         }
 
         /// <summary>
-		/// Tests the <see cref="MultiplesOf3And5.GetSumAnotherDumb(int)"/> method.
+		/// Tests the <see cref="SumNums.GetSumMultiplesOfThreeAndFiveAnotherDumb(int)"/> method.
 		/// </summary>
 		[TestMethod]
         [TestCategory(TestList.Validation)]
-        public void TestMultiplesOf3And5_GetSumAnotherDumb_Test1()
+        public void SumNums_GetSumAnotherDumb_Test1()
         {
-            var getMultiples = new MultiplesOf3And5();
+            var getMultiples = new SumNums();
             const int num = 10;
             const int ExpectedResult = 23;
 
-            var result = getMultiples.GetSumAnotherDumb(num);
+            var result = getMultiples.GetSumMultiplesOfThreeAndFiveAnotherDumb(num);
             Assert.AreEqual(ExpectedResult, result);
         }
 
         /// <summary>
-        /// Tests the <see cref="MultiplesOf3And5.GetSumAnotherDumb(int)"/> method.
+        /// Tests the <see cref="SumNums.GetSumMultiplesOfThreeAndFiveAnotherDumb(int)"/> method.
         /// </summary>
         [TestMethod]
         [TestCategory(TestList.Validation)]
-        public void TestMultiplesOf3And5_GetSumAnotherDumb_Test2()
+        public void SumNums_GetSumAnotherDumb_Test2()
         {
-            var getMultiples = new MultiplesOf3And5();
+            var getMultiples = new SumNums();
             const int num = 20;
             const int ExpectedResult = 78;
 
-            var result = getMultiples.GetSumAnotherDumb(num);
+            var result = getMultiples.GetSumMultiplesOfThreeAndFiveAnotherDumb(num);
             Assert.AreEqual(ExpectedResult, result);
         }
 
         /// <summary>
-        /// Tests the <see cref="MultiplesOf3And5.GetSumAnotherDumb(int)"/> method.
+        /// Tests the <see cref="SumNums.GetSumMultiplesOfThreeAndFiveAnotherDumb(int)"/> method.
         /// </summary>
         [TestMethod]
         [TestCategory(TestList.Validation)]
-        public void TestMultiplesOf3And5_GetSumAnotherDumb_Test3()
+        public void SumNums_GetSumAnotherDumb_Test3()
         {
-            var getMultiples = new MultiplesOf3And5();
+            var getMultiples = new SumNums();
             const int num = 1000;
             const int ExpectedResult = 233168;
 
-            var result = getMultiples.GetSumAnotherDumb(num);
+            var result = getMultiples.GetSumMultiplesOfThreeAndFiveAnotherDumb(num);
             Assert.AreEqual(ExpectedResult, result);
         }
 
         /// <summary>
-		/// Tests the <see cref="MultiplesOf3And5.GetSumSlick(int)"/> method.
+		/// Tests the <see cref="SumNums.GetSumSlick(int)"/> method.
 		/// </summary>
 		[TestMethod]
         [TestCategory(TestList.Validation)]
-        public void TestMultiplesOf3And5_GetSumSlick_Test1()
+        public void SumNums_GetSumSlick_Test1()
         {
-            var getMultiples = new MultiplesOf3And5();
+            var getMultiples = new SumNums();
             const int num = 10;
             const int ExpectedResult = 23;
 
@@ -161,13 +161,13 @@ namespace TestProjectTests.ProjectEulerTests
         }
 
         /// <summary>
-        /// Tests the <see cref="MultiplesOf3And5.GetSumSlick(int)"/> method.
+        /// Tests the <see cref="SumNums.GetSumSlick(int)"/> method.
         /// </summary>
         [TestMethod]
         [TestCategory(TestList.Validation)]
-        public void TestMultiplesOf3And5_GetSumSlick_Test2()
+        public void SumNums_GetSumSlick_Test2()
         {
-            var getMultiples = new MultiplesOf3And5();
+            var getMultiples = new SumNums();
             const int num = 20;
             const int ExpectedResult = 78;
 
@@ -176,13 +176,13 @@ namespace TestProjectTests.ProjectEulerTests
         }
 
         /// <summary>
-        /// Tests the <see cref="MultiplesOf3And5.GetSumSlick(int)"/> method.
+        /// Tests the <see cref="SumNums.GetSumSlick(int)"/> method.
         /// </summary>
         [TestMethod]
         [TestCategory(TestList.Validation)]
-        public void TestMultiplesOf3And5_GetSumSlick_Test3()
+        public void SumNums_GetSumSlick_Test3()
         {
-            var getMultiples = new MultiplesOf3And5();
+            var getMultiples = new SumNums();
             const int num = 1000;
             const int ExpectedResult = 233168;
 

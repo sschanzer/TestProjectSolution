@@ -234,7 +234,8 @@ namespace TestProjectTests.ProjectEulerTests
         [DataRow(1, false)]                        // Not prime
         [DataRow(0, false)]                        // Not prime
         [DataRow(-7, false)]                       // Negative number, not prime
-        [DataRow(1000066600001, true)]             // Belphegor's prime
+        [DataRow(1000066600001, false)]             // Large non-prime
+        //[DataRow(1000000000000066600000000000001, false)]             // Belphegor's prime is too large for the current implementation :(
         public void TestPrimes_IsPrime(long num, bool expectedValue)
         {
             var primes = new Primes();

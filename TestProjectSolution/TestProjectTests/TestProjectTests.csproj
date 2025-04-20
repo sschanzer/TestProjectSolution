@@ -51,7 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="PersonalProblemTests\UnitTest1.cs" />
-    <Compile Include="ProjectEulerTests\MultiplesOf3And5Tests.cs" />
+    <Compile Include="ProjectEulerTests\SumNumsTests.cs" />
     <Compile Include="ProjectEulerTests\FibonacciTests.cs" />
     <Compile Include="ProjectEulerTests\PrimesTests.cs" />
     <Compile Include="ProjectEulerTests\PalindromicNumbersTests.cs" />

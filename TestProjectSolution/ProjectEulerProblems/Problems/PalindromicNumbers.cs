@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProjectEulerProblems.Problems
 {
-
     /// <summary>
     /// Class containing methods relating to the Palindromic Numbers.
     /// </summary>
