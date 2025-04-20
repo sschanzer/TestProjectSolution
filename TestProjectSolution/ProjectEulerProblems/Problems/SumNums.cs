@@ -87,7 +87,7 @@ namespace ProjectEulerProblems
         /// </remarks>
         public int GetSumSlick(int bound)
         {
-            return this.SumOfMultiples(3, bound - 1) + this.SumOfMultiples(5, bound - 1) - this.SumOfMultiples(15, bound - 1);
+            return SumOfMultiples(3, bound - 1) + SumOfMultiples(5, bound - 1) - SumOfMultiples(15, bound - 1);
         }
 
         /// <summary>
@@ -96,7 +96,7 @@ namespace ProjectEulerProblems
         /// <param name="n">The number we want to find the sum of multiples for.</param>
         /// <param name="limit">The upper bound where we should stop.</param>
         /// <returns>the sum of all multiples of n up to and including limit, if divisible.</returns>
-        private int SumOfMultiples(int n, int limit)
+        public static int SumOfMultiples(int n, int limit)
         {
             int k = limit / n;
 
