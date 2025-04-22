@@ -9,14 +9,14 @@ namespace ProjectEulerProblems.Problems
     /// <summary>
     /// Class containing methods relating to Prime numbers.
     /// </summary>
-    public class Primes
+    public static class Primes
     {
         /// <summary>
         /// Implementation of the Sieve of Eratosthenes.
         /// </summary>
         /// <param name="num">Represents the bound.</param>
         /// <returns>A list of primes up to num.</returns>
-        public List<int> PrimeSieve(int num)
+        public static List<int> PrimeSieve(int num)
         {
             var primes = new List<int>();
 
@@ -66,13 +66,13 @@ namespace ProjectEulerProblems.Problems
         /// </summary>
         /// <param name="num">Represents the bound.</param>
         /// <returns>A list of prime numbers up to num.</returns>
-        public List<int> GetPrimesBrute(int num)
+        public static List<int> GetPrimesBrute(int num)
         {
             var primes = new List<int>();
 
             for (int i = 2; i < num; i++)
             {
-                var factors = this.GetFactors(i);
+                var factors = GetFactors(i);
 
                 if (factors.Count == 2)
                 {
@@ -90,7 +90,7 @@ namespace ProjectEulerProblems.Problems
         /// </summary>
         /// <param name="num">The number.</param>
         /// <returns>True if the numer is prime, false otherwise.</returns>
-        public bool IsPrime(long num)
+        public static bool IsPrime(long num)
         {
             if (num < 2)
             {
@@ -113,7 +113,7 @@ namespace ProjectEulerProblems.Problems
         /// </summary>
         /// <param name="num">The numer to determine it's factors.</param>
         /// <returns>A list of factors of num.</returns>
-        public List<long> GetFactors(long num)
+        public static List<long> GetFactors(long num)
         {
             bool negativeNum = num < 0;
 
@@ -163,13 +163,13 @@ namespace ProjectEulerProblems.Problems
         /// </summary>
         /// <param name="num">The number in question.</param>
         /// <returns>The largest prime factor of the num.</returns>
-        public long GetLargestPrimeFactors(long num)
+        public static long GetLargestPrimeFactors(long num)
         {
-            var factorList = this.GetFactors(num);
+            var factorList = GetFactors(num);
 
             for (int i = factorList.Count - 1; i > 0; i--)
             {
-                var factorOfFactors = this.GetFactors(factorList[i]);
+                var factorOfFactors = GetFactors(factorList[i]);
 
                 if (factorOfFactors.Count == 2)
                 {
