@@ -4,19 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProjectEulerProblems
+namespace ProjectEulerProblems.Problems
 {
     /// <summary>
     /// Class containing methods relating to the Sum of Numbers.
     /// </summary>
-    public class SumNums
+    public static class SumNums
     {
         /// <summary>
         /// Project Euler Problem 1.
         /// If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9.
         /// The sum of these multiples is 23. Find the sum of all the multiples of 3 or 5 below 1000.
         /// </summary>
-        public int GetSumMultiplesOfThreeAndFiveDumb(int n)
+        public static int GetSumMultiplesOfThreeAndFiveDumb(int n)
         {
             var multiplesOfThree = new List<int>();
             for (int i = 3; i < n; i += 3)
@@ -43,7 +43,7 @@ namespace ProjectEulerProblems
         /// </summary>
         /// <param name="n">The number to check up to.</param>
         /// <returns>The sum of all multiples of 3 and 5 below n.</returns>
-        public int GetSumMultiplesOfThreeAndFiveStillDumb(int n)
+        public static int GetSumMultiplesOfThreeAndFiveStillDumb(int n)
         {
             var multiples = new HashSet<int>();
 
@@ -63,7 +63,7 @@ namespace ProjectEulerProblems
         /// </summary>
         /// <param name="n">The number to check up to.</param>
         /// <returns>The sum of all multiples of 3 and 5 below n.</returns>
-        public int GetSumMultiplesOfThreeAndFiveAnotherDumb(int n)
+        public static int GetSumMultiplesOfThreeAndFiveAnotherDumb(int n)
         {
             int sum = 0;
             for (int i = 3; i < n; i++)
@@ -85,7 +85,7 @@ namespace ProjectEulerProblems
         /// <remarks>
         /// This is O(1) runtime.
         /// </remarks>
-        public int GetSumSlick(int bound)
+        public static int GetSumSlick(int bound)
         {
             return SumOfMultiples(3, bound - 1) + SumOfMultiples(5, bound - 1) - SumOfMultiples(15, bound - 1);
         }
@@ -126,6 +126,44 @@ namespace ProjectEulerProblems
             var sum = n * k * (k + 1) / 2;
 
             return sum;
+        }
+
+        /// <summary>
+        /// Gets the sum of suqares up to n.
+        /// </summary>
+        /// <param name="n">The upper bound where we should stop.</param>
+        /// <returns>The sum of squares up to the limit.</returns>
+        public static int SumOfSquares(int n)
+        {
+            // Note:
+            // 
+            // Sum_{k=1}^{n} k^2 = (1/6) * n * (n + 1) * (2n + 1)
+            //
+            // The following identity is the the trick needed for a direct proof:
+            //
+            // (k + 1)^2 - k^3 = 3k^2 + 3k + 1
+            //
+            // Summing the left hand side of the identity above from k = 1 to n we get the telescoping sum:
+            //
+            // Sum_{k=1}^{n} [(k + 1)^3 - k^3] = (n + 1)^3 - 1^3 = n^3 + 3n^2 + 3n
+            //
+            // Summing the right hand side of the identity yeilds:
+            //
+            // Sum_{k=1}^{n} [(k + 1)^3 - k^3] = 3*Sum_{k=1}^{n} k^2 + 3Sum_{k=1}^{n} k + Sum_{k=1}^{n} 1
+            //
+            // So:
+            //
+            // 3Sum_{k=1}^{n} k^2 = n^3 + 3n^2 + 3n - 3/2(n(n + 1)) - n
+            //       = n^3 + 3n^2 + 3n - (3/2)n^2 - (3/2)n - n
+            //       = (1/2)(2n^3 + 3n^2 + n)
+            //
+            // Thus:
+            //
+            // Sum_{k=1}^{n} k² = (1/6) * n * (n + 1) * (2n + 1).
+
+            var sumOfSuqares = (n * (n + 1) * (2 * n + 1)) / 6;
+
+            return sumOfSuqares;
         }
     }
 }
