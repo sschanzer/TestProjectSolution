@@ -6,22 +6,22 @@ using ProjectEulerProblems.Problems;
 
 namespace TestProjectTests.ProjectEulerTests
 {
-	/// <summary>
-	/// Tests for the <see cref="Primes"/> class.
-	/// </summary>
-	[TestClass]
-	public class PrimesTests
-	{
-		/// <summary>
-		/// Tests the <see cref="Primes.PrimeSieve"/> method for primes up to 10.
-		/// </summary>
-		[TestMethod]
+    /// <summary>
+    /// Tests for the <see cref="Primes"/> class.
+    /// </summary>
+    [TestClass]
+    public class PrimesTests
+    {
+        /// <summary>
+        /// Tests the <see cref="Primes.PrimeSieve"/> method for primes up to 10.
+        /// </summary>
+        [TestMethod]
         [TestCategory(TestList.Validation)]
         [DataRow(10, new int[] { 2, 3, 5, 7 })]
         [DataRow(100, new int[] { 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97 })]
         public void TestPrimes_PrimeSieve(int num, int[] expected)
-		{
-			var primesList = Primes.PrimeSieve(num);
+        {
+            var primesList = Primes.PrimeSieve(num);
 
             CollectionAssert.AreEqual(expected.ToList(), primesList);
         }
@@ -124,6 +124,24 @@ namespace TestProjectTests.ProjectEulerTests
         public void TestPrimes_IsPrime(long num, bool expectedValue)
         {
             Assert.AreEqual(expectedValue, Primes.IsPrime(num));
+        }
+
+        /// <summary>
+        /// By listing the first six prime numbers: $2, 3, 5, 7, 11$, and $13$, we can see that the $6$th prime is $13$.
+        /// What is the $10001$st prime number?
+        /// </summary>
+        /// <param name="bound"></param>
+        /// <param name="expectedValue"></param>
+        [TestMethod]
+        [TestCategory(TestList.Validation)]
+        [DataRow(6, 13)]
+        [DataRow(10001, 104743)]
+        public void TestSumNums_ProjectEulerProblemSeven(int bound, int expectedValue)
+        {
+            var primeList = Primes.PrimeSieveForNumberOfPrimes(bound);
+            var primeCount = primeList.Count;
+
+            Assert.AreEqual(expectedValue, primeList.Last());
         }
     }
 }

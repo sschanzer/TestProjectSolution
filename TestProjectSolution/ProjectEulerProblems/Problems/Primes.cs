@@ -179,5 +179,45 @@ namespace ProjectEulerProblems.Problems
 
             return -1;
         }
+
+        /// <summary>
+        /// Implementation of the Sieve of Eratosthenes.
+        /// </summary>
+        /// <param name="num">Represents the bound.</param>
+        /// <returns>A list of primes having count equal to the bound.</returns>
+        public static List<int> PrimeSieveForNumberOfPrimes(int num)
+        {
+            var primes = new List<int>();
+
+            // Less than zero returns an empty list.
+            if (num < 0)
+            {
+                return primes;
+            }
+
+            // Estimate an upper bound for the nth prime using the prime number theorem
+            // For n >= 6, nth prime is < n * (ln(n) + ln(ln(n)))
+            int estimatedBound = num < 6 ? 15 : (int)(num * (Math.Log(num) + Math.Log(Math.Log(num))));
+
+            // Keep increasing bound until we find enough primes
+            while (true)
+            {
+                primes = PrimeSieve(estimatedBound);
+                if (primes.Count >= num)
+                    return primes.Take(num).ToList();
+
+                estimatedBound *= 2; // Increase bound and try again
+            }
+        }
+
+        /// <summary>
+        /// Approximates the number of primes less than the given number.
+        /// </summary>
+        /// <param name="num">The number given.</param>
+        /// <returns>The approximate number of primes less than the number.</returns>
+        public static double PrimeCountingFunction(long num)
+        {
+            return num / Math.Log(num);
+        }
     }
 }
