@@ -72,5 +72,31 @@ namespace TestProjectTests.ProjectEulerTests
 
             Assert.AreEqual(ExpectedValue, fibSum);
         }
+
+        /// <summary>
+        /// Tests the <see cref="Fibonacci.GetEvenFibSumRedux(int)"/> method.
+        /// </summary>
+        /// <param name="numberOfTerms">Number of terms to generate.</param>
+        /// <param name="maxValue">Max value for a single term.</param>
+        /// <param name="expectedOutput">The answer</param>
+        [TestMethod]
+        [TestCategory(TestList.Validation)]
+        [DataRow(34, 4000000,4613732)]
+        [DataRow(10, 4000000, 44)]
+        [DataRow(20, 4000000, 3382)]
+        [DataRow(100, 4000000, 4613732)]
+        [DataRow(100, 1000, 798)]
+        [DataRow(100, 10, 10)]
+        [DataRow(100, 1, 0)]
+        [DataRow(10, 34, 44)]
+        [DataRow(0, 4000000, 0)]
+        [DataRow(-5, 4000000, -1)]
+        public void TestFibonacci_GetEvenFibSumRedux(int numberOfTerms, int maxValue, int expectedOutput)
+        {
+            var fib = new Fibonacci();
+            var fibSum = fib.GetEvenFibSumRedux(numberOfTerms, maxValue);
+
+            Assert.AreEqual(expectedOutput, fibSum);
+        }
     }
 }

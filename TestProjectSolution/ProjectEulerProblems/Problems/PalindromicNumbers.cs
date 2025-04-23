@@ -9,10 +9,10 @@ namespace ProjectEulerProblems.Problems
     public class PalindromicNumbers
     {
         /// <summary>
-        /// Project Euler Problem 4.
-        /// A palindromic number reads the same both ways. The largest palindrome made from the product of two
-        /// 2-digit numbers is 9009 = 91 * 99. Find the largest palindrome made from the product of two 3-digit numbers.
+        /// Finds the largest palindrome made from the product of two numbers with the specified number of digits.
         /// </summary>
+        /// <param name="digits">The number of digits for the multiplicands (e.g. 2 for 2-digit numbers).</param>
+        /// <returns>The largest palindromic product as a long, or 0 if none is found.</returns>
         public long GetLargestPalindromeProduct(int digits)
         {
             var stringNum = string.Empty;

@@ -12,10 +12,10 @@ namespace ProjectEulerProblems.Problems
     public static class SumNums
     {
         /// <summary>
-        /// Project Euler Problem 1.
-        /// If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9.
-        /// The sum of these multiples is 23. Find the sum of all the multiples of 3 or 5 below 1000.
+        /// Method determines the sum of all multiples of 3 and 5 below n.
         /// </summary>
+        /// <param name="n">The number to check up to.</param>
+        /// <returns>The sum of all multiples of 3 and 5 below n.</returns>
         public static int GetSumMultiplesOfThreeAndFiveDumb(int n)
         {
             var multiplesOfThree = new List<int>();

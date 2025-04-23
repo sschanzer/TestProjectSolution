@@ -20,5 +20,10 @@ namespace TestProjectTests
         /// Validation Tests.
         /// </summary>
         public const string Validation = "Validation";
+
+        /// <summary>
+        /// Contain the Project Euler problems.
+        /// </summary>
+        public const string ProjectEulerTests = "ProjectEulerTests";
     }
 }

@@ -31,39 +31,20 @@ namespace TestProjectTests.ProjectEulerTests
 		}
 
         /// <summary>
-        /// Tests the <see cref="PalindromicNumbers.GetLargestPalindromeProduct(int)"/> method for 2-digit numbers.
+        /// Tests the <see cref="PalindromicNumbers.GetLargestPalindromeProduct(int)"/> method
+        /// for various digit counts using data-driven test cases.
         /// </summary>
         [TestMethod]
         [TestCategory(TestList.Validation)]
-        public void TestPalindromicNumbers_GetLargestPalindromeProduct_TwoDigitNumbers()
+        [DataRow(1, 9)]
+        [DataRow(2, 9009)]
+        [DataRow(3, 906609)]
+        public void TestPalindromicNumbers_GetLargestPalindromeProduct(int digits, long expected)
         {
             var palindromicNumbers = new PalindromicNumbers();
-            long result = palindromicNumbers.GetLargestPalindromeProduct(2);
-            Assert.AreEqual(9009, result);
+            long result = palindromicNumbers.GetLargestPalindromeProduct(digits);
+            Assert.AreEqual(expected, result);
         }
 
-        /// <summary>
-        /// Tests the <see cref="PalindromicNumbers.GetLargestPalindromeProduct(int)"/> method for 3-digit numbers.
-        /// </summary>
-        [TestMethod]
-        [TestCategory(TestList.Validation)]
-        public void TestPalindromicNumbers_GetLargestPalindromeProduct_ThreeDigitNumbers()
-        {
-            var palindromicNumbers = new PalindromicNumbers();
-            long result = palindromicNumbers.GetLargestPalindromeProduct(3);
-            Assert.AreEqual(906609, result);
-        }
-
-        /// <summary>
-        /// Tests the <see cref="PalindromicNumbers.GetLargestPalindromeProduct(int)"/> method when the digit count is 1.
-        /// </summary>
-        [TestMethod]
-        [TestCategory(TestList.Validation)]
-        public void TestPalindromicNumbers_GetLargestPalindromeProduct_SingleDigit()
-        {
-            var palindromicNumbers = new PalindromicNumbers();
-            long result = palindromicNumbers.GetLargestPalindromeProduct(1);
-            Assert.AreEqual(9, result);
-        }
     }
 }

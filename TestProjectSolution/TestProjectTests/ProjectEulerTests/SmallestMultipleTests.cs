@@ -10,84 +10,21 @@ namespace TestProjectTests.ProjectEulerTests
     public class SmallestMultipleTests
     {
         /// <summary>
-        /// Tests the <see cref="SmallestMultiple.FindSmallestMultiple(List{int})"/> method with numbers from 1 to 10.
+        /// Tests the <see cref="SmallestMultiple.FindSmallestMultiple(List{int})"/> method with various inputs.
         /// </summary>
-        [TestMethod]
+        [DataTestMethod]
         [TestCategory(TestList.Validation)]
-        public void TestSmallestMultiple_FindSmallestMultiple_OneToTen()
+        [DataRow(new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 }, 2520)]
+        [DataRow(new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 }, 232792560)]
+        [DataRow(new int[] { 7 }, 7)]
+        [DataRow(new int[] { 3, 3, 3 }, 3)]
+        [DataRow(new int[] { 2, 3, 5, 7 }, 210)]
+        [DataRow(new int[] { 1, 9 }, 9)]
+        public void TestSmallestMultiple_FindSmallestMultiple_VariousInputs(int[] input, int expected)
         {
             var smallestMultiple = new SmallestMultiple();
-            var input = Enumerable.Range(1, 10).ToList();
-            var result = smallestMultiple.FindSmallestMultiple(input);
-            Assert.AreEqual(2520, result);
-        }
-
-        /// <summary>
-        /// Tests the <see cref="SmallestMultiple.FindSmallestMultiple(List{int})"/> method with numbers from 1 to 10.
-        /// </summary>
-        /// <remarks>
-        /// This assert verifies Project Euler Problem 5.
-        /// </remarks>
-        [TestMethod]
-        [TestCategory(TestList.Validation)]
-        public void TestSmallestMultiple_FindSmallestMultiple_OneToTwenty()
-        {
-            var smallestMultiple = new SmallestMultiple();
-            var input = Enumerable.Range(1, 10).ToList();
-            var result = smallestMultiple.FindSmallestMultiple(input);
-            Assert.AreEqual(2520, result);
-        }
-
-        /// <summary>
-        /// Tests the <see cref="SmallestMultiple.FindSmallestMultiple(List{int})"/> method with a single number in the list.
-        /// </summary>
-        [TestMethod]
-        [TestCategory(TestList.Validation)]
-        public void TestSmallestMultiple_FindSmallestMultiple_SingleElement()
-        {
-            var smallestMultiple = new SmallestMultiple();
-            var input = new List<int> { 7 };
-            var result = smallestMultiple.FindSmallestMultiple(input);
-            Assert.AreEqual(7, result);
-        }
-
-        /// <summary>
-        /// Tests the <see cref="SmallestMultiple.FindSmallestMultiple(List{int})"/> method with identical elements.
-        /// </summary>
-        [TestMethod]
-        [TestCategory(TestList.Validation)]
-        public void TestSmallestMultiple_FindSmallestMultiple_DuplicateElements()
-        {
-            var smallestMultiple = new SmallestMultiple();
-            var input = new List<int> { 3, 3, 3 };
-            var result = smallestMultiple.FindSmallestMultiple(input);
-            Assert.AreEqual(3, result);
-        }
-
-        /// <summary>
-        /// Tests the <see cref="SmallestMultiple.FindSmallestMultiple(List{int})"/> method with prime numbers.
-        /// </summary>
-        [TestMethod]
-        [TestCategory(TestList.Validation)]
-        public void TestSmallestMultiple_FindSmallestMultiple_PrimeNumbers()
-        {
-            var smallestMultiple = new SmallestMultiple();
-            var input = new List<int> { 2, 3, 5, 7 };
-            var result = smallestMultiple.FindSmallestMultiple(input);
-            Assert.AreEqual(210, result);
-        }
-
-        /// <summary>
-        /// Tests the <see cref="SmallestMultiple.FindSmallestMultiple(List{int})"/> method when list contains 1 and another number.
-        /// </summary>
-        [TestMethod]
-        [TestCategory(TestList.Validation)]
-        public void TestSmallestMultiple_FindSmallestMultiple_OneAndAnotherNumber()
-        {
-            var smallestMultiple = new SmallestMultiple();
-            var input = new List<int> { 1, 9 };
-            var result = smallestMultiple.FindSmallestMultiple(input);
-            Assert.AreEqual(9, result);
+            var result = smallestMultiple.FindSmallestMultiple(input.ToList());
+            Assert.AreEqual(expected, result);
         }
     }
 }

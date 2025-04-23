@@ -130,8 +130,8 @@ namespace TestProjectTests.ProjectEulerTests
         /// By listing the first six prime numbers: $2, 3, 5, 7, 11$, and $13$, we can see that the $6$th prime is $13$.
         /// What is the $10001$st prime number?
         /// </summary>
-        /// <param name="bound"></param>
-        /// <param name="expectedValue"></param>
+        /// <param name="bound">The position (index) of the prime number to find (e.g., 6 for the 6th prime).</param>
+        /// <param name="expectedValue">The expected prime number at the given position (e.g., 13 for the 6th prime).</param>
         [TestMethod]
         [TestCategory(TestList.Validation)]
         [DataRow(6, 13)]
