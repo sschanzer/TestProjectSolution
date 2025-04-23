@@ -185,6 +185,9 @@ namespace ProjectEulerProblems.Problems
         /// </summary>
         /// <param name="num">Represents the bound.</param>
         /// <returns>A list of primes having count equal to the bound.</returns>
+        /// <remarks>
+        /// https://en.wikipedia.org/wiki/Rosser%27s_theorem
+        /// </remarks>
         public static List<int> PrimeSieveForNumberOfPrimes(int num)
         {
             var primes = new List<int>();
@@ -195,7 +198,7 @@ namespace ProjectEulerProblems.Problems
                 return primes;
             }
 
-            // Estimate an upper bound for the nth prime using the prime number theorem
+            // Estimate an upper bound for the nth Rosser's Theorem
             // For n >= 6, nth prime is < n * (ln(n) + ln(ln(n)))
             int estimatedBound = num < 6 ? 15 : (int)(num * (Math.Log(num) + Math.Log(Math.Log(num))));
 
@@ -203,8 +206,11 @@ namespace ProjectEulerProblems.Problems
             while (true)
             {
                 primes = PrimeSieve(estimatedBound);
+
                 if (primes.Count >= num)
+                {
                     return primes.Take(num).ToList();
+                }
 
                 estimatedBound *= 2; // Increase bound and try again
             }

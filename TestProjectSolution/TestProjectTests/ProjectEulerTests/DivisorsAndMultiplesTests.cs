@@ -18,20 +18,20 @@ namespace TestProjectTests.ProjectEulerTests
         /// <param name="expectedValue">Exppected output.</param>
         [TestMethod]
         [TestCategory(TestList.Validation)]
-        [DataRow(32L, 168L, 8L)]
-        [DataRow(0L, 5L, 5L)]
-        [DataRow(5L, 0L, 5L)]
-        [DataRow(0L, 0L, 0L)]
-        [DataRow(18L, 24L, 6L)]
-        [DataRow(101L, 103L, 1L)]
-        [DataRow(54L, 24L, 6L)]
-        [DataRow(20L, 100L, 20L)]
-        [DataRow(100L, 25L, 25L)]
-        [DataRow(270L, 192L, 6L)]
-        [DataRow(7L, 13L, 1L)]
-        [DataRow(-48L, 18L, 6L)]
-        [DataRow(48L, -18L, 6L)]
-        [DataRow(-48L, -18L, 6L)]
+        [DataRow(32, 168, 8)]
+        [DataRow(0, 5, 5)]
+        [DataRow(5, 0, 5)]
+        [DataRow(0, 0, 0)]
+        [DataRow(18, 24, 6)]
+        [DataRow(101, 103, 1)]
+        [DataRow(54, 24, 6)]
+        [DataRow(20, 100, 20)]
+        [DataRow(100, 25, 25)]
+        [DataRow(270, 192, 6)]
+        [DataRow(7, 13, 1)]
+        [DataRow(-48, 18, 6)]
+        [DataRow(48, -18, 6)]
+        [DataRow(-48, -18, 6)]
         public void TestDivisorsAndMultiples_Gcd(long a, long b, long expectedValue)
         {
             var result = DivisorsAndMultiples.Gcd(a, b);
@@ -40,29 +40,29 @@ namespace TestProjectTests.ProjectEulerTests
         }
 
         /// <summary>
-        /// Tests the <see cref="DivisorsAndMultiples.Lcm(long, long)"/> method.
+        /// Tests the <see cref="DivisorsAndMultiples.cm(long, long)"/> method.
         /// </summary>
         /// <param name="a">First number.</param>
         /// <param name="b">Second number.</param>
         /// <param name="expectedValue">Exppected output.</param>
         [TestMethod]
         [TestCategory(TestList.Validation)]
-        [DataRow(0L, 5L, 0L)]
-        [DataRow(5L, 0L, 0L)]
-        [DataRow(0L, 0L, 0L)]
-        [DataRow(4L, 6L, 12L)]
-        [DataRow(21L, 6L, 42L)]
-        [DataRow(8L, 9L, 72L)]
-        [DataRow(100L, 25L, 100L)]
-        [DataRow(25L, 100L, 100L)]
-        [DataRow(-4L, 6L, 12L)]
-        [DataRow(4L, -6L, 12L)]
-        [DataRow(-4L, -6L, 12L)]
-        [DataRow(1L, 1L, 1L)]
-        [DataRow(13L, 17L, 221L)]
-        [DataRow(20L, 30L, 60L)]
-        [DataRow(270L, 192L, 8640L)]
-        public void TestDivisorsAndMultiples_Lcm(long a, long b, long expectedValue)
+        [DataRow(0, 5, 0)]
+        [DataRow(5, 0, 0)]
+        [DataRow(0, 0, 0)]
+        [DataRow(4, 6, 12)]
+        [DataRow(21, 6, 42)]
+        [DataRow(8, 9, 72)]
+        [DataRow(100, 25, 100)]
+        [DataRow(25, 100, 100)]
+        [DataRow(-4, 6, 12)]
+        [DataRow(4, -6, 12)]
+        [DataRow(-4, -6, 12)]
+        [DataRow(1, 1, 1)]
+        [DataRow(13, 17, 221)]
+        [DataRow(20, 30, 60)]
+        [DataRow(270, 192, 8640)]
+        public void TestDivisorsAndMultiples_cm(long a, long b, long expectedValue)
         {
             var result = DivisorsAndMultiples.Lcm(a, b);
 
