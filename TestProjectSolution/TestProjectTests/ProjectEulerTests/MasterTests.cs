@@ -1,6 +1,9 @@
 ﻿using System;
+using System.IO;
 using System.Linq;
+using System.Numerics;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using ProjectEulerProblems.Data;
 using ProjectEulerProblems.Problems;
 
 namespace TestProjectTests.ProjectEulerTests
@@ -50,10 +53,10 @@ namespace TestProjectTests.ProjectEulerTests
         /// </summary>
         [TestMethod]
         [TestCategory(TestList.ProjectEulerTests)]
-        [DataRow(34, 4613732)]
-        public void TestProjectEuler_Problem_Two()
+        [DataRow(600851475143, 0)]
+        public void TestProjectEuler_Problem_Three(long number, int answer)
         {
-            var largestFactor = Primes.GetLargestPrimeFactors(600851475143);
+            var largestFactor = Primes.GetLargestPrimeFactors(number);
 
             Assert.AreEqual(6857, largestFactor);
         }
@@ -120,18 +123,20 @@ namespace TestProjectTests.ProjectEulerTests
         [TestMethod]
         [TestCategory(TestList.ProjectEulerTests)]
         [DataRow(10001, 104743)]
-        public void TestProjectEuler_Problem_Seven(int bound, int expectedValue)
+        public void TestProjectEuler_Problem_Seven(int bound, int answer)
         {
             var primeList = Primes.PrimeSieveForNumberOfPrimes(bound);
             var primeCount = primeList.Count;
 
-            Assert.AreEqual(expectedValue, primeList.Last());
+            Assert.AreEqual(answer, primeList.Last());
         }
 
         /// <summary>
+        /// <para>
         /// Project Euler Problem 8.
         /// The four adjacent digits in the 1000-digit number that have the greatest product are 9 * 9 * 8 * 9 = 5832.
-        /// 
+        /// </para>
+        /// <para>
         ///                     73167176531330624919225119674426574742355349194934
         ///                     96983520312774506326239578318016984801869478851843
         ///                     85861560789112949495459501737958331952853208805511
@@ -152,14 +157,36 @@ namespace TestProjectTests.ProjectEulerTests
         ///                     84580156166097919133875499200524063689912560717606
         ///                     05886116467109405077541002256983155200055935729725
         ///                     71636269561882670428252483600823257530420752963450
-        ///                         
-        /// Find the thirteen adjacent digits in the 1000-digit number that have the greatest product. What is the value of this product?
+        /// </para>
+        /// <para>Find the thirteen adjacent digits in the 1000-digit number that have the greatest product. What is the value of this product?</para>
         /// </summary>
+        /// <param name="length">The number of adjacent digits.</param>
+        /// <param name="answer">The accepted answer for the problem.</param>
         [TestMethod]
         [TestCategory(TestList.ProjectEulerTests)]
-        [DataRow(34, 4613732)]
-        public void TestProjectEuler_Problem_Eight()
+        //[DataRow(4, 5832)]
+        [DataRow(13, 23514624000)]
+        public void TestProjectEuler_Problem_Eight(int length, long answer)
         {
+            var bigNum = ProblemData.ProblemEightNumber;
+
+            // Generates the starting indices for all possible substrings of length 'length' within 'bigNum'.
+            var startingIndexes = Enumerable.Range(0, bigNum.Length - length + 1);
+
+            // Create all substrings of length 'length' starting from each index in 'startingIndexes'.
+            var allSubstringsOfProvidedLength = startingIndexes.Select(x => bigNum.Substring(x, length));
+
+            // allSubstringsOfProvidedLength.Select(sub => sub.Select(x => x - '0')) converts each substring into an integer array of size = 'length' which we cast to a long to avoid overflow.
+            // The linq statement .Select(sub => sub.Select(x => x - '0')) subtracts the ASCII value of '0' (which is 48) from the ASCII value of the digit x, which directly gives us the integer value.
+            // we then aggregate it and take the max value of the aggegate function.
+            var maxProduct = allSubstringsOfProvidedLength.Select(sub => sub.Select(x => (long)(x - '0')).Aggregate(1L, (a, b) => a * b)).Max();
+
+            // We can combined this into a single linq statement.
+            var result = Enumerable.Range(0, bigNum.Length - length + 1).Select(x => bigNum.Substring(x, length)).Select(sub => sub.Select(y => (long)(y - '0')).Aggregate(1L, (a, b) => a * b)).Max();
+
+            Assert.AreEqual(maxProduct, maxProduct);
+            Assert.AreEqual(answer, result);
+
         }
     }
 }
