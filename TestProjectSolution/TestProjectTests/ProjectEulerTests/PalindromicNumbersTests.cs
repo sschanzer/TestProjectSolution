@@ -24,8 +24,7 @@ namespace TestProjectTests.ProjectEulerTests
         [DataRow(7, true)]
         public void TestPalindromicNumbers_IsPalindrome(long number, bool expectedValue)
 		{
-			var palindrome = new PalindromicNumbers();
-			var isPalindrome = palindrome.IsPalindrome(number);
+			var isPalindrome = PalindromicNumbers.IsPalindrome(number);
 
 			Assert.AreEqual(expectedValue, isPalindrome);
 		}
@@ -41,10 +40,8 @@ namespace TestProjectTests.ProjectEulerTests
         [DataRow(3, 906609)]
         public void TestPalindromicNumbers_GetLargestPalindromeProduct(int digits, long expected)
         {
-            var palindromicNumbers = new PalindromicNumbers();
-            long result = palindromicNumbers.GetLargestPalindromeProduct(digits);
+            long result = PalindromicNumbers.GetLargestPalindromeProduct(digits);
             Assert.AreEqual(expected, result);
         }
-
     }
 }

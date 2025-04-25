@@ -42,7 +42,6 @@ namespace TestProjectTests.ProjectEulerTests
             Assert.IsFalse(primesList.Contains(doesNotInclude));
         }
 
-
         /// <summary>
 		/// Tests the <see cref="Primes.GetPrimesBrute"/> method for primes up to 10.
 		/// </summary>
@@ -88,7 +87,6 @@ namespace TestProjectTests.ProjectEulerTests
             var result = Primes.GetFactors(number);
             CollectionAssert.AreEqual(expected.ToList(), result);
         }
-
 
         /// <summary>
         /// Tests the <see cref="Primes.GetLargestPrimeFactors(long)"/> of 600851475143.
@@ -139,7 +137,6 @@ namespace TestProjectTests.ProjectEulerTests
         public void TestSumNums_ProjectEulerProblemSeven(int bound, int expectedValue)
         {
             var primeList = Primes.PrimeSieveForNumberOfPrimes(bound);
-            var primeCount = primeList.Count;
 
             Assert.AreEqual(expectedValue, primeList.Last());
         }

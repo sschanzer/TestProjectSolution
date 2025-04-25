@@ -6,14 +6,14 @@ namespace ProjectEulerProblems.Problems
     /// <summary>
     /// Class containing methods relating to the Palindromic Numbers.
     /// </summary>
-    public class PalindromicNumbers
+    public static class PalindromicNumbers
     {
         /// <summary>
         /// Finds the largest palindrome made from the product of two numbers with the specified number of digits.
         /// </summary>
         /// <param name="digits">The number of digits for the multiplicands (e.g. 2 for 2-digit numbers).</param>
         /// <returns>The largest palindromic product as a long, or 0 if none is found.</returns>
-        public long GetLargestPalindromeProduct(int digits)
+        public static long GetLargestPalindromeProduct(int digits)
         {
             var stringNum = string.Empty;
             var boundString = "1";
@@ -33,7 +33,7 @@ namespace ProjectEulerProblems.Problems
                 {
                     long product = i * j;
 
-                    if (this.IsPalindrome(product))
+                    if (IsPalindrome(product))
                     {
                         return product;
                     }
@@ -48,7 +48,7 @@ namespace ProjectEulerProblems.Problems
         /// </summary>
         /// <param name="number">The number.</param>
         /// <returns>True if the number is a palindrome, false otherwise.</returns>
-        public bool IsPalindrome(long number)
+        public static bool IsPalindrome(long number)
         {
             var numString = number.ToString();
 

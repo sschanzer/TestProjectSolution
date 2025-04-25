@@ -161,7 +161,7 @@ namespace ProjectEulerProblems.Problems
             //
             // Sum_{k=1}^{n} k² = (1/6) * n * (n + 1) * (2n + 1).
 
-            var sumOfSuqares = (n * (n + 1) * (2 * n + 1)) / 6;
+            var sumOfSuqares = (n * (n + 1) * ((2 * n) + 1)) / 6;
 
             return sumOfSuqares;
         }

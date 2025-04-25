@@ -10,14 +10,14 @@ namespace ProjectEulerProblems.Problems
     /// <summary>
     /// Class containing methods relating to the Fibonacci sequence.
     /// </summary>
-    public class Fibonacci
+    public static class Fibonacci
     {
         /// <summary>
         /// Compiles a list of Fibonacci numbers.
         /// </summary>
         /// <param name="count">Number of terms of the seqeunce.</param>
         /// <returns>A list of Fibonacci numbers.</returns>
-        public List<BigInteger> GetFibonacciNumbers(int count)
+        public static List<BigInteger> GetFibonacciNumbers(int count)
         {
             if (count <= 0)
             {
@@ -47,9 +47,9 @@ namespace ProjectEulerProblems.Problems
         /// stopping early if a term exceeds 4,000,000. Returns -1 if count is negative.
         /// </summary>
         /// <param name="count">The number of Fibonacci terms to generate.</param>
-        /// <returns>The sum of even-valued terms in the generated Fibonacci sequence, 
+        /// <returns>The sum of even-valued terms in the generated Fibonacci sequence,
         /// or -1 if the input is invalid.</returns>
-        public int GetEvenFibSum(int count)
+        public static int GetEvenFibSum(int count)
         {
             var fibSum = 0;
 
@@ -99,7 +99,7 @@ namespace ProjectEulerProblems.Problems
         /// <param name="count">The number of Fibonacci terms to generate.</param>
         /// <param name="maxValue">The maximum Fibonacci value allowed (default is 4,000,000) since that is what the Project Euler Problem asks for.</param>
         /// <returns>The sum of the even-valued terms in the Fibonacci sequence; -1 if the input is invalid.</returns>
-        public int GetEvenFibSumRedux(int count, int maxValue = 4000000)
+        public static int GetEvenFibSumRedux(int count, int maxValue = 4000000)
         {
             if (count < 0)
             {
@@ -115,9 +115,7 @@ namespace ProjectEulerProblems.Problems
             int b = 1;
             int sum = 0;
 
-            int generatedTerms = 1;
-
-            while (generatedTerms < count)
+            for (int generatedTerms = 1; generatedTerms < count; generatedTerms++)
             {
                 var nextTerm = a + b;
 
@@ -133,12 +131,9 @@ namespace ProjectEulerProblems.Problems
 
                 a = b;
                 b = nextTerm;
-
-                generatedTerms++;
             }
 
             return sum;
         }
-
     }
 }

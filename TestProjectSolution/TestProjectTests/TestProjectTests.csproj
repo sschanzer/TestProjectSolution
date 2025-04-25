@@ -58,6 +58,7 @@
     <Compile Include="ProjectEulerTests\SmallestMultipleTests.cs" />
     <Compile Include="ProjectEulerTests\DivisorsAndMultiplesTests.cs" />
     <Compile Include="ProjectEulerTests\MasterTests.cs" />
+    <Compile Include="ProjectEulerTests\ProductsTests.cs" />
     <Compile Include="TestList.cs" />
     <Compile Include="LeetCodeTests\TwoSumTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

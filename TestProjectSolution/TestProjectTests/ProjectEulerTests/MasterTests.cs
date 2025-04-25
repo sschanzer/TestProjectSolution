@@ -40,8 +40,7 @@ namespace TestProjectTests.ProjectEulerTests
         [DataRow(34,4613732)]
         public void TestProjectEuler_Problem_Two(int num, int answer)
         {
-            var fib = new Fibonacci();
-            var fibSum = fib.GetEvenFibSumRedux(num);
+            var fibSum = Fibonacci.GetEvenFibSumRedux(num);
 
             Assert.AreEqual(answer, fibSum);
         }
@@ -53,12 +52,12 @@ namespace TestProjectTests.ProjectEulerTests
         /// </summary>
         [TestMethod]
         [TestCategory(TestList.ProjectEulerTests)]
-        [DataRow(600851475143, 0)]
+        [DataRow(600851475143, 6857)]
         public void TestProjectEuler_Problem_Three(long number, int answer)
         {
             var largestFactor = Primes.GetLargestPrimeFactors(number);
 
-            Assert.AreEqual(6857, largestFactor);
+            Assert.AreEqual(answer, largestFactor);
         }
 
         /// <summary>
@@ -71,8 +70,7 @@ namespace TestProjectTests.ProjectEulerTests
         [DataRow(3, 906609)]
         public void TestProjectEuler_Problem_Four(int digits, long answer)
         {
-            var palindromicNumbers = new PalindromicNumbers();
-            long result = palindromicNumbers.GetLargestPalindromeProduct(digits);
+            long result = PalindromicNumbers.GetLargestPalindromeProduct(digits);
             Assert.AreEqual(answer, result);
         }
 
@@ -88,8 +86,7 @@ namespace TestProjectTests.ProjectEulerTests
 
         public void TestProjectEuler_Problem_Five(int[] input, int answer)
         {
-            var smallestMultiple = new SmallestMultiple();
-            var result = smallestMultiple.FindSmallestMultiple(input.ToList());
+            var result = SmallestMultiple.FindSmallestMultiple(input.ToList());
             Assert.AreEqual(answer, result);
         }
 
@@ -126,7 +123,6 @@ namespace TestProjectTests.ProjectEulerTests
         public void TestProjectEuler_Problem_Seven(int bound, int answer)
         {
             var primeList = Primes.PrimeSieveForNumberOfPrimes(bound);
-            var primeCount = primeList.Count;
 
             Assert.AreEqual(answer, primeList.Last());
         }
@@ -164,29 +160,13 @@ namespace TestProjectTests.ProjectEulerTests
         /// <param name="answer">The accepted answer for the problem.</param>
         [TestMethod]
         [TestCategory(TestList.ProjectEulerTests)]
-        //[DataRow(4, 5832)]
         [DataRow(13, 23514624000)]
         public void TestProjectEuler_Problem_Eight(int length, long answer)
         {
             var bigNum = ProblemData.ProblemEightNumber;
+            var result = Products.FindLargestSubstringProduct(length, bigNum);
 
-            // Generates the starting indices for all possible substrings of length 'length' within 'bigNum'.
-            var startingIndexes = Enumerable.Range(0, bigNum.Length - length + 1);
-
-            // Create all substrings of length 'length' starting from each index in 'startingIndexes'.
-            var allSubstringsOfProvidedLength = startingIndexes.Select(x => bigNum.Substring(x, length));
-
-            // allSubstringsOfProvidedLength.Select(sub => sub.Select(x => x - '0')) converts each substring into an integer array of size = 'length' which we cast to a long to avoid overflow.
-            // The linq statement .Select(sub => sub.Select(x => x - '0')) subtracts the ASCII value of '0' (which is 48) from the ASCII value of the digit x, which directly gives us the integer value.
-            // we then aggregate it and take the max value of the aggegate function.
-            var maxProduct = allSubstringsOfProvidedLength.Select(sub => sub.Select(x => (long)(x - '0')).Aggregate(1L, (a, b) => a * b)).Max();
-
-            // We can combined this into a single linq statement.
-            var result = Enumerable.Range(0, bigNum.Length - length + 1).Select(x => bigNum.Substring(x, length)).Select(sub => sub.Select(y => (long)(y - '0')).Aggregate(1L, (a, b) => a * b)).Max();
-
-            Assert.AreEqual(maxProduct, maxProduct);
             Assert.AreEqual(answer, result);
-
         }
     }
 }

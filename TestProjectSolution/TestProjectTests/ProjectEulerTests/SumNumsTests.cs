@@ -121,6 +121,5 @@ namespace TestProjectTests.ProjectEulerTests
 
             Assert.AreEqual(expectedResult, difference);
         }
-
     }
 }

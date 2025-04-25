@@ -22,8 +22,7 @@ namespace TestProjectTests.ProjectEulerTests
         [DataRow(new int[] { 1, 9 }, 9)]
         public void TestSmallestMultiple_FindSmallestMultiple_VariousInputs(int[] input, int expected)
         {
-            var smallestMultiple = new SmallestMultiple();
-            var result = smallestMultiple.FindSmallestMultiple(input.ToList());
+            var result = SmallestMultiple.FindSmallestMultiple(input.ToList());
             Assert.AreEqual(expected, result);
         }
     }
