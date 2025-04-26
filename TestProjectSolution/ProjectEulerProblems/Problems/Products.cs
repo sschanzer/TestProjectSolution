@@ -1,4 +1,5 @@
 ﻿using ProjectEulerProblems.Data;
+using ProjectEulerProblems.Utility;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -49,6 +50,23 @@ namespace ProjectEulerProblems.Problems
             var maxProduct = Enumerable.Range(0, number.Length - lengthOfSubstring + 1).Select(x => number.Substring(x, lengthOfSubstring)).Max(sub => sub.Select(y => (long)(y - '0')).Aggregate(1L, (a, b) => a * b));
 
             return maxProduct;
+        }
+
+        /// <summary>
+        /// Determines the largest product of the given integer array.
+        /// </summary>
+        /// <param name="filePath">The path to the file containing the grid.</param>
+        /// <param name="digits">Specifies the amount of entries our product should be.</param>
+        /// <returns>The largest product found in the grid.</returns>
+        public static long FindLargestProductOfGrid(string filePath, int digits)
+        {
+            var fileParser = new FileParser(filePath);
+
+            int[,] grid = fileParser.ParseTextFileAsIntegerGrid();
+
+            long maxProduct = 0;
+
+            return 0;
         }
     }
 }
