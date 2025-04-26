@@ -198,13 +198,17 @@ namespace TestProjectTests.ProjectEulerTests
         /// The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.
         /// Find the sum of all the primes below two million.
         /// </summary>
-        /// <param name="targetSum">Target sum.</param>
-        /// <param name="answer">Expected product of the triple.</param>
+        /// <param name="bound">Where we want the sum to stop.</param>
+        /// <param name="answerString">The expected output as a string since Data Rows don't how to convert an int to a BigInteger.</param>
         [TestMethod]
         [TestCategory(TestList.ProjectEulerTests)]
-        [DataRow(1000, 200, 375, 425, 31875000)]
-        public void TestProjectEuler_Problem_Nine(int targetSum, BigInteger answer)
+        [DataRow(2000000, "142913828922")]
+        public void TestProjectEuler_Problem_Nine(int bound, string answerString)
         {
+            var answer = BigInteger.Parse(answerString);
+            var mySum = Primes.SumOfPrimes(bound);
+
+            Assert.AreEqual(answer, mySum);
         }
     }
 }

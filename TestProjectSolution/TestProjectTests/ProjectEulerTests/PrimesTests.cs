@@ -145,12 +145,26 @@ namespace TestProjectTests.ProjectEulerTests
         /// <summary>
         /// Tests the <see cref="Primes.SumOfPrimes(int)"/> method.
         /// </summary>
+        /// <param name="bound">Where we want the sum to stop.</param>
+        /// <param name="expectedSumString">The expected output as a string since Data Rows don't how to convert an int to a BigInteger.</param>
         [TestMethod]
         [TestCategory(TestList.Validation)]
-        [DataRow(10, 17)]
-        public void TestPrimes_SumOfPrimes(int bound, BigInteger expectedResult)
+        [DataRow(2, "2")]
+        [DataRow(3, "5")]
+        [DataRow(5, "10")]
+        [DataRow(10, "17")]
+        [DataRow(500, "21536")]
+        [DataRow(1000, "76127")]
+        [DataRow(5000, "1548136")]
+        [DataRow(10000, "5736396")]
+        [DataRow(50000, "121013308")]
+        [DataRow(100000, "454396537")]
+        [DataRow(2000000, "142913828922")]
+        public void TestPrimes_SumOfPrimes(int bound, string expectedSumString)
         {
-
+            var expectedSum = BigInteger.Parse(expectedSumString);
+            var mySum = Primes.SumOfPrimes(bound);
+            Assert.AreEqual(expectedSum, mySum);
         }
     }
 }

@@ -241,20 +241,22 @@ namespace ProjectEulerProblems.Problems
                 return primeSum;
             }
 
-            var sieve = Enumerable.Repeat(true, bound).ToArray();
+            var sieve = Enumerable.Repeat(true, bound + 1).ToArray();
 
-            for (int i = 2; i * i < bound; i++)
+            sieve[0] = sieve[1] = false;
+
+            for (int i = 2; i * i <= bound; i++)
             {
                 if (sieve[i])
                 {
-                    for (int j = i * i; j < bound; j += i)
+                    for (int j = i * i; j <= bound; j += i)
                     {
                         sieve[j] = false;
                     }
                 }
             }
 
-            for (int i = 2; i < bound; i++)
+            for (int i = 2; i <= bound; i++)
             {
                 if (sieve[i])
                 {
