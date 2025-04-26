@@ -18,7 +18,7 @@ namespace TestProjectTests.ProjectEulerTests
         {
             get
             {
-                return ProblemData.ProblemEightNumber;
+                return ProblemEightData.ProblemEightNumber;
             }
         }
 

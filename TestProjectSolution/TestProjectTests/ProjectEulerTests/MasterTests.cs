@@ -163,7 +163,7 @@ namespace TestProjectTests.ProjectEulerTests
         [DataRow(13, 23514624000)]
         public void TestProjectEuler_Problem_Eight(int length, long answer)
         {
-            var bigNum = ProblemData.ProblemEightNumber;
+            var bigNum = ProblemEightData.ProblemEightNumber;
             var result = Products.FindLargestSubstringProduct(length, bigNum);
 
             Assert.AreEqual(answer, result);

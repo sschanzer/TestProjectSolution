@@ -10,7 +10,7 @@ namespace ProjectEulerProblems.Data
     /// Provides hard-coded input data directly from Project Euler problem statements.
     /// Useful for testing and solving problems without cluttering logic with raw data.
     /// </summary>
-    public static class ProblemData
+    public static class ProblemEightData
     {
         /// <summary>
         /// The 1000-digit number from Project Euler Problem 8, used to find the greatest product of 13 adjacent digits.

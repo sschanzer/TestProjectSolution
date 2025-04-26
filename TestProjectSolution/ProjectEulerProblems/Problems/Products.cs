@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace ProjectEulerProblems.Problems
 {
     /// <summary>
-    /// Class containing methods relating to the Sum of Numbers.
+    /// Class containing methods relating to the Products of Numbers.
     /// </summary>
     public static class Products
     {
