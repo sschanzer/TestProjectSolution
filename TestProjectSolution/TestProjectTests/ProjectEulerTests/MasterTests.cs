@@ -203,7 +203,7 @@ namespace TestProjectTests.ProjectEulerTests
         [TestMethod]
         [TestCategory(TestList.ProjectEulerTests)]
         [DataRow(2000000, "142913828922")]
-        public void TestProjectEuler_Problem_Nine(int bound, string answerString)
+        public void TestProjectEuler_Problem_Ten(int bound, string answerString)
         {
             var answer = BigInteger.Parse(answerString);
             var mySum = Primes.SumOfPrimes(bound);
