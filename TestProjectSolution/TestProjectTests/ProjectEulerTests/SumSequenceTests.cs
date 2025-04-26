@@ -6,69 +6,69 @@ using ProjectEulerProblems.Problems;
 namespace TestProjectTests.ProjectEulerTests
 {
 	/// <summary>
-	/// Tests for the <see cref="SumNums"/> class.
+	/// Tests for the <see cref="SumSequence"/> class.
 	/// </summary>
 	[TestClass]
-	public class SumNumsTests
+	public class SumSequenceTests
 	{
 		/// <summary>
-		/// Tests the <see cref="SumNums.GetSumMultiplesOfThreeAndFiveDumb(int)"/> method.
+		/// Tests the <see cref="SumSequence.GetSumMultiplesOfThreeAndFiveDumb(int)"/> method.
 		/// </summary>
 		[TestMethod]
         [TestCategory(TestList.Validation)]
         [DataRow(10, 23)]
         [DataRow(20, 78)]
         [DataRow(1000, 233168)]
-        public void TestSumNums_GetSumDumb(int num, int expectedResult)
+        public void TestSumSequence_GetSumDumb(int num, int expectedResult)
 		{
-            var result = SumNums.GetSumMultiplesOfThreeAndFiveDumb(num);
+            var result = SumSequence.GetSumMultiplesOfThreeAndFiveDumb(num);
             Assert.AreEqual(expectedResult, result);
 		}
 
         /// <summary>
-		/// Tests the <see cref="SumNums.GetSumMultiplesOfThreeAndFiveStillDumb(int)"/> method.
+		/// Tests the <see cref="SumSequence.GetSumMultiplesOfThreeAndFiveStillDumb(int)"/> method.
 		/// </summary>
 		[TestMethod]
         [TestCategory(TestList.Validation)]
         [DataRow(10, 23)]
         [DataRow(20, 78)]
         [DataRow(1000, 233168)]
-        public void SumNums_GetSumStillDumb(int num, int expectedResult)
+        public void TestSumSequence_GetSumStillDumb(int num, int expectedResult)
         {
-            var result = SumNums.GetSumMultiplesOfThreeAndFiveStillDumb(num);
+            var result = SumSequence.GetSumMultiplesOfThreeAndFiveStillDumb(num);
             Assert.AreEqual(expectedResult, result);
         }
 
         /// <summary>
-		/// Tests the <see cref="SumNums.GetSumMultiplesOfThreeAndFiveAnotherDumb(int)"/> method.
+		/// Tests the <see cref="SumSequence.GetSumMultiplesOfThreeAndFiveAnotherDumb(int)"/> method.
 		/// </summary>
 		[TestMethod]
         [TestCategory(TestList.Validation)]
         [DataRow(10, 23)]
         [DataRow(20, 78)]
         [DataRow(1000, 233168)]
-        public void SumNums_GetSumAnotherDumb(int num, int expectedResult)
+        public void TestSumSequence_GetSumAnotherDumb(int num, int expectedResult)
         {
-            var result = SumNums.GetSumMultiplesOfThreeAndFiveAnotherDumb(num);
+            var result = SumSequence.GetSumMultiplesOfThreeAndFiveAnotherDumb(num);
             Assert.AreEqual(expectedResult, result);
         }
 
         /// <summary>
-		/// Tests the <see cref="SumNums.GetSumSlick(int)"/> method.
+		/// Tests the <see cref="SumSequence.GetSumSlick(int)"/> method.
 		/// </summary>
 		[TestMethod]
         [TestCategory(TestList.Validation)]
         [DataRow(10, 23)]
         [DataRow(20, 78)]
         [DataRow(1000, 233168)]
-        public void SumNums_GetSumSlick(int num, int expectedResult)
+        public void TestSumSequence_GetSumSlick(int num, int expectedResult)
         {
-            var result = SumNums.GetSumSlick(num);
+            var result = SumSequence.GetSumSlick(num);
             Assert.AreEqual(expectedResult, result);
         }
 
         /// <summary>
-        /// Tests <see cref="SumNums.SumOfMultiples(int, int)"/> for various inputs to validate the sum of multiples calculation.
+        /// Tests <see cref="SumSequence.SumOfMultiples(int, int)"/> for various inputs to validate the sum of multiples calculation.
         /// </summary>
         [TestMethod]
         [TestCategory(TestList.Validation)]
@@ -78,14 +78,14 @@ namespace TestProjectTests.ProjectEulerTests
         [DataRow(1, 5, 15)]
         [DataRow(10, 100, 550)]
         [DataRow(2, 1, 0)]
-        public void TestSumNums_SumOfMultiples_ValidCases(int n, int limit, int expectedResult)
+        public void TestSumSequence_SumOfMultiples_ValidCases(int n, int limit, int expectedResult)
         {
-            var result = SumNums.SumOfMultiples(n, limit);
+            var result = SumSequence.SumOfMultiples(n, limit);
             Assert.AreEqual(expectedResult, result);
         }
 
         /// <summary>
-        /// Tests <see cref="SumNums.SumOfSquares(int)"/> for various inputs to validate the sum of squares formula.
+        /// Tests <see cref="SumSequence.SumOfSquares(int)"/> for various inputs to validate the sum of squares formula.
         /// </summary>
         [TestMethod]
         [TestCategory(TestList.Validation)]
@@ -94,9 +94,9 @@ namespace TestProjectTests.ProjectEulerTests
         [DataRow(5, 55)]
         [DataRow(10, 385)]
         [DataRow(0, 0)]
-        public void TestSumNums_SumOfSquares_ValidCases(int n, int expectedResult)
+        public void TestSumSequence_SumOfSquares_ValidCases(int n, int expectedResult)
         {
-            var result = SumNums.SumOfSquares(n);
+            var result = SumSequence.SumOfSquares(n);
             Assert.AreEqual(expectedResult, result);
         }
 
@@ -110,10 +110,10 @@ namespace TestProjectTests.ProjectEulerTests
         [TestCategory(TestList.Validation)]
         [DataRow(10, 2640)]
         [DataRow(100, 25164150)]
-        public void TestSumNums_ProjectEulerProblemSix(int num, int expectedResult)
+        public void TestSumSequence_ProjectEulerProblemSix(int num, int expectedResult)
         {
-            int sumOfNumbersUpToNum = SumNums.SumOfMultiples(1, num);
-            int sumOfSquares = SumNums.SumOfSquares(num);
+            int sumOfNumbersUpToNum = SumSequence.SumOfMultiples(1, num);
+            int sumOfSquares = SumSequence.SumOfSquares(num);
 
             var squareOfSum = Math.Pow(sumOfNumbersUpToNum, 2);
 

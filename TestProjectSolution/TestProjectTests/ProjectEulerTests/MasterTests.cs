@@ -24,7 +24,7 @@ namespace TestProjectTests.ProjectEulerTests
         [DataRow(1000, 233168)]
         public void TestProjectEuler_Problem_One(int num, int answer)
 		{
-            var result = SumNums.GetSumSlick(num);
+            var result = SumSequence.GetSumSlick(num);
             Assert.AreEqual(answer, result);
         }
 
@@ -102,8 +102,8 @@ namespace TestProjectTests.ProjectEulerTests
         [DataRow(100, 25164150)]
         public void TestProjectEuler_Problem_Six(int num, int answer)
         {
-            int sumOfNumbersUpToNum = SumNums.SumOfMultiples(1, num);
-            int sumOfSquares = SumNums.SumOfSquares(num);
+            int sumOfNumbersUpToNum = SumSequence.SumOfMultiples(1, num);
+            int sumOfSquares = SumSequence.SumOfSquares(num);
 
             var squareOfSum = Math.Pow(sumOfNumbersUpToNum, 2);
 
@@ -167,6 +167,30 @@ namespace TestProjectTests.ProjectEulerTests
             var result = Products.FindLargestSubstringProduct(length, bigNum);
 
             Assert.AreEqual(answer, result);
+        }
+
+        /// <summary>
+        /// Project Euler Problem 9.
+        /// A Pythagorean triplet is a set of three natural numbers, a < b < c$, for which, a^2 + b^2 = c^2.
+        /// For example, 3^2 + 4^2 = 9 + 16 = 25 = 5^2. There exists exactly one Pythagorean triplet for which a + b + c = 1000.
+        /// Find the product abc.
+        /// </summary>
+        /// <param name="targetSum">Target sum.</param>
+        /// <param name="expectedA">Expected 'a' value.</param>
+        /// <param name="expectedB">Expected 'b' value.</param>
+        /// <param name="expectedC">Expected 'c' value.</param>
+        /// <param name="answer">Expected product of the triple.</param>
+        [TestMethod]
+        [TestCategory(TestList.ProjectEulerTests)]
+        [DataRow(1000, 200, 375, 425, 31875000)]
+        public void TestProjectEuler_Problem_Nine(int targetSum, int expectedA, int expectedB, int expectedC, long answer)
+        {
+            var (a, b, c, product) = Pythagorean.GetTargetTripleProduct(targetSum);
+
+            Assert.AreEqual(expectedA, a, "a mismatch");
+            Assert.AreEqual(expectedB, b, "b mismatch");
+            Assert.AreEqual(expectedC, c, "c mismatch");
+            Assert.AreEqual(answer, product, "product mismatch");
         }
     }
 }

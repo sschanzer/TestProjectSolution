@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 namespace ProjectEulerProblems.Problems
 {
     /// <summary>
-    /// Class containing methods relating to the Sum of Numbers.
+    /// Class containing methods relating to Summing Sequences of Numbers.
     /// </summary>
-    public static class SumNums
+    public static class SumSequence
     {
         /// <summary>
         /// Method determines the sum of all multiples of 3 and 5 below n.
