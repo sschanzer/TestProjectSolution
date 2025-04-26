@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ProjectEulerProblems.Problems;
 
@@ -105,20 +106,20 @@ namespace TestProjectTests.ProjectEulerTests
         /// </summary>
         [TestMethod]
         [TestCategory(TestList.Validation)]
-        [DataRow(2, true)]                         // Smallest prime number
-        [DataRow(3, true)]                         // Small prime number
-        [DataRow(4, false)]                        // First composite number
-        [DataRow(7, true)]                         // Prime number
-        [DataRow(9, false)]                        // Odd composite number
-        [DataRow(29, true)]                        // Larger prime number
-        [DataRow(1234, false)]                     // Even non-prime
-        [DataRow(600851475143, false)]            // Large non-prime (used in Euler Problem 3)
-        [DataRow(982451653, true)]                // Large prime number
-        [DataRow(1, false)]                        // Not prime
-        [DataRow(0, false)]                        // Not prime
-        [DataRow(-7, false)]                       // Negative number, not prime
-        [DataRow(1000066600001, false)]             // Large non-prime
-        //[DataRow(1000000000000066600000000000001, false)]             // Belphegor's prime is too large for the current implementation :(
+        [DataRow(2, true)]                                                // Smallest prime number
+        [DataRow(3, true)]                                                // Small prime number
+        [DataRow(4, false)]                                               // First composite number
+        [DataRow(7, true)]                                                // Prime number
+        [DataRow(9, false)]                                               // Odd composite number
+        [DataRow(29, true)]                                               // Larger prime number
+        [DataRow(1234, false)]                                            // Even non-prime
+        [DataRow(600851475143, false)]                                    // Large non-prime (used in Euler Problem 3)
+        [DataRow(982451653, true)]                                        // Large prime number
+        [DataRow(1, false)]                                               // Not prime
+        [DataRow(0, false)]                                               // Not prime
+        [DataRow(-7, false)]                                              // Negative number, not prime
+        [DataRow(1000066600001, false)]                                   // Large non-prime
+        //[DataRow(1000000000000066600000000000001, false)]                 // Belphegor's prime is too large for the current implementation :(
         public void TestPrimes_IsPrime(long num, bool expectedValue)
         {
             Assert.AreEqual(expectedValue, Primes.IsPrime(num));
@@ -134,11 +135,22 @@ namespace TestProjectTests.ProjectEulerTests
         [TestCategory(TestList.Validation)]
         [DataRow(6, 13)]
         [DataRow(10001, 104743)]
-        public void TestSumNums_ProjectEulerProblemSeven(int bound, int expectedValue)
+        public void TestPrimes_ProjectEulerProblemSeven(int bound, int expectedValue)
         {
             var primeList = Primes.PrimeSieveForNumberOfPrimes(bound);
 
             Assert.AreEqual(expectedValue, primeList.Last());
+        }
+
+        /// <summary>
+        /// Tests the <see cref="Primes.SumOfPrimes(int)"/> method.
+        /// </summary>
+        [TestMethod]
+        [TestCategory(TestList.Validation)]
+        [DataRow(10, 17)]
+        public void TestPrimes_SumOfPrimes(int bound, BigInteger expectedResult)
+        {
+
         }
     }
 }

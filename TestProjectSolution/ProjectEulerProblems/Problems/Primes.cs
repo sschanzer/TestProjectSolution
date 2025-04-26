@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -224,6 +225,44 @@ namespace ProjectEulerProblems.Problems
         public static double PrimeCountingFunction(long num)
         {
             return num / Math.Log(num);
+        }
+
+        /// <summary>
+        /// Evaluates the sum of all primes up to the given bound.
+        /// </summary>
+        /// <param name="bound">The provided bound.</param>
+        /// <returns>Sum of all primes up to the bound.</returns>
+        public static BigInteger SumOfPrimes(int bound)
+        {
+            BigInteger primeSum = 0;
+
+            if (bound < 2)
+            {
+                return primeSum;
+            }
+
+            var sieve = Enumerable.Repeat(true, bound).ToArray();
+
+            for (int i = 2; i * i < bound; i++)
+            {
+                if (sieve[i])
+                {
+                    for (int j = i * i; j < bound; j += i)
+                    {
+                        sieve[j] = false;
+                    }
+                }
+            }
+
+            for (int i = 2; i < bound; i++)
+            {
+                if (sieve[i])
+                {
+                    primeSum += i;
+                }
+            }
+
+            return primeSum;
         }
     }
 }
