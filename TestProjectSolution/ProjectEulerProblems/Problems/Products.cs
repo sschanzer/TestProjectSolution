@@ -68,8 +68,6 @@ namespace ProjectEulerProblems.Problems
             var columns = grid.GetLength(1);
             long maxProduct = 0;
 
-            var alskdjf = 1;
-
             for (var row = 0; row < rows; row++)
             {
                 for (int col = 0; col < columns; col++)
@@ -78,8 +76,9 @@ namespace ProjectEulerProblems.Problems
                     long prodLeft = 1;
                     long prodUp = 1;
                     long prodDown = 1;
-                    long prodDiagonalRight = 1;
-                    long prodDiagonalLeft = 1;
+                    long prodDiagonalDownRight = 1;
+                    long prodDiagonalDownLeft = 1;
+                    long prodDiagonalUpRight = 1;
 
                     // Check for product to the right
                     if (col + digits <= columns)
@@ -121,24 +120,34 @@ namespace ProjectEulerProblems.Problems
                         maxProduct = Math.Max(maxProduct, prodDown);
                     }
 
-                    // Check for diagonal product (top-left to bottom-right)
+                    // Check the diagonal product down and to the right
                     if (row + digits <= rows && col + digits <= columns)
                     {
                         for (int i = 0; i < digits; i++)
                         {
-                            prodDiagonalRight *= grid[row + i, col + i];
+                            prodDiagonalDownRight *= grid[row + i, col + i];
                         }
-                        maxProduct = Math.Max(maxProduct, prodDiagonalRight);
+                        maxProduct = Math.Max(maxProduct, prodDiagonalDownRight);
                     }
 
-                    // Check for diagonal product (top-right to bottom-left)
+                    // Check diagonal down to the left
                     if (row + digits <= rows && col - digits + 1 >= 0)
                     {
                         for (int i = 0; i < digits; i++)
                         {
-                            prodDiagonalLeft *= grid[row + i, col - i];
+                            prodDiagonalDownLeft *= grid[row + i, col - i];
                         }
-                        maxProduct = Math.Max(maxProduct, prodDiagonalLeft);
+                        maxProduct = Math.Max(maxProduct, prodDiagonalDownLeft);
+                    }
+
+                    // Check diagonal up to the right
+                    if (row >= digits && col + digits <= columns)
+                    {
+                        for (int i = 0; i < digits; i++)
+                        {
+                            prodDiagonalUpRight *= grid[row - i, col + i];
+                        }
+                        maxProduct = Math.Max(maxProduct, prodDiagonalUpRight);
                     }
                 }
             }

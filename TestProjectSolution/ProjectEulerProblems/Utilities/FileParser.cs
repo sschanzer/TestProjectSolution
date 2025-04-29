@@ -83,7 +83,6 @@ namespace ProjectEulerProblems.Utility
             return ParseTextFileAsGrid<string>(s => s);
         }
 
-
         /// <summary>
         /// Parses a plain text file where each line represents a row of space-separated values,
         /// and converts each value to the specified type.
@@ -110,7 +109,6 @@ namespace ProjectEulerProblems.Utility
 
             return grid;
         }
-
 
         /// <summary>
         /// Placeholder for parsing a CSV file into a structured format.

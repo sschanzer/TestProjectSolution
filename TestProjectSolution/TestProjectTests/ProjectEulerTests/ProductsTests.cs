@@ -58,12 +58,11 @@ namespace TestProjectTests.ProjectEulerTests
         /// <param name="filePath">File path.</param>
         /// <param name="length">Requested length of the substring.</param>
         /// <param name="answer">The answer.</param>
-        /// C:\Users\spenc\source\repos\TestProjectSolution\TestProjectSolution\TestProjectTests\ProjectEulerTests\TestData\ProjectEulerProblemEleven.txt
         [TestMethod]
         [TestCategory(TestList.Validation)]
         [DeploymentItem(@"ProjectEulerTests\TestData\ProjectEulerProblemEleven.txt")]
-        [DataRow("ProjectEulerProblemEleven.txt", 2, 5832)]
-        public void TestProducts_FindLargestProductOfGrid(string filePath, int length, long answer)
+        [DataRow("ProjectEulerProblemEleven.txt", 4, 70600674)]
+        public void TestProducts_FindLargestProductOfGrid(string filePath, int length, int answer)
         {
             var maxProduct = Products.FindLargestProductOfGrid(filePath, length);
             Assert.AreEqual(answer, maxProduct);
