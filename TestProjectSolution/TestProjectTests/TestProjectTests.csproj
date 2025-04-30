@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="PersonalProblemTests\UnitTest1.cs" />
+    <Compile Include="ProjectEulerTests\BigIntegerExtensionsTests.cs" />
     <Compile Include="ProjectEulerTests\SumSequenceTests.cs" />
     <Compile Include="ProjectEulerTests\FibonacciTests.cs" />
     <Compile Include="ProjectEulerTests\PrimesTests.cs" />
@@ -61,6 +62,7 @@
     <Compile Include="ProjectEulerTests\ProductsTests.cs" />
     <Compile Include="ProjectEulerTests\PythagoreanTests.cs" />
     <Compile Include="ProjectEulerTests\TestData\PythagoreanTestData.cs" />
+    <Compile Include="ProjectEulerTests\TriangularNumbersTests.cs" />
     <Compile Include="TestList.cs" />
     <Compile Include="LeetCodeTests\TwoSumTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
