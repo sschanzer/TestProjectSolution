@@ -6,6 +6,7 @@ using System.Numerics;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ProjectEulerProblems.Data;
 using ProjectEulerProblems.Problems;
+using ProjectEulerProblems.Utility;
 using static System.Net.WebRequestMethods;
 
 namespace TestProjectTests.ProjectEulerTests
@@ -277,6 +278,34 @@ namespace TestProjectTests.ProjectEulerTests
         public void TestProjectEuler_Problem_Twelve(int numberOfFactors, int answer)
         {
             var result = TriangularNumbers.GetFirstTriangularNumberWithAtLeastNFactors(numberOfFactors);
+            Assert.AreEqual(answer, result);
+        }
+
+        /// <summary>
+        /// Project Euler Problem Thriteen.
+        /// Work out the first ten digits of the sum of the one-hundred 50-digit numbers found in \TestData\ProjectEulerProblemThirteen.txt.
+        /// <see href="https://projecteuler.net/problem=13">Problem 13 description</see>.
+        /// </summary>
+        /// <param name="filePath">File path.</param>
+        /// <param name="answer">Problem solution.</param>
+        [TestMethod]
+        [TestCategory(TestList.ProjectEulerTests)]
+        [DeploymentItem(@"ProjectEulerTests\TestData\ProjectEulerProblemThirteen.txt")]
+        [DataRow("ProjectEulerProblemThirteen.txt", 5537376230)]
+        public void TestProjectEuler_Problem_Thirteen(string filePath, long answer)
+        {
+            var fileParser = new FileParser(filePath);
+            var myNumArray = fileParser.ReadAllLines();
+            
+            BigInteger mySum = 0;
+
+            foreach (string num in myNumArray)
+            {
+                mySum += BigInteger.Parse(num);
+            }
+
+            long result = long.Parse(mySum.ToString().Substring(0, 10));
+
             Assert.AreEqual(answer, result);
         }
     }
