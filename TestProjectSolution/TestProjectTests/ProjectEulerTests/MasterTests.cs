@@ -252,13 +252,19 @@ namespace TestProjectTests.ProjectEulerTests
         /// Which starting number, under one million, produces the longest Collatz chain.
         /// <see href="https://projecteuler.net/problem=14">Problem 14 description</see>.
         /// </summary>
-        /// <param name="filePath">File path.</param>
-        /// <param name="answer">Problem solution.</param>
+        /// <param name="bound">The given bound to check the sequence up to.</param>
+        /// <param name="expectedKey">The expected key of the returned dictionary.</param>
+        /// <param name="expectedValue">The expected value of the returned dictionary.</param>
         [TestMethod]
         [TestCategory(TestList.ProjectEulerTests)]
-        [DataRow(10000, 55373)]
-        public void TestProjectEuler_Problem_Fourteen(int input, int answer)
+        [DataRow(1000000, 837799, 525)]
+        public void TestProjectEuler_Problem_Fourteen(int bound, int expectedKey, int expectedValue)
         {
+            var result = Collatz.FindLongesCollatzSequence(bound);
+            var kvp = result.First();
+
+            Assert.AreEqual(expectedKey, kvp.Key);
+            Assert.AreEqual(expectedValue, kvp.Value);
         }
     }
 }

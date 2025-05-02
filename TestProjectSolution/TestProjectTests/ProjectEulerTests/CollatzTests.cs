@@ -19,8 +19,9 @@ namespace TestProjectTests.ProjectEulerTests
         /// <param name="expectedValue">The expected value of the returned dictionary.</param>
         [TestMethod]
         [TestCategory(TestList.Validation)]
-		//[DataRow(5, 3, 7)]
-		[DataRow(6, 6, 8)]
+		[DataRow(5, 3, 8)]
+		[DataRow(6, 6, 9)]
+		[DataRow(1000000, 837799, 525)]
 		public void TestCollatz_FindLongesCollatzSequence(int bound, int expectedKey, int expectedValue)
 		{
 			var result = Collatz.FindLongesCollatzSequence(bound);

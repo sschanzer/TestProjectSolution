@@ -21,9 +21,6 @@ namespace ProjectEulerProblems.Problems
         public static Dictionary<int, int> FindLongesCollatzSequence(int number)
         {
             Dictionary<int, int> numLengthDict = new Dictionary<int, int>();
-            int maxLength = 0;
-            int largestNumber = 0;
-            var cashedNumLengthDict = new Dictionary<long, List<long>>();
 
             if (number <= 0)
             {
@@ -36,25 +33,20 @@ namespace ProjectEulerProblems.Problems
                 return numLengthDict;
             }
 
+            int maxLength = 0;
+            int largestNumber = 0;
+            var cashedNumLengthDict = new Dictionary<long, long>();
+
             for (int i = 2; i <= number; i++)
             {
-                int length = 0;
+                int length = 1;
                 long tempNum = i;
-                var sequence = new List<long>();
 
                 while (tempNum != 1)
                 {
-                    sequence.Add(tempNum);
-
-                    if (cashedNumLengthDict.Any(x => x.Value.Contains(tempNum)))
+                    if (cashedNumLengthDict.ContainsKey(tempNum))
                     {
-                        var elSeq = cashedNumLengthDict.First(x => x.Value.Contains(tempNum));
-
-                        //var sequencInQuestion = cashedNumLengthDict[tempNum];
-
-                        var kldjf = 1;
-
-                        length += elSeq.Value.Count(); 
+                        length += (int)(cashedNumLengthDict[tempNum] - 1);
                         break;
                     }
 
@@ -66,10 +58,11 @@ namespace ProjectEulerProblems.Problems
                     {
                         tempNum = (3 * tempNum) + 1;
                     }
+
                     length++;
                 }
 
-                cashedNumLengthDict[i] = sequence;
+                cashedNumLengthDict[i] = length;
 
                 if (length > maxLength)
                 {
