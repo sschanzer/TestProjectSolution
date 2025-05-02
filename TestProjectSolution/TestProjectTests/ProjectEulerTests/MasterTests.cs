@@ -290,5 +290,28 @@ namespace TestProjectTests.ProjectEulerTests
             var result = BigIntegerExtensions.Choose(2 * n, n);
             Assert.AreEqual(BigInteger.Parse(answer), result);
         }
+
+        /// <summary>
+        /// Project Euler Problem 16.
+        /// What is the sum of the digits of the number 2^{1000}?
+        /// <see href="https://projecteuler.net/problem=16">Problem 16 description</see>.
+        /// </summary>
+        /// <param name="n">The specified size of the n x n grid</param>
+        /// <param name="answer">The expected value of the returned dictionary.</param>
+        [TestMethod]
+        [TestCategory(TestList.ProjectEulerTests)]
+        [DataRow(2, 1000, 1366)]
+        public void TestProjectEuler_Problem_Sixteen(int n, int exp, int answer)
+        {
+            var myExp = BigInteger.Pow(n, exp).ToString();
+            var result = 0;
+
+            foreach (char digit in myExp)
+            {
+                result += int.Parse(digit.ToString());
+            }
+
+            Assert.AreEqual(answer, result);
+        }
     }
 }
