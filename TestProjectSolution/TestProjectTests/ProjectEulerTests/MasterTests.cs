@@ -274,7 +274,7 @@ namespace TestProjectTests.ProjectEulerTests
         /// <see href="https://projecteuler.net/problem=15">Problem 15 description</see>.
         /// </summary>
         /// <param name="n">The specified size of the n x n grid</param>
-        /// <param name="answer">The expected value of the returned dictionary.</param>
+        /// <param name="answer">The problem's solution.</param>
         /// <remarks>
         /// We can represent an n x n grid as an (n + 1) x (n + 1) graph having (n + 1) vertices.
         /// Given the restrictions in the problem, we find that any valid path in the problem will
@@ -296,8 +296,9 @@ namespace TestProjectTests.ProjectEulerTests
         /// What is the sum of the digits of the number 2^{1000}?
         /// <see href="https://projecteuler.net/problem=16">Problem 16 description</see>.
         /// </summary>
-        /// <param name="n">The specified size of the n x n grid</param>
-        /// <param name="answer">The expected value of the returned dictionary.</param>
+        /// <param name="n">The base.</param>
+        /// <param name="exp">The exponent.</param>
+        /// <param name="answer">The answer.</param>
         [TestMethod]
         [TestCategory(TestList.ProjectEulerTests)]
         [DataRow(2, 1000, 1366)]
@@ -312,6 +313,20 @@ namespace TestProjectTests.ProjectEulerTests
             }
 
             Assert.AreEqual(answer, result);
+        }
+
+        /// <summary>
+        /// Project Euler Problem 17.
+        /// If all the numbers from 1 to 1000 inclusive were written out in words, how many letters would be used?
+        /// <see href="https://projecteuler.net/problem=17">Problem 17 description</see>.
+        /// </summary>
+        /// <param name="n">input</param>
+        /// <param name="answer">The answer.</param>
+        [TestMethod]
+        [TestCategory(TestList.ProjectEulerTests)]
+        [DataRow(0, 0)]
+        public void TestProjectEuler_Problem_Seventeen(int n, int answer)
+        {
         }
     }
 }
