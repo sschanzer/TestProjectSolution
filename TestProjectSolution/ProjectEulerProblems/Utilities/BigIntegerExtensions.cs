@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
@@ -21,7 +22,7 @@ namespace ProjectEulerProblems.Utilities
         /// Uses binary search to efficiently find the floor of the square root.
         /// Should converge in O(log num) steps.
         /// </remarks>
-        public static BigInteger IntegerSqrt(BigInteger num)
+        public static BigInteger IntegerSqrt(this BigInteger num)
         {
             if (num < 0)
             {
@@ -64,8 +65,8 @@ namespace ProjectEulerProblems.Utilities
         /// </summary>
         /// <param name="value">The BigInteger whose root is to be calculated.</param>
         /// <param name="num">The degree of the root.</param>
-        /// <returns>The largest integer r such that r^n ≤ value; or -1 if bad input is provided.</returns>
-        public static BigInteger IntegerRoot(BigInteger value, int num)
+        /// <returns>The largest integer r such that r^n ≤ input; or -1 if bad input is provided.</returns>
+        public static BigInteger IntegerRoot(this BigInteger value, int num)
         {
             if (num == 1)
             {
@@ -112,6 +113,109 @@ namespace ProjectEulerProblems.Utilities
             }
 
             return high;
+        }
+
+        /// <summary>
+        /// Calculates the factorial of the given input.
+        /// </summary>
+        /// <param name="input">Input.</param>
+        /// <returns>FactorialLarge of the input.</returns>
+        public static BigInteger Factorial(this BigInteger input)
+        {
+            if (input < 0)
+            {
+                throw new ArgumentOutOfRangeException("Input cannot be negative.");
+            }
+
+            if (input == 0 ||  input == 1)
+            {
+                return input;
+            }
+
+            BigInteger result = 1;
+
+            for (BigInteger i = input; i > 1; i--)
+            {
+                result *= i;
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Calculates the factorial of a larger input faster than <see cref="BigIntegerExtensions.Factorial(BigInteger)"/>.
+        /// </summary>
+        /// <param name="input">Input.</param>
+        /// <returns>Factorial of the input.</returns>
+        public static BigInteger FactorialLarge(this BigInteger input)
+        {
+            if (input < 0)
+            {
+                throw new ArgumentOutOfRangeException("Input cannot be negative.");
+            }
+
+            if (input == 0 || input == 1)
+            {
+                return input;
+            }
+
+            int processorCount = Environment.ProcessorCount;
+            BigInteger n = input;
+
+            BigInteger chunkSize = n / processorCount;
+            if (chunkSize == 0)
+            {
+                chunkSize = 1;
+            }
+
+            var ranges = new List<(BigInteger start, BigInteger end)>();
+            BigInteger start = 2;
+
+            while (start <= n)
+            {
+                BigInteger end = BigInteger.Min(start + chunkSize - 1, n);
+                ranges.Add((start, end));
+                start = end + 1;
+            }
+
+            var partialResults = new ConcurrentBag<BigInteger>();
+
+            Parallel.ForEach(ranges, range =>
+            {
+                BigInteger localProduct = 1;
+                for (BigInteger i = range.start; i <= range.end; i++)
+                {
+                    localProduct *= i;
+                }
+
+                partialResults.Add(localProduct);
+            });
+
+            BigInteger result = 1;
+            foreach (var part in partialResults)
+            {
+                result *= part;
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Calculates the binomial coefficients of two positive integers.
+        /// </summary>
+        /// <param name="n">First number.</param>
+        /// <param name="k">Second number.</param>
+        /// <returns>The binomial coefficients of two positive integers.</returns>
+        public static BigInteger Choose(this int n, int k)
+        {
+            if (n < 0 || k < 0 || n < k)
+            {
+                throw new ArgumentOutOfRangeException();
+            }
+
+            var result = Factorial(n) / (Factorial(k) * Factorial(n - k));
+
+            return result;
         }
     }
 }

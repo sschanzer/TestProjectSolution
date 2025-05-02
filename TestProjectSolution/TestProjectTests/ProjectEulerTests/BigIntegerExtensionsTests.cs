@@ -2,6 +2,7 @@
 using ProjectEulerProblems.Utilities;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Numerics;
 using System.Text;
@@ -62,6 +63,57 @@ namespace TestProjectTests.ProjectEulerTests
             var result = BigIntegerExtensions.IntegerRoot(number, exp);
 
             Assert.AreEqual(BigInteger.Parse(expected), result);
+        }
+
+        /// <summary>
+        /// Tests the <see cref="BigIntegerExtensions.Choose(int, int)"/> method.
+        /// </summary>
+        /// <param name="n">First integer.</param>
+        /// <param name="k">Second integer.</param>
+        /// <param name="answer">Expected output.</param>
+        [TestMethod]
+        [TestCategory(TestList.Validation)]
+        [DataRow(30, 15, "155117520")]
+        [DataRow(50, 25, "126410606437752")]
+        public void TestBigIntegerExtensions_Choose(int n, int k, string answer)
+        {
+            var result = BigIntegerExtensions.Choose(n, k);
+            Assert.AreEqual(BigInteger.Parse(answer), result);
+        }
+
+        /// <summary>
+        /// Benchmark for the <see cref="BigIntegerExtensions.FactorialLarge(BigInteger)"/> and <see cref="BigIntegerExtensions.Factorial(BigInteger)"/> methods.
+        /// </summary>
+        /// <param name="inputStr">Given input.</param>
+        [TestMethod]
+        [TestCategory(TestList.Benchmark)]
+        [DataRow("5000")]
+        [DataRow("7000")]
+        [DataRow("10000")]
+        [DataRow("15000")]
+        public void TestBigIntegerExtensions_FactorialPerformance(string inputStr)
+        {
+            var input = BigInteger.Parse(inputStr);
+
+            // Serial computation
+            var swSerial = Stopwatch.StartNew();
+            var resultSerial = BigIntegerExtensions.Factorial(input);
+            swSerial.Stop();
+            var timeSerial = swSerial.ElapsedMilliseconds;
+
+            // Parallel computation
+            var swParallel = Stopwatch.StartNew();
+            var resultParallel = BigIntegerExtensions.FactorialLarge(input);
+            swParallel.Stop();
+            var timeParallel = swParallel.ElapsedMilliseconds;
+
+            // Ensure both methods yield the same result
+            Assert.AreEqual(resultSerial, resultParallel, "Parallel result does not match serial result.");
+
+            if (timeParallel <= timeSerial * 1.05)
+            {
+                Console.WriteLine($"Parallel was more than 5% slower for {inputStr}. Serial: {timeSerial} ms, Parallel: {timeParallel} ms");
+            }
         }
     }
 }

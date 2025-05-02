@@ -12,6 +12,11 @@ namespace TestProjectTests
     internal struct TestList
     {
         /// <summary>
+        /// Benchmark tests.
+        /// </summary>
+        public const string Benchmark = "Benchmark";
+
+        /// <summary>
         /// Feedback Tests.
         /// </summary>
         public const string Feedback = "Feedback";

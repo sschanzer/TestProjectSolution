@@ -6,6 +6,7 @@ using System.Numerics;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ProjectEulerProblems.Data;
 using ProjectEulerProblems.Problems;
+using ProjectEulerProblems.Utilities;
 using ProjectEulerProblems.Utility;
 using static System.Net.WebRequestMethods;
 
@@ -220,7 +221,7 @@ namespace TestProjectTests.ProjectEulerTests
         }
 
         /// <summary>
-        /// Project Euler Problem Thriteen.
+        /// Project Euler Problem 13.
         /// Work out the first ten digits of the sum of the one-hundred 50-digit numbers found in \TestData\ProjectEulerProblemThirteen.txt.
         /// <see href="https://projecteuler.net/problem=13">Problem 13 description</see>.
         /// </summary>
@@ -248,23 +249,46 @@ namespace TestProjectTests.ProjectEulerTests
         }
 
         /// <summary>
-        /// Project Euler Problem Fourteen.
+        /// Project Euler Problem 14.
         /// Which starting number, under one million, produces the longest Collatz chain.
         /// <see href="https://projecteuler.net/problem=14">Problem 14 description</see>.
         /// </summary>
-        /// <param name="bound">The given bound to check the sequence up to.</param>
-        /// <param name="expectedKey">The expected key of the returned dictionary.</param>
-        /// <param name="expectedValue">The expected value of the returned dictionary.</param>
+        /// <param name="bound">The given n to check the sequence up to.</param>
+        /// <param name="answerKey">The expected key of the returned dictionary.</param>
+        /// <param name="answerValue">The expected value of the returned dictionary.</param>
         [TestMethod]
         [TestCategory(TestList.ProjectEulerTests)]
         [DataRow(1000000, 837799, 525)]
-        public void TestProjectEuler_Problem_Fourteen(int bound, int expectedKey, int expectedValue)
+        public void TestProjectEuler_Problem_Fourteen(int bound, int answerKey, int answerValue)
         {
             var result = Collatz.FindLongesCollatzSequence(bound);
             var kvp = result.First();
 
-            Assert.AreEqual(expectedKey, kvp.Key);
-            Assert.AreEqual(expectedValue, kvp.Value);
+            Assert.AreEqual(answerKey, kvp.Key);
+            Assert.AreEqual(answerValue, kvp.Value);
+        }
+
+        /// <summary>
+        /// Project Euler Problem 15.
+        /// How many right/down routes are there through a 20 x 20 grid.
+        /// <see href="https://projecteuler.net/problem=15">Problem 15 description</see>.
+        /// </summary>
+        /// <param name="n">The specified size of the n x n grid</param>
+        /// <param name="answer">The expected value of the returned dictionary.</param>
+        /// <remarks>
+        /// We can represent an n x n grid as an (n + 1) x (n + 1) graph having (n + 1) vertices.
+        /// Given the restrictions in the problem, we find that any valid path in the problem will
+        /// consist of n-right moves and n-down moves in some order, which is a total of 2n moves.
+        /// The number of distinct paths is the same as the number of ways to choose n positions
+        /// for the right/down moves out of a possible 2n ways; i.e. 2n choose n.
+        /// </remarks>
+        [TestMethod]
+        [TestCategory(TestList.ProjectEulerTests)]
+        [DataRow(20, "137846528820")]
+        public void TestProjectEuler_Problem_Fifteen(int n, string answer)
+        {
+            var result = BigIntegerExtensions.Choose(2 * n, n);
+            Assert.AreEqual(BigInteger.Parse(answer), result);
         }
     }
 }
