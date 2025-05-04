@@ -324,9 +324,11 @@ namespace TestProjectTests.ProjectEulerTests
         /// <param name="answer">The answer.</param>
         [TestMethod]
         [TestCategory(TestList.ProjectEulerTests)]
-        [DataRow(0, 0)]
+        [DataRow(1000, 21124)]
         public void TestProjectEuler_Problem_Seventeen(int n, int answer)
         {
+            var result = NumberLetterCounts.CountLettersOfNumbers(n);
+            Assert.AreEqual(answer, result);
         }
     }
 }
