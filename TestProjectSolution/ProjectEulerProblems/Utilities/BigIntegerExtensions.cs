@@ -1,13 +1,17 @@
-﻿using System;
-using System.Collections.Concurrent;
-using System.Collections.Generic;
-using System.Linq;
-using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
+﻿// <copyright file="BigIntegerExtensions.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace ProjectEulerProblems.Utilities
 {
+    using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Numerics;
+    using System.Text;
+    using System.Threading.Tasks;
+
     /// <summary>
     /// Class containing methods that extend the computational utility of BigIntegers.
     /// </summary>
@@ -127,7 +131,7 @@ namespace ProjectEulerProblems.Utilities
                 throw new ArgumentOutOfRangeException("Input cannot be negative.");
             }
 
-            if (input == 0 ||  input == 1)
+            if (input == 0 || input == 1)
             {
                 return input;
             }

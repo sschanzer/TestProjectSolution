@@ -1,13 +1,17 @@
-﻿using ProjectEulerProblems.Data;
-using ProjectEulerProblems.Utility;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿// <copyright file="Products.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace ProjectEulerProblems.Problems
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+    using ProjectEulerProblems.Data;
+    using ProjectEulerProblems.Utility;
+
     /// <summary>
     /// Class containing methods relating to the Products of Numbers.
     /// </summary>
@@ -87,6 +91,7 @@ namespace ProjectEulerProblems.Problems
                         {
                             prodRight *= grid[row, col + i];
                         }
+
                         maxProduct = Math.Max(maxProduct, prodRight);
                     }
 
@@ -97,6 +102,7 @@ namespace ProjectEulerProblems.Problems
                         {
                             prodLeft *= grid[row, col - i];
                         }
+
                         maxProduct = Math.Max(maxProduct, prodLeft);
                     }
 
@@ -107,6 +113,7 @@ namespace ProjectEulerProblems.Problems
                         {
                             prodUp *= grid[row - i, col];
                         }
+
                         maxProduct = Math.Max(maxProduct, prodUp);
                     }
 
@@ -117,6 +124,7 @@ namespace ProjectEulerProblems.Problems
                         {
                             prodDown *= grid[row + i, col];
                         }
+
                         maxProduct = Math.Max(maxProduct, prodDown);
                     }
 
@@ -127,6 +135,7 @@ namespace ProjectEulerProblems.Problems
                         {
                             prodDiagonalDownRight *= grid[row + i, col + i];
                         }
+
                         maxProduct = Math.Max(maxProduct, prodDiagonalDownRight);
                     }
 
@@ -137,6 +146,7 @@ namespace ProjectEulerProblems.Problems
                         {
                             prodDiagonalDownLeft *= grid[row + i, col - i];
                         }
+
                         maxProduct = Math.Max(maxProduct, prodDiagonalDownLeft);
                     }
 
@@ -147,6 +157,7 @@ namespace ProjectEulerProblems.Problems
                         {
                             prodDiagonalUpRight *= grid[row - i, col + i];
                         }
+
                         maxProduct = Math.Max(maxProduct, prodDiagonalUpRight);
                     }
                 }

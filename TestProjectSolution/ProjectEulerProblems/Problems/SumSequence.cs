@@ -1,11 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿// <copyright file="SumSequence.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace ProjectEulerProblems.Problems
 {
+    using System.Collections.Generic;
+    using System.Linq;
+
     /// <summary>
     /// Class containing methods relating to Summing Sequences of Numbers.
     /// </summary>

@@ -1,13 +1,13 @@
-﻿using ProjectEulerProblems.Utilities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
+﻿// <copyright file="TriangularNumbers.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace ProjectEulerProblems.Problems
 {
+    using System.Collections.Generic;
+    using System.Numerics;
+    using ProjectEulerProblems.Utilities;
+
     /// <summary>
     /// Class containing methods related to Triangular Numbers.
     /// </summary>

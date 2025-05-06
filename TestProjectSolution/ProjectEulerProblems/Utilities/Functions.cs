@@ -1,12 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
+﻿// <copyright file="Functions.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace ProjectEulerProblems.Utilities
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Numerics;
+    using System.Text;
+    using System.Threading.Tasks;
+
     /// <summary>
     /// Class containing some usful special/common mathematical functions.
     /// </summary>

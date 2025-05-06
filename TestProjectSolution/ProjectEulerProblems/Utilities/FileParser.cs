@@ -1,12 +1,16 @@
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+// <copyright file="FileParser.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace ProjectEulerProblems.Utility
 {
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+
     /// <summary>
     /// A utility class for parsing various file types.
     /// </summary>
@@ -62,7 +66,7 @@ namespace ProjectEulerProblems.Utility
         /// <returns>A two-dimensional array of integers parsed from the file.</returns>
         public int[,] ParseTextFileAsIntegerGrid()
         {
-            return ParseTextFileAsGrid<int>(s => int.Parse(s));
+            return this.ParseTextFileAsGrid<int>(s => int.Parse(s));
         }
 
         /// <summary>
@@ -71,7 +75,7 @@ namespace ProjectEulerProblems.Utility
         /// <returns>A two-dimensional array of doubles parsed from the file.</returns>
         public double[,] ParseTextFileAsDoubleGrid()
         {
-            return ParseTextFileAsGrid<double>(s => double.Parse(s));
+            return this.ParseTextFileAsGrid<double>(s => double.Parse(s));
         }
 
         /// <summary>
@@ -80,7 +84,7 @@ namespace ProjectEulerProblems.Utility
         /// <returns>A two-dimensional array of strings parsed from the file.</returns>
         public string[,] ParseTextFileAsStringGrid()
         {
-            return ParseTextFileAsGrid<string>(s => s);
+            return this.ParseTextFileAsGrid<string>(s => s);
         }
 
         /// <summary>

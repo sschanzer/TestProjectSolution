@@ -1,13 +1,17 @@
-﻿using ProjectEulerProblems.Utility;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿// <copyright file="MaxPathSum.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace ProjectEulerProblems.Problems
 {
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+    using ProjectEulerProblems.Utility;
+
     /// <summary>
     /// Class for <see href="https://projecteuler.net/problem=18">.
     /// </summary>
@@ -38,13 +42,8 @@ namespace ProjectEulerProblems.Problems
 
             var sum = bottom[0];
 
-
-            //var rows = grid.GetLength(0);
-            //var columns = grid.GetLength(1);
-
-
-
-
+            // var rows = grid.GetLength(0);
+            // var columns = grid.GetLength(1);
 
             return maxSum;
         }

@@ -1,13 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿// <copyright file="NumberLetterCounts.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace ProjectEulerProblems.Problems
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+
     /// <summary>
-    /// Class for Project Euler Problem 17 <see href="https://projecteuler.net/problem=17"/>
+    /// Class for Project Euler Problem 17 <see href="https://projecteuler.net/problem=17"/>.
     /// </summary>
     public static class NumberLetterCounts
     {
@@ -21,14 +25,14 @@ namespace ProjectEulerProblems.Problems
             Dictionary<int, string> bases = new Dictionary<int, string>()
             {
                 { 1, "one" }, { 2, "two" }, { 3, "three" }, { 4, "four" }, { 5, "five" }, { 6, "six" }, { 7, "seven" }, { 8, "eight" }, { 9, "nine" },
-                { 10, "ten" },{ 11,  "eleven" }, { 12,  "twelve" },{13,  "thirteen" }, { 14, "fourteen" }, { 15, "fifteen" }, { 16,  "sixteen" }, { 17, "seventeen" },
-                { 18, "eighteen" }, { 19, "nineteen" }
+                { 10, "ten" }, { 11,  "eleven" }, { 12,  "twelve" }, { 13,  "thirteen" }, { 14, "fourteen" }, { 15, "fifteen" }, { 16,  "sixteen" }, { 17, "seventeen" },
+                { 18, "eighteen" }, { 19, "nineteen" },
             };
 
             Dictionary<int, string> tens = new Dictionary<int, string>()
             {
                 { 20, "twenty" }, { 30, "thirty" }, { 40, "forty" }, { 50, "fifty" },
-                { 60, "sixty" }, { 70, "seventy" }, { 80, "eighty" }, { 90, "ninety" }
+                { 60, "sixty" }, { 70, "seventy" }, { 80, "eighty" }, { 90, "ninety" },
             };
 
             var words = new List<string>();
@@ -56,7 +60,7 @@ namespace ProjectEulerProblems.Problems
                 }
                 else if (i < bound)
                 {
-                    var hundreds = (i / 100);
+                    var hundreds = i / 100;
                     var remainder = i % 100;
 
                     var word = bases[hundreds] + "hundred";
@@ -82,7 +86,6 @@ namespace ProjectEulerProblems.Problems
 
                             words.Add(word);
                         }
-
                     }
                     else
                     {
@@ -104,6 +107,5 @@ namespace ProjectEulerProblems.Problems
 
             return sum;
         }
-
     }
 }

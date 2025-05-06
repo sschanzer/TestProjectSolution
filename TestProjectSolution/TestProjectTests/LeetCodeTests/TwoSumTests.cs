@@ -1,19 +1,22 @@
-﻿using System;
-using System.Linq;
-using LeetCodeProblems;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿// <copyright file="TwoSumTests.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace TestProjectTests.LeetCodeTests
 {
-	/// <summary>
-	/// Tests for the <see cref="TwoSum"/> class.
-	/// </summary>
-	[TestClass]
-	public class TwoSumTests
-	{
-		/// <summary>
-		/// Tests the <see cref="TwoSum.TwoSum1(int[], int)"/> method.
-		/// </summary>
+    using System.Linq;
+    using LeetCodeProblems;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+
+    /// <summary>
+    /// Tests for the <see cref="TwoSum"/> class.
+    /// </summary>
+    [TestClass]
+    public class TwoSumTests
+    {
+        /// <summary>
+        /// Tests the <see cref="TwoSum.TwoSum1(int[], int)"/> method.
+        /// </summary>
 		[TestMethod]
 		[TestCategory(TestList.Validation)]
 		public void TestTwoSum_TwoSum1_Test1()
