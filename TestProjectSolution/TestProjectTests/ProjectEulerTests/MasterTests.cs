@@ -330,5 +330,22 @@ namespace TestProjectTests.ProjectEulerTests
             var result = NumberLetterCounts.CountLettersOfNumbers(n);
             Assert.AreEqual(answer, result);
         }
+
+        /// <summary>
+        /// Project Euler Problem 17.
+        /// Find the maximum total from top to bottom of the triangle shown.
+        /// <see href="https://projecteuler.net/problem=18">Problem 18 description</see>.
+        /// </summary>
+        /// <param name="n">input</param>
+        /// <param name="answer">The answer.</param>
+        [TestMethod]
+        [TestCategory(TestList.ProjectEulerTests)]
+        [DeploymentItem(@"ProjectEulerTests\TestData\ProjectEulerProblemEighteen.txt")]
+        [DataRow("ProjectEulerProblemEighteen.txt", 0)]
+        public void TestProjectEuler_Problem_Eightteen(string filePath, int answer)
+        {
+            var result = MaxPathSum.FindMaxPathSum(filePath);
+            Assert.AreEqual(answer, result);
+        }
     }
 }
