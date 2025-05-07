@@ -72,6 +72,7 @@
   <ItemGroup>
     <None Include="packages.config" />
     <None Include="stylecop.json" />
+    <None Include="stylecop1.json" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LeetCodeProblems\LeetCodeProblems.csproj">

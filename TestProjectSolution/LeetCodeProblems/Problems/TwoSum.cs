@@ -1,9 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿// <copyright file="TwoSum.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace LeetCodeProblems
 {
+    using System.Collections.Generic;
+
     /// <summary>
     /// Given an array of integers nums and an integer target, return indices of the two numbers such that
     /// they add up to target. You may assume that each input would have exactly one solution, and you may
@@ -43,7 +45,7 @@ namespace LeetCodeProblems
         }
 
         /// <summary>
-        /// Alternative solution. (Beats 98.18% on runtime)
+        /// Alternative solution. (Beats 98.18% on runtime).
         /// </summary>
         /// <param name="nums">The input array.</param>
         /// <param name="target">The target int.</param>

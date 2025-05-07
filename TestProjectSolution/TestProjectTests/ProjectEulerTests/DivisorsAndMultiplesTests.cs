@@ -1,9 +1,12 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using ProjectEulerProblems.Problems;
-using System;
+﻿// <copyright file="DivisorsAndMultiplesTests.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace TestProjectTests.ProjectEulerTests
 {
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using ProjectEulerProblems.Problems;
+
     /// <summary>
     /// Tests for the <see cref="DivisorsAndMultiples"/> class.
     /// </summary>

@@ -1,18 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Numerics;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using ProjectEulerProblems.Problems;
+﻿// <copyright file="FibonacciTests.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace TestProjectTests.ProjectEulerTests
 {
-	/// <summary>
-	/// Tests for the <see cref="Fibonacci"/> class.
-	/// </summary>
-	[TestClass]
-	public class FibonacciTests
-	{
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Numerics;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using ProjectEulerProblems.Problems;
+
+    /// <summary>
+    /// Tests for the <see cref="Fibonacci"/> class.
+    /// </summary>
+    [TestClass]
+    public class FibonacciTests
+    {
         /// <summary>
         /// Tests the <see cref="Fibonacci.GetFibonacciNumbers(int)"/> method with various inputs.
         /// </summary>
@@ -59,7 +63,7 @@ namespace TestProjectTests.ProjectEulerTests
         /// <param name="expectedOutput">The answer</param>
         [TestMethod]
         [TestCategory(TestList.Validation)]
-        [DataRow(34, 4000000,4613732)]
+        [DataRow(34, 4000000, 4613732)]
         [DataRow(10, 4000000, 44)]
         [DataRow(20, 4000000, 3382)]
         [DataRow(100, 4000000, 4613732)]

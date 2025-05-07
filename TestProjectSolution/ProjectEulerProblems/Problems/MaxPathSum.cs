@@ -13,7 +13,7 @@ namespace ProjectEulerProblems.Problems
     using ProjectEulerProblems.Utility;
 
     /// <summary>
-    /// Class for <see href="https://projecteuler.net/problem=18">.
+    /// Class for <see href="https://projecteuler.net/problem=18"/>.
     /// </summary>
     public static class MaxPathSum
     {
@@ -28,9 +28,9 @@ namespace ProjectEulerProblems.Problems
 
             int[][] grid = input.Select(line => line.Split(' ').Select(int.Parse).ToArray()).ToArray();
 
-            int maxSum = 0;
+            const int maxSum = 0;
 
-            var bottom = (int[])grid[grid.Length - 1];
+            var bottom = (int[])grid[grid.Length - 1].Clone();
 
             for (int row = grid.Length - 2; row >= 0; row--)
             {
@@ -41,9 +41,6 @@ namespace ProjectEulerProblems.Problems
             }
 
             var sum = bottom[0];
-
-            // var rows = grid.GetLength(0);
-            // var columns = grid.GetLength(1);
 
             return maxSum;
         }

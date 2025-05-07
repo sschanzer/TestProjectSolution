@@ -42,7 +42,7 @@ namespace TestProjectTests.LeetCodeTests
         {
             var twoSum = new TwoSum();
             int[] nums = { 3, 2, 4 };
-            const int Target = 5;
+            const int Target = 6;
             var expectedSolution = new int[] { 1, 2 };
 
             var result = twoSum.TwoSum1(nums, Target);

@@ -1,22 +1,25 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using ProjectEulerProblems.Utilities;
+﻿// <copyright file="FunctionsTests.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace TestProjectTests.ProjectEulerTests
 {
-	/// <summary>
-	/// Tests the <see cref="Functions"/> class.
-	/// </summary>
-	[TestClass]
-	public class FunctionsTests
-	{
-		/// <summary>
-		/// Tests the <see cref="Functions.Factorial(int)"/> method.
-		/// </summary>
-		/// <param name="n">The input.</param>
-		/// <param name="answer">The answer</param>
-		[TestMethod]
-		[TestCategory(TestList.Validation)]
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using ProjectEulerProblems.Utilities;
+
+    /// <summary>
+    /// Tests the <see cref="Functions"/> class.
+    /// </summary>
+    [TestClass]
+    public class FunctionsTests
+    {
+        /// <summary>
+        /// Tests the <see cref="Functions.Factorial(int)"/> method.
+        /// </summary>
+        /// <param name="n">The input.</param>
+        /// <param name="answer">The answer</param>
+        [TestMethod]
+        [TestCategory(TestList.Validation)]
         [DataRow(0, 1)]
         [DataRow(1, 1)]
         [DataRow(2, 2)]
@@ -31,11 +34,11 @@ namespace TestProjectTests.ProjectEulerTests
         [DataRow(12, 479001600)]
         [DataRow(15, 1307674368000)]
         [DataRow(20, 2432902008176640000)]
-		public void TestFunctions_Factorial(int n, long answer)
-		{
-			var result = Functions.Factorial(n);
-			Assert.AreEqual(answer, result);
-		}
+        public void TestFunctions_Factorial(int n, long answer)
+        {
+            var result = Functions.Factorial(n);
+            Assert.AreEqual(answer, result);
+        }
 
         /// <summary>
         /// Tests the <see cref="Functions.Choose(int, int)"/> method.

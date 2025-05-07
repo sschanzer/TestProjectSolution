@@ -347,7 +347,7 @@ namespace TestProjectTests.ProjectEulerTests
         }
 
         /// <summary>
-        /// Project Euler Problem 17.
+        /// Project Euler Problem 18.
         /// Find the maximum total from top to bottom of the triangle shown.
         /// <see href="https://projecteuler.net/problem=18">Problem 18 description</see>.
         /// </summary>
@@ -356,8 +356,8 @@ namespace TestProjectTests.ProjectEulerTests
         [TestMethod]
         [TestCategory(TestList.ProjectEulerTests)]
         [DeploymentItem(@"ProjectEulerTests\TestData\ProjectEulerProblemEighteen.txt")]
-        [DataRow("ProjectEulerProblemEighteen.txt", 0)]
-        public void TestProjectEuler_Problem_Eightteen(string filePath, int answer)
+        [DataRow("ProjectEulerProblemEighteen.txt", 1074)]
+        public void TestProjectEuler_Problem_Eighteen(string filePath, int answer)
         {
             var result = MaxPathSum.FindMaxPathSum(filePath);
             Assert.AreEqual(answer, result);
