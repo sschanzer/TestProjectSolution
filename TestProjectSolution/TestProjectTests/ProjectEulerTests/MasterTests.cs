@@ -1,33 +1,36 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Numerics;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using ProjectEulerProblems.Data;
-using ProjectEulerProblems.Problems;
-using ProjectEulerProblems.Utilities;
-using ProjectEulerProblems.Utility;
-using static System.Net.WebRequestMethods;
+﻿// <copyright file="MasterTests.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace TestProjectTests.ProjectEulerTests
 {
-	/// <summary>
-	/// Test class for all of the Project Euler Problems.
-	/// </summary>
-	[TestClass]
-	public class MasterTests
-	{
+    using System;
+    using System.Linq;
+    using System.Numerics;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using ProjectEulerProblems.Data;
+    using ProjectEulerProblems.Problems;
+    using ProjectEulerProblems.Utilities;
+    using ProjectEulerProblems.Utility;
+
+    /// <summary>
+    /// Test class for all of the Project Euler Problems.
+    /// </summary>
+    [TestClass]
+    public class MasterTests
+    {
         /// <summary>
         /// Project Euler Problem 1.
         /// Find the sum of all the multiples of 3 or 5 below 1000.
         /// <see href="https://projecteuler.net/problem=1">Problem 1 description</see>.
         /// </summary>
+        /// <param name="num">The number.</param>
+        /// <param name="answer">The anwser.</param>
         [TestMethod]
-		[TestCategory(TestList.ProjectEulerTests)]
+        [TestCategory(TestList.ProjectEulerTests)]
         [DataRow(1000, 233168)]
         public void TestProjectEuler_Problem_One(int num, int answer)
-		{
+        {
             var result = SumSequence.GetSumSlick(num);
             Assert.AreEqual(answer, result);
         }
@@ -37,9 +40,11 @@ namespace TestProjectTests.ProjectEulerTests
         /// Find the sum of the even-valued terms in the Fibonacci sequence whose values are less than four million.
         /// <see href="https://projecteuler.net/problem=2">Problem 2 description</see>.
         /// </summary>
+        /// <param name="num">The number.</param>
+        /// <param name="answer">The anwser.</param>
         [TestMethod]
         [TestCategory(TestList.ProjectEulerTests)]
-        [DataRow(34,4613732)]
+        [DataRow(34, 4613732)]
         public void TestProjectEuler_Problem_Two(int num, int answer)
         {
             var fibSum = Fibonacci.GetEvenFibSumRedux(num);
@@ -52,6 +57,8 @@ namespace TestProjectTests.ProjectEulerTests
         /// What is the largest prime factor of the number 600851475143?
         /// <see href="https://projecteuler.net/problem=3">Problem 3 description</see>.
         /// </summary>
+        /// <param name="number">The number.</param>
+        /// <param name="answer">The anwser.</param>
         [TestMethod]
         [TestCategory(TestList.ProjectEulerTests)]
         [DataRow(600851475143, 6857)]
@@ -67,6 +74,8 @@ namespace TestProjectTests.ProjectEulerTests
         /// Find the largest palindrome made from the product of two 3-digit numbers.
         /// <see href="https://projecteuler.net/problem=4">Problem 4 description</see>.
         /// </summary>
+        /// <param name="digits">The digits.</param>
+        /// <param name="answer">The anwser.</param>
         [TestMethod]
         [TestCategory(TestList.ProjectEulerTests)]
         [DataRow(3, 906609)]
@@ -81,6 +90,8 @@ namespace TestProjectTests.ProjectEulerTests
         /// What is the smallest positive number that is evenly divisible with no remainder by all of the numbers from 1 to 20.
         /// <see href="https://projecteuler.net/problem=5">Problem 5 description</see>.
         /// </summary>
+        /// <param name="input">The input.</param>
+        /// <param name="answer">The anwser.</param>
         [TestMethod]
         [TestCategory(TestList.ProjectEulerTests)]
         [DataRow(new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 }, 232792560)]
@@ -96,6 +107,8 @@ namespace TestProjectTests.ProjectEulerTests
         /// Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.
         /// <see href="https://projecteuler.net/problem=6">Problem 6 description</see>.
         /// </summary>
+        /// <param name="num">The number.</param>
+        /// <param name="answer">The anwser.</param>
         [TestMethod]
         [TestCategory(TestList.ProjectEulerTests)]
         [DataRow(100, 25164150)]
@@ -116,6 +129,8 @@ namespace TestProjectTests.ProjectEulerTests
         /// What is the 10001 st prime number?
         /// <see href="https://projecteuler.net/problem=7">Problem 7 description</see>.
         /// </summary>
+        /// <param name="bound">The bound.</param>
+        /// <param name="answer">The anwser.</param>
         [TestMethod]
         [TestCategory(TestList.ProjectEulerTests)]
         [DataRow(10001, 104743)]
@@ -235,7 +250,7 @@ namespace TestProjectTests.ProjectEulerTests
         {
             var fileParser = new FileParser(filePath);
             var myNumArray = fileParser.ReadAllLines();
-            
+
             BigInteger mySum = 0;
 
             foreach (string num in myNumArray)
@@ -273,7 +288,7 @@ namespace TestProjectTests.ProjectEulerTests
         /// How many right/down routes are there through a 20 x 20 grid.
         /// <see href="https://projecteuler.net/problem=15">Problem 15 description</see>.
         /// </summary>
-        /// <param name="n">The specified size of the n x n grid</param>
+        /// <param name="n">The specified size of the n x n grid.</param>
         /// <param name="answer">The problem's solution.</param>
         /// <remarks>
         /// We can represent an n x n grid as an (n + 1) x (n + 1) graph having (n + 1) vertices.
@@ -320,7 +335,7 @@ namespace TestProjectTests.ProjectEulerTests
         /// If all the numbers from 1 to 1000 inclusive were written out in words, how many letters would be used?
         /// <see href="https://projecteuler.net/problem=17">Problem 17 description</see>.
         /// </summary>
-        /// <param name="n">input</param>
+        /// <param name="n">The input.</param>
         /// <param name="answer">The answer.</param>
         [TestMethod]
         [TestCategory(TestList.ProjectEulerTests)]
@@ -336,7 +351,7 @@ namespace TestProjectTests.ProjectEulerTests
         /// Find the maximum total from top to bottom of the triangle shown.
         /// <see href="https://projecteuler.net/problem=18">Problem 18 description</see>.
         /// </summary>
-        /// <param name="n">input</param>
+        /// <param name="filePath">input.</param>
         /// <param name="answer">The answer.</param>
         [TestMethod]
         [TestCategory(TestList.ProjectEulerTests)]

@@ -17,12 +17,12 @@ namespace TestProjectTests.LeetCodeTests
         /// <summary>
         /// Tests the <see cref="TwoSum.TwoSum1(int[], int)"/> method.
         /// </summary>
-		[TestMethod]
-		[TestCategory(TestList.Validation)]
-		public void TestTwoSum_TwoSum1_Test1()
-		{
-			var twoSum = new TwoSum();
-			int[] nums = { 2, 7, 11, 15 };
+        [TestMethod]
+        [TestCategory(TestList.Validation)]
+        public void TestTwoSum_TwoSum1_Test1()
+        {
+            var twoSum = new TwoSum();
+            int[] nums = { 2, 7, 11, 15 };
             const int Target = 9;
             var expectedSolution = new int[] { 0, 1 };
 
@@ -34,15 +34,15 @@ namespace TestProjectTests.LeetCodeTests
         }
 
         /// <summary>
-		/// Tests the <see cref="TwoSum.TwoSum1(int[], int)"/> method.
-		/// </summary>
-		[TestMethod]
+        /// Tests the <see cref="TwoSum.TwoSum1(int[], int)"/> method.
+        /// </summary>
+        [TestMethod]
         [TestCategory(TestList.Validation)]
-        public void TestTwoSum_TwoSum1_Test2()
+        public void TwoSum_TwoSum1_Test2()
         {
             var twoSum = new TwoSum();
             int[] nums = { 3, 2, 4 };
-            const int Target = 6;
+            const int Target = 5;
             var expectedSolution = new int[] { 1, 2 };
 
             var result = twoSum.TwoSum1(nums, Target);
@@ -52,11 +52,11 @@ namespace TestProjectTests.LeetCodeTests
         }
 
         /// <summary>
-		/// Tests the <see cref="TwoSum.TwoSum1(int[], int)"/> method.
-		/// </summary>
-		[TestMethod]
+        /// Tests the <see cref="TwoSum.TwoSum1(int[], int)"/> method.
+        /// </summary>
+        [TestMethod]
         [TestCategory(TestList.Validation)]
-        public void TestTwoSum_TwoSum1_Test3()
+        public void TwoSum_TwoSum1_Test3()
         {
             var twoSum = new TwoSum();
             int[] nums = { 3, 3 };
@@ -70,11 +70,11 @@ namespace TestProjectTests.LeetCodeTests
         }
 
         /// <summary>
-		/// Tests the <see cref="TwoSum.TwoSum1(int[], int)"/> method.
-		/// </summary>
-		[TestMethod]
+        /// Tests the <see cref="TwoSum.TwoSum1(int[], int)"/> method.
+        /// </summary>
+        [TestMethod]
         [TestCategory(TestList.Validation)]
-        public void TestTwoSum_TwoSum1_Test4()
+        public void TwoSum_TwoSum1_Test4()
         {
             var twoSum = new TwoSum();
             int[] nums = { 2, 5, 5, 11 };
