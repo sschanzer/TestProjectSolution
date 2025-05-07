@@ -1,11 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using ProjectEulerProblems.Problems;
-using TestProjectTests.ProjectEulerTests.TestData;
+﻿// <copyright file="PythagoreanTests.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace TestProjectTests.ProjectEulerTests
 {
+    using System;
+    using System.Collections.Generic;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using ProjectEulerProblems.Problems;
+    using TestProjectTests.ProjectEulerTests.TestData;
+
     /// <summary>
     /// Tests the <see cref="Pythagorean"/> class.
     /// </summary>

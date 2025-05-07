@@ -1,14 +1,14 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using ProjectEulerProblems.Problems;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
+﻿// <copyright file="TriangularNumbersTests.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace TestProjectTests.ProjectEulerTests
 {
+    using System.Collections.Generic;
+    using System.Linq;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using ProjectEulerProblems.Problems;
+
     /// <summary>
     /// Tests for the <see cref="TriangularNumbers"/> class.
     /// </summary>

@@ -23,13 +23,13 @@ namespace TestProjectTests.ProjectEulerTests
         /// <param name="expected">The expected output.</param>
         [TestMethod]
         [TestCategory(TestList.Validation)]
-        [DataRow("100000000000000000000000000000000", "10000000000000000")]                 // sqrt(1e32)
-        [DataRow("123456789123456789123456789", "11111111066111")]                          // ~sqrt(1.5e26)
-        [DataRow("9999999999999999999999999999999999", "99999999999999999")]                // sqrt(1e34 - 1)
-        [DataRow("18446744073709551615", "4294967295")]                                     // sqrt(ulong.MaxValue)
-        [DataRow("1000000000000000000000000000000000000", "1000000000000000000")]           // sqrt(1e36)
-        [DataRow("9223372036854775808", "3037000499")]                                      // sqrt(long.MaxValue + 1)
-        [DataRow("340282366920938463463374607431768211455", "18446744073709551615")]        // sqrt(2^128 - 1)
+        [DataRow("100000000000000000000000000000000", "10000000000000000")]
+        [DataRow("123456789123456789123456789", "11111111066111")]
+        [DataRow("9999999999999999999999999999999999", "99999999999999999")]
+        [DataRow("18446744073709551615", "4294967295")]
+        [DataRow("1000000000000000000000000000000000000", "1000000000000000000")]
+        [DataRow("9223372036854775808", "3037000499")]
+        [DataRow("340282366920938463463374607431768211455", "18446744073709551615")]
         public void TestBigIntegerExtensions_IntegerSqrt(string num, string expected)
         {
             var number = BigInteger.Parse(num);
@@ -43,7 +43,8 @@ namespace TestProjectTests.ProjectEulerTests
         /// Tests the <see cref="BigIntegerExtensions.IntegerRoot(BigInteger, int)"/> method.
         /// </summary>
         /// <param name="num">String representation of the test number.</param>
-        /// <param name="expected">The expected output.</param>
+        /// <param name="exp">The expected output.</param>
+        /// <param name="expected">The expected.</param>
         [TestMethod]
         [TestCategory(TestList.Validation)]
         [DataRow("1", 2, "1")]

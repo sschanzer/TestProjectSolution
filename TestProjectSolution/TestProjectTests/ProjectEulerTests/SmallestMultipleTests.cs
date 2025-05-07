@@ -1,11 +1,18 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using ProjectEulerProblems.Problems;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿// <copyright file="SmallestMultipleTests.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace TestProjectTests.ProjectEulerTests
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using ProjectEulerProblems.Problems;
+
+    /// <summary>
+    /// Tests for the <see cref="SmallestMultiple"/> class.
+    /// </summary>
     [TestClass]
     public class SmallestMultipleTests
     {

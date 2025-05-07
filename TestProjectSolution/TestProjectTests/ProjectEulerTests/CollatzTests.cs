@@ -20,7 +20,7 @@ namespace TestProjectTests.ProjectEulerTests
         /// <param name="bound">The given bound to check the sequence up to.</param>
         /// <param name="expectedKey">The expected key of the returned dictionary.</param>
         /// <param name="expectedValue">The expected value of the returned dictionary.</param>
-		[TestMethod]
+        [TestMethod]
         [TestCategory(TestList.Validation)]
         [DataRow(5, 3, 8)]
         [DataRow(6, 6, 9)]

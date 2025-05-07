@@ -1,21 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿// <copyright file="PythagoreanTestData.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace TestProjectTests.ProjectEulerTests.TestData
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+
     /// <summary>
     /// Holds data for the <see cref="PythagoreanTests"/> class.
     /// </summary>
     public static class PythagoreanTestData
     {
         /// <summary>
-        /// Declares a public static property that returns test data for use with DynamicData in <see cref="PythagoreanTests"/>.
+        /// Gets a public static property that returns test data for use with DynamicData in <see cref="PythagoreanTests"/>.
         /// </summary>
         /// <remarks>
-        /// The return type is IEnumerable<object[]> — each object[] is a single row of test data.
+        /// The return type is IEnumerable.<object[]> — each object[] is a single row of test data.
         /// </remarks>
         public static IEnumerable<object[]> PythagoreanTripleData
         {
@@ -47,8 +51,8 @@ namespace TestProjectTests.ProjectEulerTests.TestData
                             (21, 28, 35),
                             (24, 32, 40),
                             (27, 36, 45),
-                            (30, 40, 50)
-                        }
+                            (30, 40, 50),
+                        },
                     },
 
                     new object[]
@@ -107,8 +111,8 @@ namespace TestProjectTests.ProjectEulerTests.TestData
                             (57, 76, 95),
                             (60, 63, 87),
                             (60, 80, 100),
-                            (65, 72, 97)
-                        }
+                            (65, 72, 97),
+                        },
                     },
                 };
             }

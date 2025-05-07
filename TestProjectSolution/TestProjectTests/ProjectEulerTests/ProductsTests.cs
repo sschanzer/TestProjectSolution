@@ -1,16 +1,20 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using ProjectEulerProblems.Data;
-using ProjectEulerProblems.Problems;
+﻿// <copyright file="ProductsTests.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace TestProjectTests.ProjectEulerTests
 {
+    using System;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using ProjectEulerProblems.Data;
+    using ProjectEulerProblems.Problems;
+
     /// <summary>
     /// Tests for the <see cref="Products"/> class.
     /// </summary>
-	[TestClass]
-	public class ProductsTests
-	{
+    [TestClass]
+    public class ProductsTests
+    {
         /// <summary>
         /// Gets the number used in Project Euler Problem 8.
         /// </summary>

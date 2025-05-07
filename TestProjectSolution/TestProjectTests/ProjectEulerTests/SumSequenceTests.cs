@@ -1,34 +1,42 @@
-﻿using System;
-using System.Security.Policy;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using ProjectEulerProblems.Problems;
+﻿// <copyright file="SumSequenceTests.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace TestProjectTests.ProjectEulerTests
 {
-	/// <summary>
-	/// Tests for the <see cref="SumSequence"/> class.
-	/// </summary>
-	[TestClass]
-	public class SumSequenceTests
-	{
-		/// <summary>
-		/// Tests the <see cref="SumSequence.GetSumMultiplesOfThreeAndFiveDumb(int)"/> method.
-		/// </summary>
-		[TestMethod]
+    using System;
+    using System.Security.Policy;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using ProjectEulerProblems.Problems;
+
+    /// <summary>
+    /// Tests for the <see cref="SumSequence"/> class.
+    /// </summary>
+    [TestClass]
+    public class SumSequenceTests
+    {
+        /// <summary>
+        /// Tests the <see cref="SumSequence.GetSumMultiplesOfThreeAndFiveDumb(int)"/> method.
+        /// </summary>
+        /// <param name="num">The number.</param>
+        /// <param name="expectedResult">Expected result.</param>
+        [TestMethod]
         [TestCategory(TestList.Validation)]
         [DataRow(10, 23)]
         [DataRow(20, 78)]
         [DataRow(1000, 233168)]
         public void TestSumSequence_GetSumDumb(int num, int expectedResult)
-		{
+        {
             var result = SumSequence.GetSumMultiplesOfThreeAndFiveDumb(num);
             Assert.AreEqual(expectedResult, result);
-		}
+        }
 
         /// <summary>
-		/// Tests the <see cref="SumSequence.GetSumMultiplesOfThreeAndFiveStillDumb(int)"/> method.
-		/// </summary>
-		[TestMethod]
+        /// Tests the <see cref="SumSequence.GetSumMultiplesOfThreeAndFiveStillDumb(int)"/> method.
+        /// </summary>
+        /// <param name="num">The number.</param>
+        /// <param name="expectedResult">Expected output.</param>
+        [TestMethod]
         [TestCategory(TestList.Validation)]
         [DataRow(10, 23)]
         [DataRow(20, 78)]
@@ -40,9 +48,10 @@ namespace TestProjectTests.ProjectEulerTests
         }
 
         /// <summary>
-		/// Tests the <see cref="SumSequence.GetSumMultiplesOfThreeAndFiveAnotherDumb(int)"/> method.
-		/// </summary>
-		[TestMethod]
+        /// Tests the <see cref="SumSequence.GetSumMultiplesOfThreeAndFiveAnotherDumb(int)"/> method.
+        /// </summary>
+        /// <param name="num">The number.</param>
+        /// <param name="expectedResult">Expected output.</param>
         [TestCategory(TestList.Validation)]
         [DataRow(10, 23)]
         [DataRow(20, 78)]
@@ -54,9 +63,11 @@ namespace TestProjectTests.ProjectEulerTests
         }
 
         /// <summary>
-		/// Tests the <see cref="SumSequence.GetSumSlick(int)"/> method.
-		/// </summary>
-		[TestMethod]
+        /// Tests the <see cref="SumSequence.GetSumSlick(int)"/> method.
+        /// </summary>
+        /// <param name="num">The number.</param>
+        /// <param name="expectedResult">Expected output.</param>
+        [TestMethod]
         [TestCategory(TestList.Validation)]
         [DataRow(10, 23)]
         [DataRow(20, 78)]
@@ -87,6 +98,8 @@ namespace TestProjectTests.ProjectEulerTests
         /// <summary>
         /// Tests <see cref="SumSequence.SumOfSquares(int)"/> for various inputs to validate the sum of squares formula.
         /// </summary>
+        /// <param name="n">The number.</param>
+        /// <param name="expectedResult">Expected output.</param>
         [TestMethod]
         [TestCategory(TestList.Validation)]
         [DataRow(1, 1)]
@@ -106,6 +119,8 @@ namespace TestProjectTests.ProjectEulerTests
         /// Hence the difference between the sum of the squares of the first ten natural numbers and the square of the sum is 3025 - 385 = 2640.
         /// Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.
         /// </summary>
+        /// <param name="num">The number.</param>
+        /// <param name="expectedResult">Expected output.</param>
         [TestMethod]
         [TestCategory(TestList.Validation)]
         [DataRow(10, 2640)]

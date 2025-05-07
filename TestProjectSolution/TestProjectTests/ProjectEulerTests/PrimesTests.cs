@@ -16,8 +16,10 @@ namespace TestProjectTests.ProjectEulerTests
     public class PrimesTests
     {
         /// <summary>
-        /// Tests the <see cref="Primes.PrimeSieve"/> method for primes up to 10.
+        /// Tests the <see cref="Primes.PrimeSieve"/> method for primes 1-10, 1-20.
         /// </summary>
+        /// <param name="num">Number.</param>
+        /// <param name="expected">Expected output.</param>
         [TestMethod]
         [TestCategory(TestList.Validation)]
         [DataRow(10, new int[] { 2, 3, 5, 7 })]
@@ -30,8 +32,12 @@ namespace TestProjectTests.ProjectEulerTests
         }
 
         /// <summary>
-        /// Tests the <see cref="Primes.PrimeSieve"/> method for primes up to 1000.
+        /// Tests the <see cref="Primes.PrimeSieve"/> method for primes 1-100, 1-1000.
         /// </summary>
+        /// <param name="bound">The bound.</param>
+        /// <param name="count">The count.</param>
+        /// <param name="includes">A prime we'd expect to see in the output.</param>
+        /// <param name="doesNotInclude">A number we expect to be absent from the outpue.</param>
         [TestMethod]
         [TestCategory(TestList.Validation)]
         [DataRow(1000, 168, 997, 1000)]
@@ -46,9 +52,11 @@ namespace TestProjectTests.ProjectEulerTests
         }
 
         /// <summary>
-		/// Tests the <see cref="Primes.GetPrimesBrute"/> method for primes up to 10.
-		/// </summary>
-		[TestMethod]
+        /// Tests the <see cref="Primes.GetPrimesBrute(int)"/> method for primes 1-10, 1-20.
+        /// </summary>
+        /// <param name="num">Number to go to.</param>
+        /// <param name="expected">Expected output.</param>
+        [TestMethod]
         [TestCategory(TestList.Validation)]
         [DataRow(10, new int[] { 2, 3, 5, 7 })]
         [DataRow(100, new int[] { 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97 })]
@@ -62,6 +70,10 @@ namespace TestProjectTests.ProjectEulerTests
         /// <summary>
         /// Tests the <see cref="Primes.GetPrimesBrute"/> method for primes up to 100.
         /// </summary>
+        /// <param name="bound">The bound.</param>
+        /// <param name="count">The count.</param>
+        /// <param name="includes">A prime we'd expect to see in the output.</param>
+        /// <param name="doesNotInclude">A number we expect to be absent from the outpue.</param>
         [TestMethod]
         [TestCategory(TestList.Validation)]
         [DataRow(1000, 168, 997, 1000)]
@@ -78,6 +90,8 @@ namespace TestProjectTests.ProjectEulerTests
         /// <summary>
         /// Tests the <see cref="Primes.GetFactors(long)"/> method for various inputs.
         /// </summary>
+        /// <param name="number">Number to determine factors of.</param>
+        /// <param name="expected">Expected output.</param>
         [DataTestMethod]
         [TestCategory(TestList.Validation)]
         [DataRow(10, new long[] { 1, 2, 5, 10 })]
@@ -108,20 +122,20 @@ namespace TestProjectTests.ProjectEulerTests
         /// </summary>
         [TestMethod]
         [TestCategory(TestList.Validation)]
-        [DataRow(2, true)]                                                // Smallest prime number
-        [DataRow(3, true)]                                                // Small prime number
-        [DataRow(4, false)]                                               // First composite number
-        [DataRow(7, true)]                                                // Prime number
-        [DataRow(9, false)]                                               // Odd composite number
-        [DataRow(29, true)]                                               // Larger prime number
-        [DataRow(1234, false)]                                            // Even non-prime
-        [DataRow(600851475143, false)]                                    // Large non-prime (used in Euler Problem 3)
-        [DataRow(982451653, true)]                                        // Large prime number
-        [DataRow(1, false)]                                               // Not prime
-        [DataRow(0, false)]                                               // Not prime
-        [DataRow(-7, false)]                                              // Negative number, not prime
-        [DataRow(1000066600001, false)]                                   // Large non-prime
-        //[DataRow(1000000000000066600000000000001, false)]                 // Belphegor's prime is too large for the current implementation :(
+        [DataRow(2, true)]
+        [DataRow(3, true)]
+        [DataRow(4, false)]
+        [DataRow(7, true)]
+        [DataRow(9, false)]
+        [DataRow(29, true)]
+        [DataRow(1234, false)]
+        [DataRow(600851475143, false)]
+        [DataRow(982451653, true)]
+        [DataRow(1, false)]
+        [DataRow(0, false)]
+        [DataRow(-7, false)]
+        [DataRow(1000066600001, false)]
+        ////[DataRow(1000000000000066600000000000001, false)]                 // Belphegor's prime is too large for the current implementation :(
         public void TestPrimes_IsPrime(long num, bool expectedValue)
         {
             Assert.AreEqual(expectedValue, Primes.IsPrime(num));

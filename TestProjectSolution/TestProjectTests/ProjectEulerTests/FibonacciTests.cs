@@ -20,6 +20,8 @@ namespace TestProjectTests.ProjectEulerTests
         /// <summary>
         /// Tests the <see cref="Fibonacci.GetFibonacciNumbers(int)"/> method with various inputs.
         /// </summary>
+        /// <param name="n">The number of terms to get.</param>
+        /// <param name="expected">Expected value.</param>
         [DataTestMethod]
         [TestCategory(TestList.Validation)]
         [DataRow(10, "0,1,1,2,3,5,8,13,21,34")] // First 10 Fibonacci numbers
