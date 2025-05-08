@@ -361,5 +361,21 @@ namespace TestProjectTests.ProjectEulerTests
             var result = MaxPathSum.FindMaxPathSum_TopDown(filePath);
             Assert.AreEqual(answer, result);
         }
+
+        /// <summary>
+        /// Project Euler Problem 19.
+        /// How many Sundays fell on the first of the month during the twentieth century?
+        /// <see href="https://projecteuler.net/problem=19">Problem 19 description</see>.
+        /// </summary>
+        /// <param name="day">The day of the week we're interested in.</param>
+        /// <param name="dayOfMonth">The day of the month we want our day to land on.</param>
+        /// <param name="dateRange">The range dates we want to check.</param>
+        /// <param name="answer">The accepted solution.</param>
+        [TestMethod]
+        [TestCategory(TestList.ProjectEulerTests)]
+        public void TestProjectEuler_Problem_Nineeen(string day, int dayOfMonth, string dateRange, int answer)
+        {
+
+        }
     }
 }
