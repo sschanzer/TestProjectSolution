@@ -18,11 +18,11 @@ namespace ProjectEulerProblems.Problems
     public static class MaxPathSum
     {
         /// <summary>
-        /// Finds the sum of the path of a triangular array whose sum is maximal.
+        /// Finds the sum of the path of a triangular array whose sum is maximal using a bottom up approach.
         /// </summary>
         /// <param name="filePath">File path of the array.</param>
         /// <returns>The max path's total.</returns>
-        public static int FindMaxPathSum(string filePath)
+        public static int FindMaxPathSum_BottomUp(string filePath)
         {
             var input = File.ReadAllLines(filePath);
 
@@ -39,6 +39,46 @@ namespace ProjectEulerProblems.Problems
             }
 
             return bottom[0];
+        }
+
+        /// <summary>
+        /// Finds the sum of the path of a triangular array whose sum is maximal using a top down approach.
+        /// </summary>
+        /// <param name="filePath">File path of the array.</param>
+        /// <returns>The max path's total.</returns>
+        public static int FindMaxPathSum_TopDown(string filePath)
+        {
+            var input = File.ReadAllLines(filePath);
+
+            int[][] grid = input.Select(line => line.Split(' ').Select(int.Parse).ToArray()).ToArray();
+
+            var dynamicRow = new int[grid.Length];
+            var path = new List<int>();
+
+            // Add top element to dr
+            dynamicRow[0] = grid[0][0];
+
+            for (int r = 1; r < grid.Length; r++)
+            {
+                // Go right to left.
+                for (int c = grid[r].Length - 1; c >= 0; c--)
+                {
+                    if (c == 0)
+                    {
+                        dynamicRow[c] = dynamicRow[c] + grid[r][c];
+                    }
+                    else if (c == grid[r].Length - 1)
+                    {
+                        dynamicRow[c] = dynamicRow[c - 1] + grid[r][c];
+                    }
+                    else
+                    {
+                        dynamicRow[c] = grid[r][c] + Math.Max(dynamicRow[c - 1], dynamicRow[c]);
+                    }
+                }
+            }
+
+            return dynamicRow.Max();
         }
     }
 }

@@ -65,6 +65,7 @@
     <Compile Include="ProjectEulerTests\TriangularNumbersTests.cs" />
     <Compile Include="ProjectEulerTests\CollatzTests.cs" />
     <Compile Include="ProjectEulerTests\FunctionsTests.cs" />
+    <Compile Include="ProjectEulerTests\MaxPathSumTests.cs" />
     <Compile Include="TestList.cs" />
     <Compile Include="LeetCodeTests\TwoSumTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

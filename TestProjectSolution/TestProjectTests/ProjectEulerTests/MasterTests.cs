@@ -358,7 +358,7 @@ namespace TestProjectTests.ProjectEulerTests
         [DataRow("ProjectEulerProblemEighteen.txt", 1074)]
         public void TestProjectEuler_Problem_Eighteen(string filePath, int answer)
         {
-            var result = MaxPathSum.FindMaxPathSum(filePath);
+            var result = MaxPathSum.FindMaxPathSum_TopDown(filePath);
             Assert.AreEqual(answer, result);
         }
     }
