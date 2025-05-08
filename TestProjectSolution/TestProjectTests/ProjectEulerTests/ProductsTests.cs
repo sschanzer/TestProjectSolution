@@ -37,7 +37,7 @@ namespace TestProjectTests.ProjectEulerTests
         [DataRow(13, 23514624000)]
         public void TestProducts_FindLargestSubstringProduct_BreakDown(int length, long answer)
         {
-            var maxProduct = Products.FindLargestSubstringProduct_BreakDown(length, BigNum);
+            var maxProduct = Products.FindLargestSubstringProduct_BreakDown(length, this.BigNum);
             Assert.AreEqual(answer, maxProduct);
         }
 
@@ -52,7 +52,7 @@ namespace TestProjectTests.ProjectEulerTests
         [DataRow(13, 23514624000)]
         public void TestProducts_FindLargestSubstringProduct(int length, long answer)
         {
-            var maxProduct = Products.FindLargestSubstringProduct(length, BigNum);
+            var maxProduct = Products.FindLargestSubstringProduct(length, this.BigNum);
             Assert.AreEqual(answer, maxProduct);
         }
 

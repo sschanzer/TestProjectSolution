@@ -52,11 +52,11 @@ namespace TestProjectTests.ProjectEulerTests
         }
 
         /// <summary>
-		/// Tests the <see cref="Pythagorean.GeneratePythagoreanTriples(int)"/> method.
-		/// </summary>
-		/// <param name="bound">Provided bound.</param>
-		/// <param name="expectedValue">Answer.</param>
-		[TestMethod]
+        /// Tests the <see cref="Pythagorean.GeneratePythagoreanTriples(int)"/> method.
+        /// </summary>
+        /// <param name="bound">Provided bound.</param>
+        /// <param name="expectedValue">Expected value.</param>
+        [TestMethod]
         [TestCategory(TestList.Validation)]
         [DynamicData(nameof(PythagoreanTestData.PythagoreanTripleData), typeof(PythagoreanTestData))]
         public void TestPythagorean_GeneratePythagoreanTriples(int bound, List<(int a, int b, int c)> expectedValue)
@@ -67,16 +67,17 @@ namespace TestProjectTests.ProjectEulerTests
         }
 
         /// <summary>
-		/// Tests the <see cref="Pythagorean.GeneratePrimitivePythagoreanTriples(int)(int)"/> method.
-		/// </summary>
-		/// <param name="bound">Provided bound.</param>
-		/// <param name="nonPrimitiveTriples">List of Non-primitive Pythagorean triples.</param>
-		[TestMethod]
+        /// Tests the <see cref="Pythagorean.GeneratePrimitivePythagoreanTriples(int)"/> method.
+        /// </summary>
+        /// <param name="bound">The provided bound.</param>
+        /// <param name="nonPrimitiveTriples">List of Non-primitive Pythagorean triples.</param>
+        [TestMethod]
         [TestCategory(TestList.Validation)]
         [DynamicData(nameof(PythagoreanTestData.PythagoreanTripleData), typeof(PythagoreanTestData))]
         public void TestPythagorean_GeneratePrimitivePythagoreanTriples(int bound, List<(int a, int b, int c)> nonPrimitiveTriples)
         {
             var primitiveTriplesFromTestData = new List<(int a, int b, int c)>();
+
             // Extract the primitive triples from our list.
             foreach (var triple in nonPrimitiveTriples)
             {

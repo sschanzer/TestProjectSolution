@@ -14,28 +14,6 @@ namespace ProjectEulerProblems.Problems
     public static class TriangularNumbers
     {
         /// <summary>
-        /// Gets the number of factors for the given number.
-        /// </summary>
-        /// <param name="number">The number.</param>
-        /// <returns>The total number of factors the number has.</returns>
-        private static BigInteger GetFactorCount(int number)
-        {
-            BigInteger factorCount = 0;
-            BigInteger squareRoot = BigIntegerExtensions.IntegerSqrt(number);
-
-            for (BigInteger i = 1; i <= squareRoot; i++)
-            {
-                if (number % i == 0)
-                {
-                    BigInteger pair = number / i;
-                    factorCount += (i == pair) ? 1 : 2;
-                }
-            }
-
-            return factorCount;
-        }
-
-        /// <summary>
         /// Gets the first n triangular numbers.
         /// </summary>
         /// <param name="num">Bound.</param>
@@ -81,7 +59,7 @@ namespace ProjectEulerProblems.Problems
         }
 
         /// <summary>
-        /// Gets the number of factors of a given list as a dictionary
+        /// Gets the number of factors of a given list as a dictionary.
         /// </summary>
         /// <param name="numList">The list of numbers.</param>
         /// <returns>A dictionary with Keys = number, Values = number of factors.</returns>
@@ -105,6 +83,28 @@ namespace ProjectEulerProblems.Problems
             }
 
             return factorCountDic;
+        }
+
+        /// <summary>
+        /// Gets the number of factors for the given number.
+        /// </summary>
+        /// <param name="number">The number.</param>
+        /// <returns>The total number of factors the number has.</returns>
+        private static BigInteger GetFactorCount(int number)
+        {
+            BigInteger factorCount = 0;
+            BigInteger squareRoot = BigIntegerExtensions.IntegerSqrt(number);
+
+            for (BigInteger i = 1; i <= squareRoot; i++)
+            {
+                if (number % i == 0)
+                {
+                    BigInteger pair = number / i;
+                    factorCount += (i == pair) ? 1 : 2;
+                }
+            }
+
+            return factorCount;
         }
     }
 }

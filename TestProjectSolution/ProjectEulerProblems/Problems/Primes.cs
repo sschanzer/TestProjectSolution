@@ -1,12 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
+﻿// <copyright file="Primes.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace ProjectEulerProblems.Problems
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Numerics;
+    using System.Text;
+    using System.Threading.Tasks;
+
     /// <summary>
     /// Class containing methods relating to Prime numbers.
     /// </summary>
@@ -187,7 +191,7 @@ namespace ProjectEulerProblems.Problems
         /// <param name="num">Represents the bound.</param>
         /// <returns>A list of primes having count equal to the bound.</returns>
         /// <remarks>
-        /// https://en.wikipedia.org/wiki/Rosser%27s_theorem
+        /// https://en.wikipedia.org/wiki/Rosser%27s_theorem.
         /// </remarks>
         public static List<int> PrimeSieveForNumberOfPrimes(int num)
         {

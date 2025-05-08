@@ -28,8 +28,6 @@ namespace ProjectEulerProblems.Problems
 
             int[][] grid = input.Select(line => line.Split(' ').Select(int.Parse).ToArray()).ToArray();
 
-            const int maxSum = 0;
-
             var bottom = (int[])grid[grid.Length - 1].Clone();
 
             for (int row = grid.Length - 2; row >= 0; row--)
@@ -40,9 +38,7 @@ namespace ProjectEulerProblems.Problems
                 }
             }
 
-            var sum = bottom[0];
-
-            return maxSum;
+            return bottom[0];
         }
     }
 }

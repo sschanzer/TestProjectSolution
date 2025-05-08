@@ -42,7 +42,6 @@ namespace ProjectEulerProblems.Problems
         /// <param name="a">First number.</param>
         /// <param name="b">Second number.</param>
         /// <returns>The lcm of the two nubers.</returns>
-        /// <exception cref="NotImplementedException"></exception>
         public static long Lcm(long a, long b)
         {
             if (a == 0 || b == 0)
@@ -50,7 +49,7 @@ namespace ProjectEulerProblems.Problems
                 return 0;
             }
 
-            return Math.Abs(a* b) / Gcd(a, b);
+            return Math.Abs(a * b) / Gcd(a, b);
         }
     }
 }

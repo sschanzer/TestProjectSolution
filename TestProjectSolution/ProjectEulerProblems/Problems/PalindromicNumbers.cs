@@ -1,8 +1,12 @@
-﻿using System;
-using System.Linq;
+﻿// <copyright file="PalindromicNumbers.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace ProjectEulerProblems.Problems
 {
+    using System;
+    using System.Linq;
+
     /// <summary>
     /// Class containing methods relating to the Palindromic Numbers.
     /// </summary>

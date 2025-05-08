@@ -48,7 +48,7 @@ namespace ProjectEulerProblems.Problems
         {
             var multiples = new HashSet<int>();
 
-            for (int i = 3; i < n; i ++)
+            for (int i = 3; i < n; i++)
             {
                 if (i % 3 == 0 || i % 5 == 0)
                 {
@@ -97,33 +97,33 @@ namespace ProjectEulerProblems.Problems
         /// <param name="n">The number we want to find the sum of multiples for.</param>
         /// <param name="limit">The upper bound where we should stop.</param>
         /// <returns>the sum of all multiples of n up to and including limit, if divisible.</returns>
+        /// <remarks>
+        /// Note:
+        ///
+        ///     Sum_{i}^{k} j = 1 + 2 + 3 + ... + k = k * (k + 1) / 2
+        ///
+        /// Proof:
+        /// Write the sum forwards and backwards:
+        ///     S = 1 + 2 + 3 + ... + (k - 1) + k
+        ///     S = k + (k - 1) + (k - 2) + ... + 2 + 1
+        ///
+        /// Then:
+        ///     S + S = 2S = (1 + k) + (2 + (k - 1)) + (3 + (k - 2)) + ... + (k + 1)
+        ///
+        ///                = (1 + k) + (k + 1) + (k + 1) + ... + (k + 1)
+        ///
+        ///                = k * (1 + k)
+        ///
+        /// So,
+        ///          2S = k * (1 + k)
+        ///
+        ///          =>
+        ///
+        ///                      S = k * (k + 1) / 2.
+        /// </remarks>
         public static int SumOfMultiples(int n, int limit)
         {
             int k = limit / n;
-
-            // Note:
-            //
-            //     Sum_{i}^{k} j = 1 + 2 + 3 + ... + k = k * (k + 1) / 2
-            //
-            // Proof:
-            // Write the sum forwards and backwards:
-            //     S = 1 + 2 + 3 + ... + (k - 1) + k
-            //     S = k + (k - 1) + (k - 2) + ... + 2 + 1
-            //
-            // Then:
-            //     S + S = 2S = (1 + k) + (2 + (k - 1)) + (3 + (k - 2)) + ... + (k + 1)
-            // 
-            //                = (1 + k) + (k + 1) + (k + 1) + ... + (k + 1)
-            //
-            //                = k * (1 + k)
-            //
-            // So,
-            //          2S = k * (1 + k)
-            //
-            //          =>
-            //
-            //                      S = k * (k + 1) / 2.
-
             var sum = n * k * (k + 1) / 2;
 
             return sum;
@@ -134,34 +134,35 @@ namespace ProjectEulerProblems.Problems
         /// </summary>
         /// <param name="n">The upper bound where we should stop.</param>
         /// <returns>The sum of squares up to the limit.</returns>
+        /// <remarks>
+        /// Note:
+        ///
+        /// Sum_{k=1}^{n} k^2 = (1/6) * n * (n + 1) * (2n + 1)
+        ///
+        /// The following identity is the the trick needed for a direct proof:
+        ///
+        /// (k + 1)^2 - k^3 = 3k^2 + 3k + 1
+        ///
+        /// Summing the left hand side of the identity above from k = 1 to n we get the telescoping sum:
+        ///
+        /// Sum_{k=1}^{n} [(k + 1)^3 - k^3] = (n + 1)^3 - 1^3 = n^3 + 3n^2 + 3n
+        ///
+        /// Summing the right hand side of the identity yeilds:
+        ///
+        /// Sum_{k=1}^{n} [(k + 1)^3 - k^3] = 3*Sum_{k=1}^{n} k^2 + 3Sum_{k=1}^{n} k + Sum_{k=1}^{n} 1
+        ///
+        /// So:
+        ///
+        /// 3Sum_{k=1}^{n} k^2 = n^3 + 3n^2 + 3n - 3/2(n(n + 1)) - n
+        ///       = n^3 + 3n^2 + 3n - (3/2)n^2 - (3/2)n - n
+        ///       = (1/2)(2n^3 + 3n^2 + n)
+        ///
+        /// Thus:
+        ///
+        /// Sum_{k=1}^{n} k² = (1/6) * n * (n + 1) * (2n + 1).
+        /// </remarks>
         public static int SumOfSquares(int n)
         {
-            // Note:
-            // 
-            // Sum_{k=1}^{n} k^2 = (1/6) * n * (n + 1) * (2n + 1)
-            //
-            // The following identity is the the trick needed for a direct proof:
-            //
-            // (k + 1)^2 - k^3 = 3k^2 + 3k + 1
-            //
-            // Summing the left hand side of the identity above from k = 1 to n we get the telescoping sum:
-            //
-            // Sum_{k=1}^{n} [(k + 1)^3 - k^3] = (n + 1)^3 - 1^3 = n^3 + 3n^2 + 3n
-            //
-            // Summing the right hand side of the identity yeilds:
-            //
-            // Sum_{k=1}^{n} [(k + 1)^3 - k^3] = 3*Sum_{k=1}^{n} k^2 + 3Sum_{k=1}^{n} k + Sum_{k=1}^{n} 1
-            //
-            // So:
-            //
-            // 3Sum_{k=1}^{n} k^2 = n^3 + 3n^2 + 3n - 3/2(n(n + 1)) - n
-            //       = n^3 + 3n^2 + 3n - (3/2)n^2 - (3/2)n - n
-            //       = (1/2)(2n^3 + 3n^2 + n)
-            //
-            // Thus:
-            //
-            // Sum_{k=1}^{n} k² = (1/6) * n * (n + 1) * (2n + 1).
-
             var sumOfSuqares = (n * (n + 1) * ((2 * n) + 1)) / 6;
 
             return sumOfSuqares;
