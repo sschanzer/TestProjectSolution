@@ -395,5 +395,20 @@ namespace TestProjectTests.ProjectEulerTests
             var result = Functions.GetFactSum(num);
             Assert.AreEqual(answer, result);
         }
+
+        /// <summary>
+        /// Project Euler Problem 21.
+        /// Evaluate the sum of all amicable numbers under 10000.
+        /// </summary>
+        /// <see href="https://projecteuler.net/problem=21">Problem 21 description.</see>
+        /// <param name="bound">The bound setting how many amicable values to go up to.</param>
+        /// <param name="answer">The accepted solution on Project Euler.</param>
+        [TestMethod]
+        [TestCategory(TestList.ProjectEulerTests)]
+        [DataRow(10000, 31626)]
+        public void TestProjectEuler_Problem_TwentyOne(int bound, int answer)
+        {
+
+        }
     }
 }

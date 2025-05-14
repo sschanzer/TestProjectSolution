@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\ProblemEightData.cs" />
+    <Compile Include="Problems\AmicableNumbers.cs" />
     <Compile Include="Problems\Collatz.cs" />
     <Compile Include="Problems\CountingDays.cs" />
     <Compile Include="Problems\DivisorsAndMultiples.cs" />
