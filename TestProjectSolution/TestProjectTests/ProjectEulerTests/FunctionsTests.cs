@@ -1,5 +1,5 @@
-﻿// <copyright file="FunctionsTests.cs" company="PlaceholderCompany">
-// Copyright (c) PlaceholderCompany. All rights reserved.
+﻿// <copyright file="FunctionsTests.cs" company="MyTestProject">
+// Copyright (c) MyTestProject. All rights reserved.
 // </copyright>
 
 namespace TestProjectTests.ProjectEulerTests
@@ -17,7 +17,7 @@ namespace TestProjectTests.ProjectEulerTests
         /// Tests the <see cref="Functions.Factorial(int)"/> method.
         /// </summary>
         /// <param name="n">The input.</param>
-        /// <param name="answer">The answer</param>
+        /// <param name="answer">The answer.</param>
         [TestMethod]
         [TestCategory(TestList.Validation)]
         [DataRow(0, 1)]

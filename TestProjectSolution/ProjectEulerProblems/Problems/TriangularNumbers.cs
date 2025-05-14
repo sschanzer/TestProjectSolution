@@ -1,5 +1,5 @@
-﻿// <copyright file="TriangularNumbers.cs" company="PlaceholderCompany">
-// Copyright (c) PlaceholderCompany. All rights reserved.
+﻿// <copyright file="TriangularNumbers.cs" company="MyTestProject">
+// Copyright (c) MyTestProject. All rights reserved.
 // </copyright>
 
 namespace ProjectEulerProblems.Problems

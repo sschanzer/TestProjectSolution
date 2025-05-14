@@ -1,5 +1,5 @@
-﻿// <copyright file="PalindromicNumbersTests.cs" company="PlaceholderCompany">
-// Copyright (c) PlaceholderCompany. All rights reserved.
+﻿// <copyright file="PalindromicNumbersTests.cs" company="MyTestProject">
+// Copyright (c) MyTestProject. All rights reserved.
 // </copyright>
 
 namespace TestProjectTests.ProjectEulerTests
@@ -16,6 +16,8 @@ namespace TestProjectTests.ProjectEulerTests
         /// <summary>
         /// Tests the <see cref="PalindromicNumbers.IsPalindrome(long)"/> method.
         /// </summary>
+        /// <param name="number">The number.</param>
+        /// <param name="expectedValue">Expected output.</param>
         [TestMethod]
         [TestCategory(TestList.Validation)]
         [DataRow(1001, true)]
@@ -36,6 +38,8 @@ namespace TestProjectTests.ProjectEulerTests
         /// Tests the <see cref="PalindromicNumbers.GetLargestPalindromeProduct(int)"/> method
         /// for various digit counts using data-driven test cases.
         /// </summary>
+        /// /// <param name="digits">The digits.</param>
+        /// <param name="expected">Expected output.</param>
         [TestMethod]
         [TestCategory(TestList.Validation)]
         [DataRow(1, 9)]

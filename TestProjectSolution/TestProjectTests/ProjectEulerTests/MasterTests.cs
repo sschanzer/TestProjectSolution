@@ -1,5 +1,5 @@
-﻿// <copyright file="MasterTests.cs" company="PlaceholderCompany">
-// Copyright (c) PlaceholderCompany. All rights reserved.
+﻿// <copyright file="MasterTests.cs" company="MyTestProject">
+// Copyright (c) MyTestProject. All rights reserved.
 // </copyright>
 
 namespace TestProjectTests.ProjectEulerTests
@@ -373,9 +373,11 @@ namespace TestProjectTests.ProjectEulerTests
         /// <param name="answer">The accepted solution.</param>
         [TestMethod]
         [TestCategory(TestList.ProjectEulerTests)]
+        [DataRow("Sunday", 1, "1 Jan 1901 to 31 Dec 2000", 171)]
         public void TestProjectEuler_Problem_Nineeen(string day, int dayOfMonth, string dateRange, int answer)
         {
-
+            var result = CountingDays.CountNumberOfDays(day, dayOfMonth, dateRange);
+            Assert.AreEqual(answer, result);
         }
     }
 }

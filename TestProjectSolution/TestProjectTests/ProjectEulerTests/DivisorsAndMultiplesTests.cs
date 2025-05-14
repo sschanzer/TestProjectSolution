@@ -1,5 +1,5 @@
-﻿// <copyright file="DivisorsAndMultiplesTests.cs" company="PlaceholderCompany">
-// Copyright (c) PlaceholderCompany. All rights reserved.
+﻿// <copyright file="DivisorsAndMultiplesTests.cs" company="MyTestProject">
+// Copyright (c) MyTestProject. All rights reserved.
 // </copyright>
 
 namespace TestProjectTests.ProjectEulerTests

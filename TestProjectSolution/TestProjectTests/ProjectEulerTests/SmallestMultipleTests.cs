@@ -1,5 +1,5 @@
-﻿// <copyright file="SmallestMultipleTests.cs" company="PlaceholderCompany">
-// Copyright (c) PlaceholderCompany. All rights reserved.
+﻿// <copyright file="SmallestMultipleTests.cs" company="MyTestProject">
+// Copyright (c) MyTestProject. All rights reserved.
 // </copyright>
 
 namespace TestProjectTests.ProjectEulerTests
@@ -19,6 +19,8 @@ namespace TestProjectTests.ProjectEulerTests
         /// <summary>
         /// Tests the <see cref="SmallestMultiple.FindSmallestMultiple(List{int})"/> method with various inputs.
         /// </summary>
+        /// /// <param name="input">The input array.</param>
+        /// <param name="expected">Expected output.</param>
         [DataTestMethod]
         [TestCategory(TestList.Validation)]
         [DataRow(new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 }, 2520)]
