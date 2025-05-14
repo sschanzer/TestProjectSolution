@@ -133,7 +133,7 @@ namespace ProjectEulerProblems.Utilities
 
             if (input == 0 || input == 1)
             {
-                return input;
+                return 1;
             }
 
             BigInteger result = 1;

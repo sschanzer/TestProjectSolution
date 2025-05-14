@@ -22,7 +22,7 @@ namespace TestProjectTests.ProjectEulerTests
         /// <summary>
         /// Project Euler Problem 1.
         /// Find the sum of all the multiples of 3 or 5 below 1000.
-        /// <see href="https://projecteuler.net/problem=1">Problem 1 description</see>.
+        /// <see href="https://projecteuler.net/problem=1">Problem 1 description.</see>
         /// </summary>
         /// <param name="num">The number.</param>
         /// <param name="answer">The anwser.</param>
@@ -38,7 +38,7 @@ namespace TestProjectTests.ProjectEulerTests
         /// <summary>
         /// Project Euler Problem 2.
         /// Find the sum of the even-valued terms in the Fibonacci sequence whose values are less than four million.
-        /// <see href="https://projecteuler.net/problem=2">Problem 2 description</see>.
+        /// <see href="https://projecteuler.net/problem=2">Problem 2 description.</see>
         /// </summary>
         /// <param name="num">The number.</param>
         /// <param name="answer">The anwser.</param>
@@ -55,7 +55,7 @@ namespace TestProjectTests.ProjectEulerTests
         /// <summary>
         /// Project Euler Problem 3.
         /// What is the largest prime factor of the number 600851475143?
-        /// <see href="https://projecteuler.net/problem=3">Problem 3 description</see>.
+        /// <see href="https://projecteuler.net/problem=3">Problem 3 description.</see>
         /// </summary>
         /// <param name="number">The number.</param>
         /// <param name="answer">The anwser.</param>
@@ -72,7 +72,7 @@ namespace TestProjectTests.ProjectEulerTests
         /// <summary>
         /// Project Euler Problem 4.
         /// Find the largest palindrome made from the product of two 3-digit numbers.
-        /// <see href="https://projecteuler.net/problem=4">Problem 4 description</see>.
+        /// <see href="https://projecteuler.net/problem=4">Problem 4 description.</see>
         /// </summary>
         /// <param name="digits">The digits.</param>
         /// <param name="answer">The anwser.</param>
@@ -88,7 +88,7 @@ namespace TestProjectTests.ProjectEulerTests
         /// <summary>
         /// Project Euler Problem 5.
         /// What is the smallest positive number that is evenly divisible with no remainder by all of the numbers from 1 to 20.
-        /// <see href="https://projecteuler.net/problem=5">Problem 5 description</see>.
+        /// <see href="https://projecteuler.net/problem=5">Problem 5 description.</see>
         /// </summary>
         /// <param name="input">The input.</param>
         /// <param name="answer">The anwser.</param>
@@ -105,7 +105,7 @@ namespace TestProjectTests.ProjectEulerTests
         /// <summary>
         /// Project Euler Problem 6.
         /// Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.
-        /// <see href="https://projecteuler.net/problem=6">Problem 6 description</see>.
+        /// <see href="https://projecteuler.net/problem=6">Problem 6 description.</see>
         /// </summary>
         /// <param name="num">The number.</param>
         /// <param name="answer">The anwser.</param>
@@ -127,7 +127,7 @@ namespace TestProjectTests.ProjectEulerTests
         /// <summary>
         /// Project Euler Problem 7.
         /// What is the 10001 st prime number?
-        /// <see href="https://projecteuler.net/problem=7">Problem 7 description</see>.
+        /// <see href="https://projecteuler.net/problem=7">Problem 7 description.</see>
         /// </summary>
         /// <param name="bound">The bound.</param>
         /// <param name="answer">The anwser.</param>
@@ -144,7 +144,7 @@ namespace TestProjectTests.ProjectEulerTests
         /// <summary>
         /// Project Euler Problem 8.
         /// Find the thirteen adjacent digits in the 1000-digit number that have the greatest product. What is the value of this product?
-        /// <see href="https://projecteuler.net/problem=8">Problem 8 description</see>.
+        /// <see href="https://projecteuler.net/problem=8">Problem 8 description.</see>
         /// </summary>
         /// <param name="length">The number of adjacent digits.</param>
         /// <param name="answer">The accepted answer for the problem.</param>
@@ -162,7 +162,7 @@ namespace TestProjectTests.ProjectEulerTests
         /// <summary>
         /// Project Euler Problem 9.
         /// There exists exactly one Pythagorean triplet for which a + b + c = 1000. Find its product abc.
-        /// <see href="https://projecteuler.net/problem=9">Problem 9 description</see>.
+        /// <see href="https://projecteuler.net/problem=9">Problem 9 description.</see>
         /// </summary>
         /// <param name="targetSum">Target sum.</param>
         /// <param name="expectedA">Expected 'a' value.</param>
@@ -185,7 +185,7 @@ namespace TestProjectTests.ProjectEulerTests
         /// <summary>
         /// Project Euler Problem 10.
         /// Find the sum of all the primes below two million.
-        /// <see href="https://projecteuler.net/problem=10">Problem 10 description</see>.
+        /// <see href="https://projecteuler.net/problem=10">Problem 10 description.</see>
         /// </summary>
         /// <param name="bound">Where we want the sum to stop.</param>
         /// <param name="answerString">The expected output as a string since Data Rows don't how to convert an int to a BigInteger.</param>
@@ -203,7 +203,7 @@ namespace TestProjectTests.ProjectEulerTests
         /// <summary>
         /// Project Euler Problem 11.
         /// What is the greatest product of four adjacent numbers in the same direction(up, down, left, right, or diagonally) in the 20 * 20 grid?
-        /// <see href="https://projecteuler.net/problem=11">Problem 11 description</see>.
+        /// <see href="https://projecteuler.net/problem=11">Problem 11 description.</see>
         /// </summary>
         /// <param name="filePath">File path.</param>
         /// <param name="length">Requested length of the substring.</param>
@@ -221,7 +221,7 @@ namespace TestProjectTests.ProjectEulerTests
         /// <summary>
         /// Project Euler Problem 12.
         /// What is the value of the first triangle number to have over five hundred divisors?
-        /// <see href="https://projecteuler.net/problem=12">Problem 12 description</see>.
+        /// <see href="https://projecteuler.net/problem=12">Problem 12 description.</see>
         /// </summary>
         /// <param name="numberOfFactors">Number of factors required for the problem.</param>
         /// <param name="answer">Problem solution.</param>
@@ -237,7 +237,7 @@ namespace TestProjectTests.ProjectEulerTests
         /// <summary>
         /// Project Euler Problem 13.
         /// Work out the first ten digits of the sum of the one-hundred 50-digit numbers found in \TestData\ProjectEulerProblemThirteen.txt.
-        /// <see href="https://projecteuler.net/problem=13">Problem 13 description</see>.
+        /// <see href="https://projecteuler.net/problem=13">Problem 13 description.</see>
         /// </summary>
         /// <param name="filePath">File path.</param>
         /// <param name="answer">Problem solution.</param>
@@ -265,7 +265,7 @@ namespace TestProjectTests.ProjectEulerTests
         /// <summary>
         /// Project Euler Problem 14.
         /// Which starting number, under one million, produces the longest Collatz chain.
-        /// <see href="https://projecteuler.net/problem=14">Problem 14 description</see>.
+        /// <see href="https://projecteuler.net/problem=14">Problem 14 description.</see>
         /// </summary>
         /// <param name="bound">The given n to check the sequence up to.</param>
         /// <param name="answerKey">The expected key of the returned dictionary.</param>
@@ -285,7 +285,7 @@ namespace TestProjectTests.ProjectEulerTests
         /// <summary>
         /// Project Euler Problem 15.
         /// How many right/down routes are there through a 20 x 20 grid.
-        /// <see href="https://projecteuler.net/problem=15">Problem 15 description</see>.
+        /// <see href="https://projecteuler.net/problem=15">Problem 15 description.</see>
         /// </summary>
         /// <param name="n">The specified size of the n x n grid.</param>
         /// <param name="answer">The problem's solution.</param>
@@ -308,7 +308,7 @@ namespace TestProjectTests.ProjectEulerTests
         /// <summary>
         /// Project Euler Problem 16.
         /// What is the sum of the digits of the number 2^{1000}?
-        /// <see href="https://projecteuler.net/problem=16">Problem 16 description</see>.
+        /// <see href="https://projecteuler.net/problem=16">Problem 16 description.</see>
         /// </summary>
         /// <param name="n">The base.</param>
         /// <param name="exp">The exponent.</param>
@@ -332,7 +332,7 @@ namespace TestProjectTests.ProjectEulerTests
         /// <summary>
         /// Project Euler Problem 17.
         /// If all the numbers from 1 to 1000 inclusive were written out in words, how many letters would be used?
-        /// <see href="https://projecteuler.net/problem=17">Problem 17 description</see>.
+        /// <see href="https://projecteuler.net/problem=17">Problem 17 description.</see>
         /// </summary>
         /// <param name="n">The input.</param>
         /// <param name="answer">The answer.</param>
@@ -348,7 +348,7 @@ namespace TestProjectTests.ProjectEulerTests
         /// <summary>
         /// Project Euler Problem 18.
         /// Find the maximum total from top to bottom of the triangle shown.
-        /// <see href="https://projecteuler.net/problem=18">Problem 18 description</see>.
+        /// <see href="https://projecteuler.net/problem=18">Problem 18 description.</see>
         /// </summary>
         /// <param name="filePath">input.</param>
         /// <param name="answer">The answer.</param>
@@ -365,7 +365,7 @@ namespace TestProjectTests.ProjectEulerTests
         /// <summary>
         /// Project Euler Problem 19.
         /// How many Sundays fell on the first of the month during the twentieth century?
-        /// <see href="https://projecteuler.net/problem=19">Problem 19 description</see>.
+        /// <see href="https://projecteuler.net/problem=19">Problem 19 description.</see>
         /// </summary>
         /// <param name="day">The day of the week we're interested in.</param>
         /// <param name="dayOfMonth">The day of the month we want our day to land on.</param>
@@ -377,6 +377,22 @@ namespace TestProjectTests.ProjectEulerTests
         public void TestProjectEuler_Problem_Nineeen(string day, int dayOfMonth, string dateRange, int answer)
         {
             var result = CountingDays.CountNumberOfDays(day, dayOfMonth, dateRange);
+            Assert.AreEqual(answer, result);
+        }
+
+        /// <summary>
+        /// Project Euler Problem 20.
+        /// Find the sum of the digits in the factorial 1000!.
+        /// </summary>
+        /// <see href="https://projecteuler.net/problem=20">Problem 20 description.</see>
+        /// <param name="num">The number.</param>
+        /// <param name="answer">The answer.</param>
+        [TestMethod]
+        [TestCategory(TestList.ProjectEulerTests)]
+        [DataRow(100, 648)]
+        public void TestProjectEuler_Problem_Twenty(int num, int answer)
+        {
+            var result = Functions.GetFactSum(num);
             Assert.AreEqual(answer, result);
         }
     }

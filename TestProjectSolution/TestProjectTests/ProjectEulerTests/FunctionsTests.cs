@@ -65,5 +65,31 @@ namespace TestProjectTests.ProjectEulerTests
             var result = Functions.Choose(n, k);
             Assert.AreEqual(answer, result);
         }
+
+        /// <summary>
+        /// Tests the <see cref="Functions.GetFactSum(int)"/> method.
+        /// </summary>
+        /// <param name="num">The number.</param>
+        /// <param name="answer">The answer.</param>
+        [TestMethod]
+        [TestCategory(TestList.Validation)]
+        [DataRow(0, 1)]
+        [DataRow(1, 1)]
+        [DataRow(2, 2)]
+        [DataRow(3, 6)]
+        [DataRow(4, 6)]
+        [DataRow(5, 3)]
+        [DataRow(10, 27)]
+        [DataRow(15, 45)]
+        [DataRow(20, 54)]
+        [DataRow(25, 72)]
+        [DataRow(50, 216)]
+        [DataRow(75, 432)]
+        [DataRow(100, 648)]
+        public void TestFunctions_GetFactSum(int num, int answer)
+        {
+            var result = Functions.GetFactSum(num);
+            Assert.AreEqual(answer, result);
+        }
     }
 }

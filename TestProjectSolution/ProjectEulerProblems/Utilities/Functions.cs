@@ -58,5 +58,24 @@ namespace ProjectEulerProblems.Utilities
 
             return Factorial(n) / (Factorial(k) * Factorial(n - k));
         }
+
+        /// <summary>
+        /// Calculates the sum of the digits in a factorial.
+        /// </summary>
+        /// <param name="n">The number.</param>
+        /// <returns>The sum of the digits in n!.</returns>
+        public static int GetFactSum(this int n)
+        {
+            int sum = 0;
+            var num = BigIntegerExtensions.Factorial(n);
+            var numString = num.ToString();
+
+            for (int i = 0; i < numString.Length; i++)
+            {
+                sum += int.Parse(numString[i].ToString());
+            }
+
+            return sum;
+        }
     }
 }
