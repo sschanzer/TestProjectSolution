@@ -6,7 +6,6 @@ namespace TestProjectTests.ProjectEulerTests
 {
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using ProjectEulerProblems.Utilities;
-    using System.Linq;
 
     /// <summary>
     /// Tests the <see cref="Functions"/> class.

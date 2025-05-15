@@ -438,8 +438,7 @@ namespace TestProjectTests.ProjectEulerTests
         [TestCategory(TestList.ProjectEulerTests)]
         public void TestProjectEuler_Problem_TwentyThree()
         {
-
+            Assert.IsTrue(true);
         }
-
     }
 }

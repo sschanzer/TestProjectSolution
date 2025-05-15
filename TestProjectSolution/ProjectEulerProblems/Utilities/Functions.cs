@@ -135,16 +135,22 @@ namespace ProjectEulerProblems.Utilities
         /// <returns>Sum of proper divisors.</returns>
         public static int GetProperDivisorSum(int num)
         {
-            var sum = 0;
-            for (int i = 1; i <= Math.Pow(num, 0.5); i++)
+            if (num == 1)
+            {
+                return 0;
+            }
+
+            var sum = 1;
+            for (int i = 2; i <= Math.Pow(num, 0.5); i++)
             {
                 if (num % i == 0)
                 {
                     sum += i;
+                    var pair = num / i;
 
-                    if (num / i != num && num / i != i)
+                    if (pair != i)
                     {
-                        sum += num / i;
+                        sum += pair;
                     }
                 }
             }
