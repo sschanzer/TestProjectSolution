@@ -17,7 +17,6 @@ namespace TestProjectTests.PersonalProblemTests
         /// Unit test scaffolding.
         /// </summary>
         [TestMethod]
-        [TestCategory(TestList.Validation)]
         public void MyUnitTest()
         {
         }

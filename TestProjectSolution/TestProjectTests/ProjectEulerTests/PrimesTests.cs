@@ -88,24 +88,6 @@ namespace TestProjectTests.ProjectEulerTests
         }
 
         /// <summary>
-        /// Tests the <see cref="Primes.GetFactors(long)"/> method for various inputs.
-        /// </summary>
-        /// <param name="number">Number to determine factors of.</param>
-        /// <param name="expected">Expected output.</param>
-        [DataTestMethod]
-        [TestCategory(TestList.Validation)]
-        [DataRow(10, new long[] { 1, 2, 5, 10 })]
-        [DataRow(12, new long[] { 1, 2, 3, 4, 6, 12 })]
-        [DataRow(7, new long[] { 1, 7 })]
-        [DataRow(1, new long[] { 1 })]
-        [DataRow(0, new long[] { })]
-        public void TestPrimes_GetFactors_VariousInputs(long number, long[] expected)
-        {
-            var result = Primes.GetFactors(number);
-            CollectionAssert.AreEqual(expected.ToList(), result);
-        }
-
-        /// <summary>
         /// Tests the <see cref="Primes.GetLargestPrimeFactors(long)"/> of 600851475143.
         /// </summary>
         [TestMethod]

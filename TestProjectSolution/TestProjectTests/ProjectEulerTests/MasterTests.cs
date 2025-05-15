@@ -392,7 +392,7 @@ namespace TestProjectTests.ProjectEulerTests
         [DataRow(100, 648)]
         public void TestProjectEuler_Problem_Twenty(int num, int answer)
         {
-            var result = Functions.GetFactSum(num);
+            var result = Functions.GetFactorialDigitsSum(num);
             Assert.AreEqual(answer, result);
         }
 
@@ -408,7 +408,8 @@ namespace TestProjectTests.ProjectEulerTests
         [DataRow(10000, 31626)]
         public void TestProjectEuler_Problem_TwentyOne(int bound, int answer)
         {
-
+            var result = AmicableNumbers.GetSumOfAmicableNumbers(bound);
+            Assert.AreEqual(answer, result);
         }
     }
 }

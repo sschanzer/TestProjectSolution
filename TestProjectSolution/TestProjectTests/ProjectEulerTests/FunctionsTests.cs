@@ -6,6 +6,7 @@ namespace TestProjectTests.ProjectEulerTests
 {
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using ProjectEulerProblems.Utilities;
+    using System.Linq;
 
     /// <summary>
     /// Tests the <see cref="Functions"/> class.
@@ -67,7 +68,7 @@ namespace TestProjectTests.ProjectEulerTests
         }
 
         /// <summary>
-        /// Tests the <see cref="Functions.GetFactSum(int)"/> method.
+        /// Tests the <see cref="Functions.GetFactorialDigitsSum(int)"/> method.
         /// </summary>
         /// <param name="num">The number.</param>
         /// <param name="answer">The answer.</param>
@@ -88,8 +89,24 @@ namespace TestProjectTests.ProjectEulerTests
         [DataRow(100, 648)]
         public void TestFunctions_GetFactSum(int num, int answer)
         {
-            var result = Functions.GetFactSum(num);
+            var result = Functions.GetFactorialDigitsSum(num);
             Assert.AreEqual(answer, result);
+        }
+
+        /// <summary>
+        /// Tests the <see cref="Functions.GetProperDivisorSum(int)"/> method.
+        /// </summary>
+        /// <param name="input">Input.</param>
+        /// <param name="expected">Expected output.</param>
+        [DataTestMethod]
+        [TestCategory(TestList.Validation)]
+        [DataRow(6, 6)]
+        [DataRow(12, 16)]
+        [DataRow(10, 8)]
+        public void TestFunctions_GetProperDivisorSum(int input, int expected)
+        {
+            var result = Functions.GetProperDivisorSum(input);
+            Assert.AreEqual(expected, result);
         }
     }
 }
