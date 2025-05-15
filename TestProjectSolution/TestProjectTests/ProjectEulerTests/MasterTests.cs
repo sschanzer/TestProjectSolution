@@ -90,7 +90,7 @@ namespace TestProjectTests.ProjectEulerTests
         /// What is the smallest positive number that is evenly divisible with no remainder by all of the numbers from 1 to 20.
         /// <see href="https://projecteuler.net/problem=5">Problem 5 description.</see>
         /// </summary>
-        /// <param name="input">The input.</param>
+        /// <param name="input">The filePath.</param>
         /// <param name="answer">The anwser.</param>
         [TestMethod]
         [TestCategory(TestList.ProjectEulerTests)]
@@ -334,7 +334,7 @@ namespace TestProjectTests.ProjectEulerTests
         /// If all the numbers from 1 to 1000 inclusive were written out in words, how many letters would be used?
         /// <see href="https://projecteuler.net/problem=17">Problem 17 description.</see>
         /// </summary>
-        /// <param name="n">The input.</param>
+        /// <param name="n">The filePath.</param>
         /// <param name="answer">The answer.</param>
         [TestMethod]
         [TestCategory(TestList.ProjectEulerTests)]
@@ -350,7 +350,7 @@ namespace TestProjectTests.ProjectEulerTests
         /// Find the maximum total from top to bottom of the triangle shown.
         /// <see href="https://projecteuler.net/problem=18">Problem 18 description.</see>
         /// </summary>
-        /// <param name="filePath">input.</param>
+        /// <param name="filePath">filePath.</param>
         /// <param name="answer">The answer.</param>
         [TestMethod]
         [TestCategory(TestList.ProjectEulerTests)]
@@ -411,5 +411,23 @@ namespace TestProjectTests.ProjectEulerTests
             var result = AmicableNumbers.GetSumOfAmicableNumbers(bound);
             Assert.AreEqual(answer, result);
         }
+
+        /// <summary>
+        /// Project Euler Problem 22.
+        /// What is the total of all the name scores in the file?
+        /// <see href="https://projecteuler.net/problem=22">Problem 22 description.</see>
+        /// </summary>
+        /// <param name="filePath">File path to text file. </param>
+        /// <param name="answer">The accepted solution on Project Euler.</param>
+        [TestMethod]
+        [TestCategory(TestList.ProjectEulerTests)]
+        [DeploymentItem(@"ProjectEulerTests\TestData\PEP22_Names.txt")]
+        [DataRow("PEP22_Names.txt", 871198282)]
+        public void TestProjectEuler_Problem_TwentyTwo(string filePath, int answer)
+        {
+            var result = NameScores.GetTotalOfAllNameScores(filePath);
+            Assert.AreEqual(answer, result);
+        }
+
     }
 }

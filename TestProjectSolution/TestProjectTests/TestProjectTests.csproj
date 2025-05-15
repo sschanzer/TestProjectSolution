@@ -94,6 +94,9 @@
     <Content Include="ProjectEulerTests\TestData\PEP18Case1.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="ProjectEulerTests\TestData\PEP22_Names.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="ProjectEulerTests\TestData\ProjectEulerProblemEighteen.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
