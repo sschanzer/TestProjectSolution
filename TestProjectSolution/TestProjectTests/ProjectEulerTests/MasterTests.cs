@@ -434,11 +434,15 @@ namespace TestProjectTests.ProjectEulerTests
         /// Find the sum of all the positive integers which cannot be written as the sum of two abundant numbers.
         /// </summary>
         /// <see href="https://projecteuler.net/problem=23">Problem 23 description.</see>
+        /// <param name="bound">The bound.</param>
+        /// <param name="answer">The accepted solution on Project Euler.</param>
         [TestMethod]
         [TestCategory(TestList.ProjectEulerTests)]
-        public void TestProjectEuler_Problem_TwentyThree()
+        [DataRow(28123, 4179871)]
+        public void TestProjectEuler_Problem_TwentyThree(int bound, int answer)
         {
-            Assert.IsTrue(true);
+            var result = AbundantNumbers.GetAllNumbersNotASumOfTwoAbundantNumbers(bound);
+            Assert.AreEqual(answer, result);
         }
     }
 }
