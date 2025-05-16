@@ -444,5 +444,20 @@ namespace TestProjectTests.ProjectEulerTests
             var result = AbundantNumbers.GetAllNumbersNotASumOfTwoAbundantNumbers(bound);
             Assert.AreEqual(answer, result);
         }
+
+        /// <summary>
+        /// Project Euler Problem 24.
+        /// Find the millionth lexicographic permutation of the digits 0, 1, 2, 3, 4, 5, 6, 7, 8 and 9.
+        /// </summary>
+        /// <see href="https://projecteuler.net/problem=24">Problem 24 description.</see>
+        /// <param name="input">The input.</param>
+        /// <param name="answer">The accepted solution on Project Euler.</param>
+        [TestMethod]
+        [TestCategory(TestList.ProjectEulerTests)]
+        public void TestProjectEuler_Problem_TwentyFour(int input, int answer)
+        {
+            Assert.IsTrue(true);
+        }
+
     }
 }
