@@ -26,8 +26,7 @@
 
             if (permCount != 0)
             {
-                var permutationAtN = new List<string> { permutations[permCount - 1] };
-                return permutationAtN;
+                return new List<string> { permutations[permCount - 1] };
             }
 
             return permutations;
