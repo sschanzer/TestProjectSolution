@@ -450,14 +450,17 @@ namespace TestProjectTests.ProjectEulerTests
         /// Find the millionth lexicographic permutation of the digits 0, 1, 2, 3, 4, 5, 6, 7, 8 and 9.
         /// </summary>
         /// <see href="https://projecteuler.net/problem=24">Problem 24 description.</see>
-        /// <param name="input">The input.</param>
+        /// <param name="input">The number as a string.</param>
+        /// <param name="num">Element of permutation we want.</param>
         /// <param name="answer">The accepted solution on Project Euler.</param>
         [TestMethod]
         [TestCategory(TestList.ProjectEulerTests)]
-        public void TestProjectEuler_Problem_TwentyFour(int input, int answer)
+        [DataRow("0123456789", 1000000, 2783915460)]
+        public void TestProjectEuler_Problem_TwentyFour(string input, int num, long answer)
         {
-            Assert.IsTrue(true);
+            var permutation = LexicographicPermutations.GetLexicographicPermutations(input, num);
+            var result = long.Parse(permutation[0]);
+            Assert.AreEqual(answer, result);
         }
-
     }
 }
