@@ -5,13 +5,13 @@
     using ProjectEulerProblems.Problems;
 
     /// <summary>
-    /// Test for <see cref="LexicographicPermutations"/> class.
+    /// Test for <see cref="Permutations"/> class.
     /// </summary>
     [TestClass]
-    public class LexicographicPermutationsTests
+    public class PermutationsTests
     {
         /// <summary>
-        /// Tests the <see cref="LexicographicPermutations.GetLexicographicPermutations(string)"/> method.
+        /// Tests the <see cref="Permutations.GetLexicographicPermutations(numString, num)"/> method.
         /// </summary>
         /// <param name="numString">The number as a string.</param>
         /// <param name="num">Element of permutation we want.</param>
@@ -22,7 +22,7 @@
         [DataRow("0123456789", 1000000, 2783915460)]
         public void TestLexicographicPermutations_GetLexicographicPermutations(string numString, int num, long answer)
         {
-            var permutation = LexicographicPermutations.GetLexicographicPermutations(numString, num);
+            var permutation = Permutations.GetLexicographicPermutations(numString, num);
             var result = long.Parse(permutation[0]);
             Assert.AreEqual(answer, result);
         }

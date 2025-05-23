@@ -9,7 +9,7 @@
     /// <summary>
     /// Class containing methods related counting permutations strings and numbers.
     /// </summary>
-    public static class LexicographicPermutations
+    public static class Permutations
     {
         /// <summary>
         /// Finds the Lexicographical Permutations of a given string.

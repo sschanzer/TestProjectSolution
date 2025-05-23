@@ -49,7 +49,7 @@
     <Compile Include="Problems\CountingDays.cs" />
     <Compile Include="Problems\DivisorsAndMultiples.cs" />
     <Compile Include="Problems\Fibonacci.cs" />
-    <Compile Include="Problems\LexicographicPermutations.cs" />
+    <Compile Include="Problems\Permutations.cs" />
     <Compile Include="Problems\MaxPathSum.cs" />
     <Compile Include="Problems\NameScores.cs" />
     <Compile Include="Problems\NumberLetterCounts.cs" />

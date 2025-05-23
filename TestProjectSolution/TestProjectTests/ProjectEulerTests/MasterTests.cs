@@ -458,7 +458,7 @@ namespace TestProjectTests.ProjectEulerTests
         [DataRow("0123456789", 1000000, 2783915460)]
         public void TestProjectEuler_Problem_TwentyFour(string input, int num, long answer)
         {
-            var permutation = LexicographicPermutations.GetLexicographicPermutations(input, num);
+            var permutation = Permutations.GetLexicographicPermutations(input, num);
             var result = long.Parse(permutation[0]);
             Assert.AreEqual(answer, result);
         }
