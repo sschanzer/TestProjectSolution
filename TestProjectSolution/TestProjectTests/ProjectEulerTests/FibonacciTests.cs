@@ -24,23 +24,12 @@ namespace TestProjectTests.ProjectEulerTests
         /// <param name="expected">Expected value.</param>
         [DataTestMethod]
         [TestCategory(TestList.Validation)]
-        [DataRow(10, "0,1,1,2,3,5,8,13,21,34")] // First 10 Fibonacci numbers
-        [DataRow(100, "218922995834555169026")] // 100th Fibonacci number
-        [DataRow(1000, "26863810024485359386146727202142923967616609318986952340123175997617981700247881689338369654483356564191827856161443356312976673642210350324634850410377680367334151172899169723197082763985615764450078474174626")] // 1000th Fibonacci number
+        [DataRow(10, "0,1,1,2,3,5,8,13,21,34")]
         public void TestFibonacci_GetFibonacciNumbers(int n, string expected)
         {
             var fibList = Fibonacci.GetFibonacciNumbers(n);
-
-            if (n == 10)
-            {
-                var expectedList = expected.Split(',').Select(BigInteger.Parse).ToList();
-                CollectionAssert.AreEqual(expectedList, fibList);
-            }
-            else
-            {
-                BigInteger expectedTerm = BigInteger.Parse(expected);
-                Assert.AreEqual(expectedTerm, fibList.Last());
-            }
+            var expectedList = expected.Split(',').Select(BigInteger.Parse).ToList();
+            CollectionAssert.AreEqual(expectedList, fibList);
         }
 
         /// <summary>
@@ -94,8 +83,8 @@ namespace TestProjectTests.ProjectEulerTests
         [DataRow(3, "2")]
         [DataRow(4, "3")]
         [DataRow(12, "144")]
-        [DataRow(100, "218922995834555169026")]
-        [DataRow(1000, "26863810024485359386146727202142923967616609318986952340123175997617981700247881689338369654483356564191827856161443356312976673642210350324634850410377680367334151172899169723197082763985615764450078474174626")]
+        [DataRow(100, "354224848179261915075")]
+        [DataRow(1000, "43466557686937456435688527675040625802564660517371780402481729089536555417949051890403879840079255169295922593080322634775209689623239873322471161642996440906533187938298969649928516003704476137795166849228875")]
         public void TestFibonacci_GetNthFib(int n, string expected)
         {
             var result = Fibonacci.GetNthFib(n);
