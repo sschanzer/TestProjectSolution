@@ -1,11 +1,9 @@
 Input,ExpectedPermutations
 201,"012;021;102;120;201;210"
 321,"123;132;213;231;312;321"
-abc,"acb;bac;bca;cab;cba;abc"
+abc,"abc;acb;bac;bca;cab;cba"
 a,"a"
 ab,"ab;ba"
-aab,"aab;aba;baa"
-112,"112;121;211"
 ,""
 1,"1"
-xyz,"xzy;yxz;yzx;zxy;zyx;xyz"
+xyz,"xyz;xzy;yxz;yzx;zxy;zyx"

@@ -42,7 +42,11 @@
         {
             if (remaining.Length == 0)
             {
-                results.Add(current);
+                if (!string.IsNullOrEmpty(current))
+                {
+                    results.Add(current);
+                }
+
                 return;
             }
 
@@ -62,6 +66,11 @@
         public static List<string> PermutationsViaHeaps(string input, int nthPermutation = 0)
         {
             int length = input.Length;
+
+            if (length == 0)
+            {
+                return new List<string>();
+            }
 
             // Convert the input string into a mutable character array
             char[] characters = input.ToCharArray();
