@@ -462,5 +462,22 @@ namespace TestProjectTests.ProjectEulerTests
             var result = long.Parse(permutation[0]);
             Assert.AreEqual(answer, result);
         }
+
+        /// <summary>
+        /// Project Euler Problem 25.
+        /// What is the index of the first term in the Fibonacci sequence to contain 1000 digits?
+        /// </summary>
+        /// <see href="https://projecteuler.net/problem=25">Problem 25 description.</see>
+        /// <param name="input">The number of digits we want the term to have.</param>
+        /// <param name="answer">The accepted solution on Project Euler.</param>
+        [TestMethod]
+        [TestCategory(TestList.ProjectEulerTests)]
+        [DataRow(1000, "4782")]
+        public void TestProjectEuler_Problem_TwentyFive(int input, string answer)
+        {
+            var result = Fibonacci.GetFirstFibsWithNDigits(1000);
+            var answerInt = BigInteger.Parse(answer);
+            Assert.AreEqual(answerInt, result);
+        }
     }
 }

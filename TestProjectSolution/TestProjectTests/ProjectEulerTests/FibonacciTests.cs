@@ -81,5 +81,40 @@ namespace TestProjectTests.ProjectEulerTests
 
             Assert.AreEqual(expectedOutput, fibSum);
         }
+
+        /// <summary>
+        /// Tests the <see cref="Fibonacci.GetNthFib(int)"/> method.
+        /// </summary>
+        /// <param name="n">The term of the sequence we want.</param>
+        /// <param name="expected">Expected output.</param>
+        [TestMethod]
+        [TestCategory(TestList.Validation)]
+        [DataRow(1, "1")]
+        [DataRow(2, "1")]
+        [DataRow(3, "2")]
+        [DataRow(4, "3")]
+        [DataRow(12, "144")]
+        [DataRow(100, "218922995834555169026")]
+        [DataRow(1000, "26863810024485359386146727202142923967616609318986952340123175997617981700247881689338369654483356564191827856161443356312976673642210350324634850410377680367334151172899169723197082763985615764450078474174626")]
+        public void TestFibonacci_GetNthFib(int n, string expected)
+        {
+            var result = Fibonacci.GetNthFib(n);
+            var expectedInt = BigInteger.Parse(expected);
+            Assert.AreEqual(expectedInt, result);
+        }
+
+        /// <summary>
+        /// Tests the <see cref="Fibonacci.GetFirstFibsWithNDigits(int)"/> method.
+        /// </summary>
+        /// <param name="n">The number of digits we want in the term.</param>
+        /// <param name="expected">Expected output.</param>
+        [TestMethod]
+        [TestCategory(TestList.Validation)]
+        [DataRow(3, 12)]
+        public void TestFibonacci_GetFirstFibsWithNDigits(int n, int expected)
+        {
+            var result = Fibonacci.GetFirstFibsWithNDigits(n);
+            Assert.AreEqual(expected, result);
+        }
     }
 }

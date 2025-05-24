@@ -139,5 +139,46 @@ namespace ProjectEulerProblems.Problems
 
             return sum;
         }
+
+        /// <summary>
+        /// Gets the Nth Fibonacci number.
+        /// </summary>
+        /// <param name="n">The term we want returned.</param>
+        /// <returns>The Nth Fibonacci number.</returns>
+        public static BigInteger GetNthFib(int n)
+        {
+            BigInteger a = 0;
+            BigInteger b = 1;
+            for (int i = 0; i < n; i++)
+            {
+                BigInteger temp = a + b;
+                a = b;
+                b = temp;
+            }
+
+            return a;
+        }
+
+        /// <summary>
+        /// Gets the index of the first Fibonacci number with the specified number of digits.
+        /// </summary>
+        /// <param name="digit">The number of digits.</param>
+        /// <returns>Index of the first Fibonacci number with the specified number of digits.</returns>
+        public static BigInteger GetFirstFibsWithNDigits(int digit)
+        {
+            var fibList = new List<BigInteger>() { 0, 1 };
+            BigInteger a = 0;
+            BigInteger b = 1;
+            while (b.ToString().Length < digit)
+            {
+                BigInteger temp = a + b;
+                a = b;
+                b = temp;
+
+                fibList.Add(temp);
+            }
+
+            return fibList.IndexOf(b);
+        }
     }
 }
