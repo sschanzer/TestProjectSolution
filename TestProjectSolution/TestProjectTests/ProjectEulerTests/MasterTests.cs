@@ -465,7 +465,7 @@ namespace TestProjectTests.ProjectEulerTests
 
         /// <summary>
         /// Project Euler Problem 25.
-        /// What is the index of the first term in the Fibonacci sequence to contain 1000 digits?
+        /// Find the index of the first term in the Fibonacci sequence to contain 1000 digits.
         /// </summary>
         /// <see href="https://projecteuler.net/problem=25">Problem 25 description.</see>
         /// <param name="input">The number of digits we want the term to have.</param>
@@ -478,6 +478,22 @@ namespace TestProjectTests.ProjectEulerTests
             var result = Fibonacci.GetFirstFibsWithNDigits(1000);
             var answerInt = BigInteger.Parse(answer);
             Assert.AreEqual(answerInt, result);
+        }
+
+        /// <summary>
+        /// Project Euler Problem 26.
+        /// Find the value of d less than 1000 for which 1/d contains the longest recurring cycle in its decimal fraction part.
+        /// </summary>
+        /// <see href="https://projecteuler.net/problem=26">Problem 26 description.</see>
+        /// <param name="input">The number of digits we want the term to have.</param>
+        /// <param name="answer">The accepted solution on Project Euler.</param>
+        [TestMethod]
+        [TestCategory(TestList.ProjectEulerTests)]
+        [DataRow(1000, 983)]
+        public void TestProjectEuler_Problem_TwentySix(int input, int answer)
+        {
+            var result = ReciprocalCycles.GetLongestReciprocalCycle(input);
+            Assert.AreEqual(answer, result.divisor);
         }
     }
 }

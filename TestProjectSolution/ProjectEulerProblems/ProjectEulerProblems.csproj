@@ -56,6 +56,7 @@
     <Compile Include="Problems\PalindromicNumbers.cs" />
     <Compile Include="Problems\Products.cs" />
     <Compile Include="Problems\Pythagorean.cs" />
+    <Compile Include="Problems\ReciprocalCycles.cs" />
     <Compile Include="Problems\SmallestMultiple.cs" />
     <Compile Include="Problems\SumSequence.cs" />
     <Compile Include="Problems\Primes.cs" />

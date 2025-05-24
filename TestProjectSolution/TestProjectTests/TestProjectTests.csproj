@@ -70,6 +70,7 @@
     <Compile Include="ProjectEulerTests\AmicableNumbersTests.cs" />
     <Compile Include="ProjectEulerTests\AbundantNumbersTests.cs" />
     <Compile Include="ProjectEulerTests\PermutationsTests.cs" />
+    <Compile Include="ProjectEulerTests\ReciprocalCyclesTests.cs" />
     <Compile Include="TestList.cs" />
     <Compile Include="LeetCodeTests\TwoSumTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
