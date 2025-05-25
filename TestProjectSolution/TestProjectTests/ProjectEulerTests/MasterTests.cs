@@ -498,17 +498,19 @@ namespace TestProjectTests.ProjectEulerTests
 
         /// <summary>
         /// Project Euler Problem 27.
-        /// Find the product of the coefficients, a and b, for the quadratic expression that produces the maximum number of primes for consecutive values of n, starting with n = 0.
+        /// Find the product of the coefficients, a and b, for the quadratic expression: n^2 + an + b that produces the maximum number of primes for consecutive values of n, starting with n = 0.
         /// </summary>
         /// <see href="https://projecteuler.net/problem=27">Problem 27 description.</see>
-        /// <param name="input">The number of digits we want the term to have.</param>
+        /// <param name="bound">The bound for the coefficients.</param>
         /// <param name="answer">The accepted solution on Project Euler.</param>
         [TestMethod]
         [TestCategory(TestList.ProjectEulerTests)]
-        [DataRow(1000, 983)]
-        public void TestProjectEuler_Problem_TwentySeven(int input, int answer)
+        [DataRow(1000, -59231)]
+        public void TestProjectEuler_Problem_TwentySeven(int bound, int answer)
         {
-            Assert.IsTrue(true);
+            var (a, b) = Primes.ProductOfQuadradicCoefficientsProducingMaximalConsecutivePrimes(bound);
+            var product = a * b;
+            Assert.AreEqual(answer, product);
         }
     }
 }

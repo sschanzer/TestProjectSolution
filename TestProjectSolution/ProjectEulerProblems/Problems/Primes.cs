@@ -219,5 +219,61 @@ namespace ProjectEulerProblems.Problems
 
             return primeSum;
         }
+
+        /// <summary>
+        /// Finds the product of coefficients in a quadradic expression which produces the maximal consecutive prime numbers.
+        /// </summary>
+        /// <param name="bound">Bound for the First order and constant coefficient terms of the quadradic.</param>
+        /// <returns>The product of coefficients in the quadradic expression producing the maximal consecutive prime numbers.</returns>
+        public static (int a, int b) ProductOfQuadradicCoefficientsProducingMaximalConsecutivePrimes(int bound)
+        {
+            var consecutivePrimesLength = 0;
+            (int a, int b) coefficientTuple = (0, 0);
+            for (int i = -bound + 1; i < bound; i++)
+            {
+                for (int j = 0; j <= bound; j++)
+                {
+                    if (IsPrime(j))
+                    {
+                        var consecutivePrimesOfQuadradic = ConsecutiveQuadradicPrimes(i, j);
+                        var currentConsecutivePrimesLength = consecutivePrimesOfQuadradic.Count;
+                        if (currentConsecutivePrimesLength > consecutivePrimesLength)
+                        {
+                            consecutivePrimesLength = currentConsecutivePrimesLength;
+                            coefficientTuple = (i, j);
+                        }
+                    }
+                }
+            }
+
+            return coefficientTuple;
+        }
+
+        /// <summary>
+        /// Evaluates the consecutive primes the coefficients product for the quadradic n^2 + an + b.
+        /// </summary>
+        /// <param name="a">First order coefficient.</param>
+        /// <param name="b">Constant coefficient.</param>
+        /// <returns>A list of consecutive prime numbers the quadradic produces with the provided coefficients.</returns>
+        private static List<int> ConsecutiveQuadradicPrimes(int a, int b)
+        {
+            List<int> consecutivePrimeList = new List<int>();
+
+            for (int n = 0; n < 1000;  n++)
+            {
+                var currentQuadradicEvaluation = (n * n) + (a * n) + b;
+                var isPrime = IsPrime(currentQuadradicEvaluation);
+                if (isPrime)
+                {
+                    consecutivePrimeList.Add(currentQuadradicEvaluation);
+                }
+                else
+                {
+                    break;
+                }
+            }
+
+            return consecutivePrimeList;
+        }
     }
 }

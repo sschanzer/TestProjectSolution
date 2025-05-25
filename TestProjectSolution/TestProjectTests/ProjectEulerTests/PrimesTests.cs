@@ -102,6 +102,8 @@ namespace TestProjectTests.ProjectEulerTests
         /// <summary>
         /// Tests the <see cref="Primes.IsPrime(long)"/> method with a variety of inputs.
         /// </summary>
+        /// <param name="num">Test input.</param>
+        /// <param name="expectedValue">Expected output.</param>
         [TestMethod]
         [TestCategory(TestList.Validation)]
         [DataRow(2, true)]
@@ -124,8 +126,8 @@ namespace TestProjectTests.ProjectEulerTests
         }
 
         /// <summary>
-        /// By listing the first six prime numbers: $2, 3, 5, 7, 11$, and $13$, we can see that the $6$th prime is $13$.
-        /// What is the $10001$st prime number?
+        /// By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13.
+        /// Find the 10001st prime number.
         /// </summary>
         /// <param name="bound">The position (index) of the prime number to find (e.g., 6 for the 6th prime).</param>
         /// <param name="expectedValue">The expected prime number at the given position (e.g., 13 for the 6th prime).</param>
@@ -163,6 +165,22 @@ namespace TestProjectTests.ProjectEulerTests
             var expectedSum = BigInteger.Parse(expectedSumString);
             var mySum = Primes.SumOfPrimes(bound);
             Assert.AreEqual(expectedSum, mySum);
+        }
+
+        /// <summary>
+        /// Tests the <see cref="Primes.ProductOfQuadradicCoefficientsProducingMaximalConsecutivePrimes(int)"/> method.
+        /// </summary>
+        /// <param name="bound">Bound for the first order and constant coefficients.</param>
+        /// <param name="expected">Expected output.</param>
+        [TestMethod]
+        [TestCategory(TestList.Validation)]
+        [DataRow(41, -41)]
+        [DataRow(1000, -59231)]
+        public void TestPrimes_ProductOfQuadradicCoefficientsProducingMaximalConsecutivePrimes(int bound, int expected)
+        {
+            var (a, b) = Primes.ProductOfQuadradicCoefficientsProducingMaximalConsecutivePrimes(bound);
+            var product = a * b;
+            Assert.AreEqual(expected, product);
         }
     }
 }
