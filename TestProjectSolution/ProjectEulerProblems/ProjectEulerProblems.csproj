@@ -47,6 +47,7 @@
     <Compile Include="Problems\AmicableNumbers.cs" />
     <Compile Include="Problems\Collatz.cs" />
     <Compile Include="Problems\CountingDays.cs" />
+    <Compile Include="Problems\DigitPowers.cs" />
     <Compile Include="Problems\DivisorsAndMultiples.cs" />
     <Compile Include="Problems\Fibonacci.cs" />
     <Compile Include="Problems\Permutations.cs" />

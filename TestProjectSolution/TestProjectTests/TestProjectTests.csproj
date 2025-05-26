@@ -73,6 +73,7 @@
     <Compile Include="ProjectEulerTests\ReciprocalCyclesTests.cs" />
     <Compile Include="ProjectEulerTests\SpiralGridTests.cs" />
     <Compile Include="ProjectEulerTests\SequenceTests.cs" />
+    <Compile Include="ProjectEulerTests\DigitPowersTests.cs" />
     <Compile Include="TestList.cs" />
     <Compile Include="LeetCodeTests\TwoSumTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

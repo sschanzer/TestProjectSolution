@@ -544,5 +544,21 @@ namespace TestProjectTests.ProjectEulerTests
             var result = Sequence.FindDistinctPowers(bound, bound);
             Assert.AreEqual(answer, result);
         }
+
+        /// <summary>
+        /// Project Euler Problem 30.
+        /// Find the sum of all the numbers that can be written as the sum of fifth powers of their digits.
+        /// </summary>
+        /// <see href="https://projecteuler.net/problem=30">Problem 30 description.</see>
+        /// <param name="bound">The bound for the base and exponent.</param>
+        /// <param name="answer">The accepted solution on Project Euler.</param>
+        [TestMethod]
+        [TestCategory(TestList.ProjectEulerTests)]
+        [DataRow(5, 443839)]
+        public void TestProjectEuler_Problem_Thirty(int bound, int answer)
+        {
+            var result = DigitPowers.GetDigitPowers(bound);
+            Assert.AreEqual(answer, result.Sum());
+        }
     }
 }
