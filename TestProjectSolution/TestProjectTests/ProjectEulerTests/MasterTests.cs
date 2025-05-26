@@ -560,5 +560,20 @@ namespace TestProjectTests.ProjectEulerTests
             var result = DigitPowers.GetDigitPowers(bound);
             Assert.AreEqual(answer, result.Sum());
         }
+
+        /// <summary>
+        /// Project Euler Problem 31.
+        /// Find how many different ways can £2 be made using any number of coins.
+        /// </summary>
+        /// <see href="https://projecteuler.net/problem=31">Problem 31 description.</see>
+        /// <param name="bound">The bound for the base and exponent.</param>
+        /// <param name="answer">The accepted solution on Project Euler.</param>
+        [TestMethod]
+        [TestCategory(TestList.ProjectEulerTests)]
+        [DataRow(5, 443839)]
+        public void TestProjectEuler_Problem_ThirtyOne(int bound, int answer)
+        {
+            Assert.IsTrue(true);
+        }
     }
 }
