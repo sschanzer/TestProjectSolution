@@ -58,6 +58,7 @@
     <Compile Include="Problems\Pythagorean.cs" />
     <Compile Include="Problems\ReciprocalCycles.cs" />
     <Compile Include="Problems\SmallestMultiple.cs" />
+    <Compile Include="Problems\SpiralGrid.cs" />
     <Compile Include="Problems\SumSequence.cs" />
     <Compile Include="Problems\Primes.cs" />
     <Compile Include="Problems\TriangularNumbers.cs" />

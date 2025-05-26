@@ -512,5 +512,21 @@ namespace TestProjectTests.ProjectEulerTests
             var product = a * b;
             Assert.AreEqual(answer, product);
         }
+
+        /// <summary>
+        /// Project Euler Problem 28.
+        /// Find the sum of the numbers on the diagonals in a 1001 by 1001 spiral formed in the same way.
+        /// </summary>
+        /// <see href="https://projecteuler.net/problem=28">Problem 28 description.</see>
+        /// <param name="bound">The bound for the coefficients.</param>
+        /// <param name="answer">The accepted solution on Project Euler.</param>
+        [TestMethod]
+        [TestCategory(TestList.ProjectEulerTests)]
+        [DataRow(1001, 669171001)]
+        public void TestProjectEuler_Problem_TwentyEight(int bound, int answer)
+        {
+            var result = SpiralGrid.GetDiagonalSumOfSpiralGrid(bound);
+            Assert.AreEqual(answer, result);
+        }
     }
 }
