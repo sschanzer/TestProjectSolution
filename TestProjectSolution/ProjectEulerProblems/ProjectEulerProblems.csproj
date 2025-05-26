@@ -57,6 +57,7 @@
     <Compile Include="Problems\Products.cs" />
     <Compile Include="Problems\Pythagorean.cs" />
     <Compile Include="Problems\ReciprocalCycles.cs" />
+    <Compile Include="Problems\Sequence.cs" />
     <Compile Include="Problems\SmallestMultiple.cs" />
     <Compile Include="Problems\SpiralGrid.cs" />
     <Compile Include="Problems\SumSequence.cs" />
