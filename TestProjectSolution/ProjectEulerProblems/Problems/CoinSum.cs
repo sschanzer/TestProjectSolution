@@ -27,7 +27,7 @@
             {
                 for (int j = coins[i]; j <= targetValue; j++)
                 {
-                    dynamicRow[j] = dynamicRow[j - coins[i]];
+                    dynamicRow[j] += dynamicRow[j - coins[i]];
                 }
             }
 
