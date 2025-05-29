@@ -566,14 +566,16 @@ namespace TestProjectTests.ProjectEulerTests
         /// Find how many different ways can £2 be made using any number of coins.
         /// </summary>
         /// <see href="https://projecteuler.net/problem=31">Problem 31 description.</see>
-        /// <param name="bound">The bound for the base and exponent.</param>
+        /// <param name="coins">Denomination of coins as an integer array.</param>
+        /// <param name="targetSum">The target sum.</param>
         /// <param name="answer">The accepted solution on Project Euler.</param>
         [TestMethod]
         [TestCategory(TestList.ProjectEulerTests)]
-        [DataRow(5, 443839)]
-        public void TestProjectEuler_Problem_ThirtyOne(int bound, int answer)
+        [DataRow(new int[] { 1, 2, 5, 10, 20, 50, 100, 200 }, 200, 73682)]
+        public void TestProjectEuler_Problem_ThirtyOne(int[] coins, int targetSum, int answer)
         {
-            Assert.IsTrue(true);
+            var result = CoinSum.CountCoins(coins, targetSum);
+            Assert.AreEqual(answer, result);
         }
     }
 }
