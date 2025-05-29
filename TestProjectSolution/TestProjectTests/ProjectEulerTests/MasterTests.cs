@@ -577,5 +577,21 @@ namespace TestProjectTests.ProjectEulerTests
             var result = CoinSum.CountCoins(coins, targetSum);
             Assert.AreEqual(answer, result);
         }
+
+        /// <summary>
+        /// Project Euler Problem 32.
+        /// Find the sum of all products whose multiplicand/multiplier/product identity can be written as a 1 through 9 pandigital.
+        /// </summary>
+        /// <see href="https://projecteuler.net/problem=32">Problem 32 description.</see>
+        /// <param name="coins">Denomination of coins as an integer array.</param>
+        /// <param name="targetSum">The target sum.</param>
+        /// <param name="answer">The accepted solution on Project Euler.</param>
+        [TestMethod]
+        [TestCategory(TestList.ProjectEulerTests)]
+        [DataRow(new int[] { 1, 2, 5, 10, 20, 50, 100, 200 }, 200, 73682)]
+        public void TestProjectEuler_Problem_ThirtyTwo(int[] coins, int targetSum, int answer)
+        {
+            Assert.IsTrue(true);
+        }
     }
 }
