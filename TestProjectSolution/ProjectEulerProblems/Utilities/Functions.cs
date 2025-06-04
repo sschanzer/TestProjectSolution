@@ -129,6 +129,28 @@ namespace ProjectEulerProblems.Utilities
         }
 
         /// <summary>
+        /// Gets all pairs of factors up to the given number.
+        /// </summary>
+        /// <param name="num">The numer to determine it's factors.</param>
+        /// <returns>A list of factor pairs of numbers up to num.</returns>
+        /// <remarks>int inputs only.</remarks>
+        public static IEnumerable<(int number, int firstFactor, int secondFactor)> GetFactorsPairsUpTo(int num)
+        {
+            int sqrt = (int)Math.Sqrt(num);
+
+            for (int number = 1; number <= num; number++)
+            {
+                for (int i = 1; i <= sqrt; i++)
+                {
+                    if ((number % i) == 0)
+                    {
+                        yield return (number, i, number / i);
+                    }
+                }
+            }
+        }
+
+        /// <summary>
         /// Calculates the sum of proper divisors of a number.
         /// </summary>
         /// <param name="num">The number.</param>

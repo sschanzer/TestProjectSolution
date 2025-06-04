@@ -51,6 +51,7 @@
     <Compile Include="Problems\DigitPowers.cs" />
     <Compile Include="Problems\DivisorsAndMultiples.cs" />
     <Compile Include="Problems\Fibonacci.cs" />
+    <Compile Include="Problems\PandigitalNumbers.cs" />
     <Compile Include="Problems\Permutations.cs" />
     <Compile Include="Problems\MaxPathSum.cs" />
     <Compile Include="Problems\NameScores.cs" />
