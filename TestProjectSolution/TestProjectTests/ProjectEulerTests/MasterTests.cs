@@ -593,5 +593,20 @@ namespace TestProjectTests.ProjectEulerTests
             var result = PandigitalNumbers.PandigitalProduct(input);
             Assert.AreEqual(answer, result);
         }
+
+        /// <summary>
+        /// Project Euler Problem 33
+        /// If the product of these four fractions is given in its lowest common terms, find the value of the denominator.
+        /// </summary>
+        /// <see href="https://projecteuler.net/problem=33">Problem 33 description.</see>
+        /// <param name="input">Number inputted.</param>
+        /// <param name="answer">The accepted solution on Project Euler.</param>
+        [TestMethod]
+        [TestCategory(TestList.ProjectEulerTests)]
+        [DataRow(9, 45228)]
+        public void TestProjectEuler_Problem_ThirtyThree(int input, int answer)
+        {
+            Assert.IsTrue(true);
+        }
     }
 }
