@@ -612,7 +612,7 @@ namespace TestProjectTests.ProjectEulerTests
 
         /// <summary>
         /// Project Euler Problem 34
-        /// Find the sum of all numbers which are equal to the sum of the factorial of their digits..
+        /// Find the sum of all numbers which are equal to the sum of the factorial of their digits.
         /// </summary>
         /// <see href="https://projecteuler.net/problem=34">Problem 34 description.</see>
         /// <param name="answer">The accepted solution on Project Euler.</param>
@@ -623,6 +623,21 @@ namespace TestProjectTests.ProjectEulerTests
         {
             var result = Functions.FindFactorions();
             Assert.AreEqual(answer, result.Sum());
+        }
+
+        /// <summary>
+        /// Project Euler Problem 35
+        /// Find How many circular primes are there below one million.
+        /// </summary>
+        /// <see href="https://projecteuler.net/problem=35">Problem 35 description.</see>
+        /// <param name="input">Number inputted.</param>
+        /// <param name="answer">The accepted solution on Project Euler.</param>
+        [TestMethod]
+        [TestCategory(TestList.ProjectEulerTests)]
+        [DataRow(1000000, 55)]
+        public void TestProjectEuler_Problem_ThirtyFive(int input, int answer)
+        {
+            Assert.IsFalse(true);
         }
     }
 }
