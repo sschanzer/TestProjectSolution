@@ -603,10 +603,11 @@ namespace TestProjectTests.ProjectEulerTests
         /// <param name="answer">The accepted solution on Project Euler.</param>
         [TestMethod]
         [TestCategory(TestList.ProjectEulerTests)]
-        [DataRow(9, 45228)]
+        [DataRow(100, 100)]
         public void TestProjectEuler_Problem_ThirtyThree(int input, int answer)
         {
-            Assert.IsTrue(true);
+            var result = DigitCancellingFractions.GetProductOfDenominators(input);
+            Assert.AreEqual(answer, result);
         }
     }
 }

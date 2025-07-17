@@ -19,7 +19,7 @@ namespace ProjectEulerProblems.Problems
         /// <summary>
         /// Finds digit cancelling fractions up to num.
         /// </summary>
-        /// <returns>A list of digit cancelling fractions</returns>
+        /// <returns>A list of digit cancelling fractions.</returns>
         public static List<(int numerator, int denominator)> FindDigitCancelingFractions(int num)
         {
             var results = new List<(int numerator, int denominator)>();
@@ -58,6 +58,30 @@ namespace ProjectEulerProblems.Problems
             }
 
             return results;
+        }
+
+        /// <summary>
+        /// Finds the product of denominators in the digit cancelling list.
+        /// </summary>
+        /// <param name="bound">The number we want to find digit cancelling fractions up to.</param>
+        /// <returns>The product of denominators in the digit cancelling list.</returns>
+        public static int GetProductOfDenominators(int bound)
+        {
+            int productDenominator = 1, productNumerator = 1;
+
+            var digitCancellingList = FindDigitCancelingFractions(bound);
+
+            foreach (var pair in digitCancellingList)
+            {
+                productNumerator *= pair.numerator;
+                productDenominator *= pair.denominator;
+            }
+
+            var gcd = DivisorsAndMultiples.Gcd(productNumerator, productDenominator);
+
+            var productOfDenominatorInLowestTerms = productDenominator / (int)gcd;
+
+            return productOfDenominatorInLowestTerms;
         }
     }
 }
