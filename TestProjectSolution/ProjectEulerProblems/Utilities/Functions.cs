@@ -79,6 +79,29 @@ namespace ProjectEulerProblems.Utilities
         }
 
         /// <summary>
+        /// Finds the Factorions of numbers in given base 10.
+        /// </summary>
+        /// <returns>A list of Factorions of numbers in base 10.</returns>
+        /// <see href="https://en.wikipedia.org/wiki/Factorion"/>.
+        public static List<int> FindFactorions()
+        {
+            var resultList = new List<int>();
+
+            for (int i = 10; i <= 1000000; i++)
+            {
+                var digits = i.ToString().Select(x => int.Parse(x.ToString()));
+                int sum = digits.Sum(d => (int)Factorial(d));
+
+                if (sum == i)
+                {
+                    resultList.Add(i);
+                }
+            }
+
+            return resultList;
+        }
+
+        /// <summary>
         /// Gets all factors of the given number.
         /// </summary>
         /// <param name="num">The numer to determine it's factors.</param>

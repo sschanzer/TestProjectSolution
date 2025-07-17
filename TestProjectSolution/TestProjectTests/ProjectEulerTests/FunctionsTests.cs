@@ -107,5 +107,18 @@ namespace TestProjectTests.ProjectEulerTests
             var result = Functions.GetProperDivisorSum(input);
             Assert.AreEqual(expected, result);
         }
+
+        /// <summary>
+        /// Tests the <see cref="Functions.FindFactorions(int)"/> method.
+        /// </summary>
+        /// <param name="expected">Expected output.</param>
+        [DataTestMethod]
+        [TestCategory(TestList.Validation)]
+        [DataRow(new[] { 145, 40585 })]
+        public void TestFunctions_FindFactorions(int[] expected)
+        {
+            var result = Functions.FindFactorions();
+            CollectionAssert.AreEqual(expected, result);
+        }
     }
 }

@@ -609,5 +609,20 @@ namespace TestProjectTests.ProjectEulerTests
             var result = DigitCancellingFractions.GetProductOfDenominators(input);
             Assert.AreEqual(answer, result);
         }
+
+        /// <summary>
+        /// Project Euler Problem 34
+        /// Find the sum of all numbers which are equal to the sum of the factorial of their digits..
+        /// </summary>
+        /// <see href="https://projecteuler.net/problem=34">Problem 34 description.</see>
+        /// <param name="answer">The accepted solution on Project Euler.</param>
+        [TestMethod]
+        [TestCategory(TestList.ProjectEulerTests)]
+        [DataRow(40730)]
+        public void TestProjectEuler_Problem_ThirtyFour(int answer)
+        {
+            var result = Functions.FindFactorions();
+            Assert.AreEqual(answer, result.Sum());
+        }
     }
 }
