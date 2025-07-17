@@ -45,6 +45,7 @@
     <Compile Include="Data\ProblemEightData.cs" />
     <Compile Include="Problems\AbundantNumbers.cs" />
     <Compile Include="Problems\AmicableNumbers.cs" />
+    <Compile Include="Problems\DigitCancellingFractions.cs" />
     <Compile Include="Problems\CoinSum.cs" />
     <Compile Include="Problems\Collatz.cs" />
     <Compile Include="Problems\CountingDays.cs" />

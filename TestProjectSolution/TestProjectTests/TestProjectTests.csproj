@@ -76,6 +76,7 @@
     <Compile Include="ProjectEulerTests\DigitPowersTests.cs" />
     <Compile Include="ProjectEulerTests\CoinSumTests.cs" />
     <Compile Include="ProjectEulerTests\PandigitalNumbersTests.cs" />
+    <Compile Include="ProjectEulerTests\DigitCancellingFractionsTests.cs" />
     <Compile Include="TestList.cs" />
     <Compile Include="LeetCodeTests\TwoSumTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
