@@ -640,5 +640,20 @@ namespace TestProjectTests.ProjectEulerTests
             var result = IntegerCycles.CountPrimeCycles(input);
             Assert.AreEqual(answer, result);
         }
+
+        /// <summary>
+        /// Project Euler Problem 36
+        /// Find the sum of all numbers, less than one million, which are palindromic in base 10 and base 2.
+        /// </summary>
+        /// <see href="https://projecteuler.net/problem=36">Problem 36 description.</see>
+        /// <param name="input">Number inputted.</param>
+        /// <param name="answer">The accepted solution on Project Euler.</param>
+        [TestMethod]
+        [TestCategory(TestList.ProjectEulerTests)]
+        [DataRow(1000000, 55)]
+        public void TestProjectEuler_Problem_ThirtySix(int input, int answer)
+        {
+            Assert.IsFalse(true);
+        }
     }
 }
