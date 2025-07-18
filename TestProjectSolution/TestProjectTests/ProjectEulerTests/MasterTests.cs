@@ -637,7 +637,8 @@ namespace TestProjectTests.ProjectEulerTests
         [DataRow(1000000, 55)]
         public void TestProjectEuler_Problem_ThirtyFive(int input, int answer)
         {
-            Assert.IsFalse(true);
+            var result = IntegerCycles.CountPrimeCycles(input);
+            Assert.AreEqual(answer, result);
         }
     }
 }
